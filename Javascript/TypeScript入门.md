@@ -1,10 +1,77 @@
-# TypeScript
+# TypeScript入门
 
-TypeScript是一种由微软开发的自由和开源的编程语言。它是JavaScript的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
+TypeScript是一种由微软开发的自由和开源的编程语言。它是JavaScript的一个超集，而且本质上向这个语言**添加了可选的静态类型和基于类的面向对象编程**。其**遵循ES6规范**。
 
-## 参数
+## TypeScript的优势
 
-### 2. 参数类型
+* 支持ES6规范
+
+* 强大的IDE支持，3大特性： 类型检查、语法提示、重构
+
+* Angular2的开发语言
+
+## 搭建TypeScript开发环境
+
+* 在线compiler
+
+* 本地compiler
+
+```bash
+npm install -g typescript
+```
+
+```bash
+tsc --version
+```
+
+```bash
+// 将在Hello.ts同级目录生成Hello.js文件
+tsc Hello.ts
+```
+
+## 字符串新特性
+
+### 1. 多行字符串
+
+```typescript
+let str = `lsjfkaj
+fkdsajfk
+adsjf
+kdajfkdjad`;
+```
+### 2. 字符串模板
+
+```typescript
+let text = 'World';
+
+let getName = function () {
+	return 'World';
+}
+
+console.log(`Hello ${text}`); // Hello World
+console.log(`Hello ${getName()}`); // Hello World
+```
+### 3. 自动拆分字符串
+
+```typescript
+function test (temp, name, age) {
+	console.log(temp);
+	console.log(name);
+	console.log(age);
+}
+
+let myMame = 'zhang san';
+
+let getAge = function () {
+	return 18;
+}
+
+test`Hello my name is ${myName}, I'm ${getAge()}`;
+```
+
+## 参数新特性
+
+### 1. 参数类型
 
 语法 **标识符: 类型**
 
@@ -24,7 +91,7 @@ let age: number = 32;
 let man: boolean = true;
 ```
 
-#### 自定义类型
+### 2. 自定义类型
 
 ```typescript
 class Person {
@@ -38,7 +105,7 @@ zhangsan.name = 'lisi';
 zhangsan.age = 18;
 ```
 
-#### 参数默认值&可选参数
+### 3. 参数默认值&可选参数
 
 ```typescript
 // 以方法为例，普通变量见上方例子
@@ -347,3 +414,176 @@ let el = new Employee('naem', '1');
 ### 2. 泛型 (generic)
 
 参数化的类型，一般用于限制集合的内容。
+
+```typescript
+// 引用上面的类 Person(name) Employee(name, code)
+let workers: Array<Person> = [];
+	workers[0] = new Person('张三');
+	workers[1] = new Employee('李四', '2');
+```
+
+### 3. 接口 (Interface)
+
+用来建立某种代码约定，使得其它开发者在调用某个方法或创建新的类时必须遵循接口所定义的代码约定。
+
+> JavaScript 中没有Interface的概念
+
+* ts
+```typescript
+// 声明一个接口IPerson，同时设置两个属性
+interface IPerson {
+	name: string;
+	age: number;
+}
+
+// 作为方法()参数的类型声明
+class Person {
+	constructor(public config: IPerson) {
+	}
+}
+// 参数必须与接口声明的参数相同
+let p1 = new Person({
+	name: 'zhangsna',
+	age: 18
+});
+```
+* ES5
+```typescript
+// 编译后
+var Person = (function () {
+	funtion Person(config) {
+		this.config = config;
+	}
+	return Person;
+}());
+
+var p1 = new Person({
+	name: 'zhangsna',
+	age: 18
+});
+```
+
+----------------- 华丽的分割线 -----------------
+
+* ts
+```typescript
+interface Animal {
+	eat();
+}
+
+// 所有声明这个接口的类，都要实现这个接口的方法
+class Sheep implements Animal {
+	eat () {
+		console.log('I eat grass');
+	}
+}
+
+class Tiger implements Animal {
+	eat () {
+		console.log('I eat meat');
+	}
+}
+```
+* ES5
+```typescript
+// 编译后
+var Sheep = (function () {
+	funtion Sheep () {
+	}
+	Sheep.prototype.eat = function () {
+		console.log('I eat grass');
+	}
+	return Sheep;
+}());
+
+var Tiger = (function () {
+	funtion Tiger () {
+	}
+	Tiger.prototype.eat = function () {
+		console.log('I eat meat');
+	}
+	return Tiger;
+}());
+```
+
+### 4. 模块 (Module)
+
+模块可以帮助开发者将代码分割为可重用的单元。开发者可以自己决定将模块中的哪些资源(类、方法、变量)暴露出去供外部使用，哪些资源只在模块内使用。
+
+> TypeScript中，一个文件即一个模块。
+
+> 模块中的两个关键字 **export、 import**。**export** 控制模块对外暴露哪些方法或参数， **import** 需要某个模块提供哪些方法或参数。
+
+```typescript
+/** file a.ts **/
+export let prop1;
+
+let prop2;
+
+export funtion func1 () {
+}
+
+funtion func2 () {
+}
+
+export class Class1 {
+}
+
+class Class2 {
+}
+```
+
+```typescript
+/** file b.ts **/
+// 导入a.ts暴露的属性、方法和类
+import {prop1, func1, Class1} from './a';
+
+console.log(prop1);
+func1();
+new Class1();
+```
+
+### 5. 注解 (annotation)
+
+注解为程序的元素(类、方法、变量)加上更直观更明了的说明，这些说明信息与程序的业务逻辑无关，而是供指定的工具或框架使用的。
+
+```typescript
+// Angular2
+import { Component } from '@angular/core';
+
+// 注解
+@Component({
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+	title = 'app works';
+}
+```
+
+### 6. 类型定义文件 (*.d.ts)
+
+类型定义文件用来帮助开发者在TypeScript中使用已有的JavaScript的工具包。如jQuery
+
+> 所有文件均以.d.ts结尾
+
+```typescript
+/** file jquery.d.ts **/
+
+/**
+ * 此处省略n多代码
+ */
+
+declare module "jquery" {
+	export = $;
+}
+
+declare let jQuery: JQueryStatic;
+declare let $: JQueryStatic;
+```
+
+**代码来源**：[https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped, '_blank')
+
+**安装工具**：[https://github.com/typings/typings](https://github.com/typings/typings, '_blank')
