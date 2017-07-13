@@ -114,11 +114,11 @@ ab\d.
 注意：`^`符号不在中括号[]内，则表示以xxx开始，而非取反的意思。
 
 ```javascript
-'@123@abc@'.relace(/@./g, 'X'); // 'X23Xbc@'
+'@123@abc@'.replace(/@./g, 'X'); // 'X23Xbc@'
 
-'@123@abc@'.relace(/^@./g, 'X'); // 'X23@bc@'
+'@123@abc@'.replace(/^@./g, 'X'); // 'X23@abc@'
 
-'@123@abc@'.relace(/.@/g, 'X'); // '@23XbcX'
+'@123@abc@'.replace(/.@/g, 'X'); // '@12XabX'
 ```
 
 #### 5.量词
