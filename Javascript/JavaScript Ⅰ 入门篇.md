@@ -253,3 +253,45 @@ Object.innerHTML
 ```
 
 ### 3. 改变 HTML 样式
+
+HTML DOM 允许 JavaScript 改变 HTML 元素的样式。
+
+```
+<p id="pcon">Hello World!</p>
+<script>
+   var mychar = document.getElementById("pcon");
+   mychar.style.color="red";
+   mychar.style.fontSize="20";
+   mychar.style.backgroundColor ="blue";
+</script>
+```
+
+### 4. 显示和隐藏（display属性）
+
+网页中经常会看到显示和隐藏的效果，可通过display属性来设置。
+
+```
+Object.style.display = value
+```
+
+注意: Object是获取的元素对象，如通过`document.getElementById("id")`获取的元素。
+
+| value取值 | 描述 |
+| -- | -- |
+| none | 元素被隐藏 |
+| block | 元素被显示为块级元素 |
+
+### 5. 控制类名（className 属性）
+
+className 属性设置或返回元素的class 属性
+
+```
+object.className = classname
+```
+
+**作用:**
+
+1. 获取元素的class 属性
+
+2. 为网页内的某个元素指定一个css样式来更改该元素的外观
+
