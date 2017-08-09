@@ -29,16 +29,19 @@
 | in | try | do | instanceof |
 | typeof |  |  |  |
 
-| 保留字 | -- | -- | -- |
-| :--: | :--: | :--: | :--: |
-| abstract | enum | int | short |
-| boolean | export | interface | static |
-| byte | extends | long | super |
-| char | final | native | synchronized |
-| class | float | package | throws |
-| const | goto | private | transient |
-| debugger | implements | protected | volatile |
-| double | import | public | |
+| 保留字 | -- | -- |
+| :--: | :--: | :--: |
+| abstract | enum | int |
+| short | boolean | export |
+| interface | static | byte |
+| extends | long | super |
+| char | final | native |
+| synchronized | class | float |
+| package | throws | const |
+| goto | private | transient |
+| debugger | implements | protected |
+| volatile | double | import |
+| public | | |
 
 #### 3. 变量声明及赋值
 
@@ -1164,7 +1167,249 @@ window对象是BOM的核心，window对象指当前的浏览器窗口。
 
 | 方法 | 说明 |
 | -- | -- |
-| alert | 显示带有一段消息和一个确认按钮的警告框 |
+| alert() | 显示带有一段消息和一个确认按钮的警告框 |
+| prompt() | 显示可提示用户输入的对话框 |
+| confirm() | 显示带有一段消息以及确认按钮和取消按钮的对话框 |
+| open() | 打开一个新的浏览器窗口或查找一个已命名的窗口 |
+| close() | 关闭浏览器窗口 |
+| print() | 打印当前窗口的内容 |
+| focus() | 把键盘焦点给予一个窗口 |
+| blur() | 把键盘焦点从顶层窗口移开 |
+| moveBy() | 可相对窗口的当前坐标把它移动指定的像素 |
+| moveTo() | 把窗口的左上角移动到一个指定的坐标 |
+| resizeBy() | 按照指定的像素调整窗口的大小 |
+| resizeTo() | 把窗口的大小调整到指定的宽度和高度 |
+| scrollBy() | 按照指定的像素值来滚动内容 |
+| scrollTo() | 把内容滚动到指定的坐标 |
+| setInterval() | 每隔指定的时间执行代码 |
+| setTimeout() | 在指定的延迟时间之后来执行代码 |
+| clearInterval() | 取消setInterval()的设置 |
+| clearTimeout() | 取消setTimeout()的设置 |
+
+* 计时器
+
+在JavaScript中，我们可以在设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行。  
+
+**计时器类型：**  
+1. `setTimeout()` 一次性计时器：仅在指定的延迟时间之后触发一次。
+
+2. `setInterval()` 间隔性触发计时器：每隔一定的时间间隔就触发一次。
+
+##### setInterval()
+
+```
+setInterval(代码,交互时间);
+```
+
+参数说明：
+
+1. 代码：要调用的函数或要执行的代码串。
+
+2. 交互时间：周期性执行或调用表达式之间的时间间隔，以毫秒计（1s=1000ms）。
+
+返回值:
+
+一个可以传递给 clearInterval() 从而取消对"代码"的周期性执行的值。
+
+##### clearInterval() 取消计时器
+
+```
+clearInterval(id_of_setInterval)
+````
+
+参数说明:
+
+1. id_of_setInterval：由 setInterval() 返回的 ID 值。
+
+##### setTimeout()
+
+setTimeout()计时器，在载入后延迟指定时间后,去执行一次表达式,仅执行一次。
+
+```
+setTimeout(代码,延迟时间);
+```
+
+参数说明：
+
+1. 要调用的函数或要执行的代码串。
+
+2. 延时时间：在执行代码前需等待的时间，以毫秒为单位（1s=1000ms)。
+
+要创建一个运行于**无穷循环中的计数器**，我们需要编写一个函数来调用其自身。在下面的代码，当按钮被点击后，输入域便从0开始计数。
+
+```javascript
+// html
+// <input type="text" id="txt" />
+
+var num=0;
+function numCount () {
+	document.getElementById('txt').value = num;
+	num = num + 1;
+	setTimeout("numCount()", 1000);
+}
+```
+
+##### clearTimeout() 取消计时器
+
+```javascript
+clearTimeout(id_of_setTimeout)
+```
+
+参数说明:
+
+1. id_of_setTimeout：由 setTimeout() 返回的 ID 值。该值标识要取消的延迟执行代码块。
+
+
+#### 6. History 对象
+
+**history对象**记录了用户曾经浏览过的页面(URL)，并可以实现浏览器前进与后退相似导航的功能。
+
+注意:
+
+从窗口被打开的那一刻开始记录，每个浏览器窗口、每个标签页乃至每个框架，都有自己的history对象与特定的window对象关联。
+
+```javascript
+window.history.[属性|方法]
+// 注意：window可以省略。
+```
+
+History 对象属性
+
+| 属性 | 说明 |
+| -- | -- |
+| length | 返回浏览器历史纪录中的URL数量 |
+
+History 对象方法
+
+| 属性 | 说明 |
+| -- | -- |
+| back() | 加载history列表中的前一个URL |
+| forward() | 加载history列表中的下一个URL |
+| go() | 加载history列表中的某个具体的页面 |
+
+##### back()方法，加载 history 列表中的前一个 URL。
+
+```javascript
+window.history.back();
+// 注意：等同于点击浏览器的倒退按钮。
+```
+back()相当于go(-1),代码如下:
+
+```javascript
+window.history.go(-1);
+```
+
+##### forward()方法，加载 history 列表中的下一个 URL。
+
+如果倒退之后，再想回到倒退之前浏览的页面，则可以使用forward()方法,代码如下:
+
+```javascript
+window.history.forward();
+// 注意：等价点击前进按钮。
+```
+
+forward()相当于go(1),代码如下: 
+
+```javascript
+window.history.go(1);
+```
+
+##### go() 返回浏览历史中的其他页面
+
+go()方法，根据当前所处的页面，加载 history 列表中的某个具体的页面。
+
+```javascript
+window.history.go(number);
+```
+
+| number | 说明 |
+| :--: | -- |
+| 1 | 前一个，go(1)等价于 forward() |
+| 0 | 当前页面 |
+| -1 | 后一个， go(-1)等价back() |
+| 其他值 | 要访问的URL在History的URL列表中的相对位置 |
+
+```javascript
+// 返回当前页面之前浏览过的第二个历史页面
+window.history.go(-2);
+// 返回当前页面之后浏览过的第三个历史页面
+window.history.go(-3);
+```
+
+#### 7. Location对象
+
+location用于获取或设置窗体的URL，并且可以用于解析URL。
+
+```javascript
+location.[属性|方法]
+```
+
+![Location对象](img/js2-811.png)
+
+location 对象属性：
+
+| 属性 | 说明 |
+| -- | -- |
+| hash | 设置或返回从#号开始的URL（锚）部分 |
+| host | 设置或返回从主机名和当前URL的端口号 |
+| hostname | 设置或返回当前URL的主机名 |
+| href | 设置或返回完整的RUL |
+| pathname | 设置或返回当前URL的路径部分 |
+| port | 设置或返回当前URL的端口号 |
+| protocol | 设置或返回当前URL的协议 |
+| search | 设置或返回从问好?开始的URL（查询）部分 |
+
+location 对象方法:
+
+| 方法 | 说明 |
+| -- | -- |
+| assign() | 加载新的文档 |
+| reload() | 重新加载当前文档 |
+| replace() | 用新的文档替换当前文档 |
+
+#### 8. Navigator对象
+
+Navigator 对象包含有关浏览器的信息，通常用于检测浏览器与操作系统的版本。
+
+| 属性 | 说明 |
+| -- | -- |
+| appCodeName | 浏览器代码名的字符串表示 |
+| appName | 返回浏览器的名称 |
+| appVersion | 返回浏览器的平台和版本信息 |
+| platform | 返回浏览器的操作系统平台 |
+| userAgent | 返回有客户端发送服务器的user-agent头部的值 |
+
+```javascript
+navigator.appCodeName
+navigator.appName
+navigator.appVersion
+navigator.platform
+navigator.userAgent
+```
+
+##### userAgent
+
+返回用户代理头的字符串表示(就是包括浏览器版本信息等的字符串)
+
+```javascript
+navigator.userAgent
+```
+
+几种浏览的user_agent.，像360的兼容模式用的是IE、极速模式用的是chrom的内核。
+
+| 浏览器 | userAgent |
+| -- | -- |
+| chrome | Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36 |
+| firefox | Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0 |
+| IE 8 |  |
+
+#### 9. screen对象
+
+screen对象用于获取用户的屏幕信息。
+
+```
+window.screen.属性
+```
 
 
 》》》
