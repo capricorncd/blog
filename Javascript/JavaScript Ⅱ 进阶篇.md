@@ -1407,9 +1407,113 @@ navigator.userAgent
 
 screen对象用于获取用户的屏幕信息。
 
+每个 Window 对象的 **screen 属性**都引用一个 Screen 对象。Screen 对象中存放着有关显示浏览器屏幕的信息。JavaScript 程序将利用这些信息来优化它们的输出，以达到用户的显示要求。例如，一个程序可以根据显示器的尺寸选择使用大图像还是使用小图像，它还可以根据显示器的颜色深度选择使用 16 位色还是使用 8 位色的图形。另外，JavaScript 程序还能根据有关屏幕尺寸的信息将新的浏览器窗口定位在屏幕中间。
+
 ```
 window.screen.属性
 ```
 
+| 属性| 描述 |
+| -- | -- |
+| availHeight | 窗口可以使用的屏幕高度，单位像素<br>返回显示屏幕的高度 (除 Windows 任务栏之外) |
+| availWidth | 窗口可以使用的屏幕宽度，单位像素<br>返回显示屏幕的宽度 (除 Windows 任务栏之外) |
+| bufferDepth | 设置或返回调色板的比特深度 |
+| colorDepth | 用户浏览器表示的颜色位数，通常为32位(每像素的位数) |
+| deviceXDPI | 返回显示屏幕的每英寸水平点数 |
+| deviceYDPI | 返回显示屏幕的每英寸垂直点数 |
+| fontSmoothingEnabled | 返回用户是否在显示控制面板中启用了字体平滑 |
+| height | 返回显示屏幕的高度 |
+| logicalXDPI | 返回显示屏幕每英寸的水平方向的常规点数 |
+| logicalYDPI | 返回显示屏幕每英寸的垂直方向的常规点数 |
+| pixelDepth | 返回显示屏幕的颜色分辨率（比特每像素） |
+| updateInterval | 设置或返回屏幕的刷新率 |
+| width | 返回显示器屏幕的宽度 |
+
+
+##### 屏幕可用高和宽度
+
+1. screen.availWidth 属性返回访问者屏幕的宽度，以像素计，减去界面特性，比如任务栏。
+
+2. screen.availHeight 属性返回访问者屏幕的高度，以像素计，减去界面特性，比如任务栏。
+
+注意:
+
+不同系统的任务栏默认高度不一样，及任务栏的位置可在屏幕上下左右任何位置，所以有可能可用宽度和高度不一样。
+
+
+## 八、DOM（Document Object Model）
+
+**文档对象模型**DOM（Document Object Model）定义访问和处理HTML文档的标准方法。DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）。
+
+```html
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM（Document Object Model）</title>
+	</head>
+	<body id="Bdoy">
+	  <h2 id="con">I love JavaScript</h2>
+	  <p> JavaScript使网页显示动态效果并实现与用户交互功能。</p>
+	  
+	  <script type="text/javascript">
+	   var gid = document.getElementById('con');
+	   gid.style.color='red';
+	   gid.style.backgroundColor='#CCC';
+	   gid.style.display="none";
+	  </script>
+	</body>
+</html>
+```
+
+#### 1. HTML文档可以说由节点构成的集合，DOM节点有:
+
+1. **元素节点**：上图中`<html>`、`<body>`、`<p>`等都是元素节点，即标签。
+
+2. **文本节点**：向用户展示的内容，如`<li>...</li>`中的JavaScript、DOM、CSS等文本。
+
+3. **属性节点**：元素属性，如`<a>`标签的链接属性`href="http://www.imooc.com"`。
+
+##### 节点属性:
+
+| 方法| 描述 |
+| -- | -- |
+| nodeName | 返回一个字符串，其内容是给定节点的名字 |
+| nodeType | 返回一个整数，数值代表给定节点的类型 |
+| nodeValue | 返回给定节点的当前值 |
+
+##### 遍历节点树:
+
+| 方法| 描述 |
+| -- | -- |
+| childNodes | 返回一个数组，由给定元素节点的子节点构成 |
+| firstChild | 返回第一个子节点 |
+| lastChild | 返回最后一个子节点 |
+| parentNode | 返回给定节点的父节点 |
+| nextSibling | 返回给定节点的下一个子节点 |
+| previousSibling | 返回给定节点的上一个子节点 |
+
+
+##### DOM操作:
+
+| 方法| 描述 |
+| -- | -- |
+| createElement(element) | 创建一个新的元素节点 |
+| createTextNode() | 创建一个包含给定文本的新文本节点 |
+| appendChild() | 指定节点的最后一个子节点之后添加一个新的子节点 |
+| insertBefore() | 在指定的已有子节点之前插入新的子节点 |
+| removeChild() | 从一个给定元素中删除一个子节点 |
+| replaceChild() | 把一个给定父元素里的一个子节点替换为另一个节点 |
+
+注意:前两个是document方法。
+
+
+#### 2. getElementsByName()方法
+
+返回带有指定名称的节点对象的集合。
+
+```
+document.getElementsByName(name)
+```
 
 》》》
