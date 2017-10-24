@@ -1,0 +1,21 @@
+{
+  "name": "express-jade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jade"
+  ],
+  "author": "capricorncd",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jade": "^1.11.0",
+    "moment": "^2.19.1",
+    "mongoose": "^4.12.4",
+    "underscore": "^1.8.3"
+  }
+}
