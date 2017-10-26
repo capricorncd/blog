@@ -25,4 +25,5 @@ block content
               td: a(target="_blank", href="../movie/#{item._id}") 查看
               td: a(target="_blank", href="../admin/update/#{item._id}") 修改
               td
-                button.btn.btn-danger.del(type="button", data-id="#{item._id}") 删除
+                button.btn.btn-danger.del(type="button", data-id="#{item._id}", data-title="#{item.title}") 删除
+  script(src="/js/admin.js")

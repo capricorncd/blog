@@ -2,16 +2,20 @@
   "name": "express-jade",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "jade"
+    "jade",
+    "express",
+    "mongoose",
+    "movie"
   ],
   "author": "capricorncd",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "jade": "^1.11.0",
     "moment": "^2.19.1",
