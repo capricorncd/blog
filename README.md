@@ -6,27 +6,29 @@
 
 ### DEMOS
 
-| Name | Link |
+| Name | [Link](./Demos) |
 | :--- | :---: |
-| nodejs-express-jade | [[view]](https://github.com/capricorncd/blog/tree/master/demos/nodejs-express-jade)  |
+| nodejs-express-jade | [[view]](./Demos/nodejs-express-jade)  |
 
 #### JavaScript
 
-| Name | [[Link]](./Javascript) |
-| :--- | :---: |  
-| JavaScript正则表达式RegExp | [[阅读]](https://github.com/capricorncd/my-notes/blob/master/Javascript/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8FRegExp.md) |  
-| TypeScript入门 | [[阅读]](https://github.com/capricorncd/my-notes/blob/master/Typescript/TypeScript%E5%85%A5%E9%97%A8.md)|
+| Name | [Link](./Javascript) |
+| :--- | :---: |
+| JavaScriptⅠ-入门篇 | [[阅读]](./Javascript/JavaScriptⅠ-入门篇.md) |
+| JavaScriptⅡ-进阶篇 | [[阅读]](./Javascript/JavaScriptⅡ-进阶篇.md) |
+| JavaScript正则表达式RegExp | [[阅读]](./Javascript/JavaScript正则表达式RegExp.md) |
+| Ajax全接触 | [[阅读]](./Javascript/Ajax全接触.md) |
+| TypeScript入门 | [[阅读]](./Typescript/TypeScript入门.md)|
 
 #### C/C++
 
-| Name | [[Link]](./Javascript) |
+| Name | [Link](./C%2B%2B) |
 | :--- | :---: |
-| **C++** | [**[列表]**](https://github.com/capricorncd/my-notes/tree/master/C%2B%2B) |
-| C语言基础 | [[阅读]](https://github.com/capricorncd/my-notes/blob/master/C%2B%2B/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.md) |
-| 数据结构-栈(Stack) | [[阅读]](https://github.com/capricorncd/my-notes/blob/master/C%2B%2B/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88(Stack).md) |
+| C语言基础 | [阅读](./C++/C语言基础.md) |
+| 数据结构-栈(Stack) | [[阅读]](./C++/数据结构-栈(Stack).md) |
 
 #### Python
 
-| Name | [[Link]](./Javascript) |
+| Name | [Link](./Python) |
 | :--- | :---: |
 | Python零基础入门到精通 | [[阅读]](./Python/Python零基础入门到精通.md) |
