@@ -12,9 +12,7 @@ TypeScript是一种由微软开发的自由和开源的编程语言。它是Java
 
 ## 搭建TypeScript开发环境
 
-* 在线compiler
-
-* 本地compiler
+npm安装
 
 ```bash
 npm install -g typescript
@@ -31,7 +29,7 @@ tsc Hello.ts
 
 ## 字符串新特性
 
-### 1. 多行字符串
+#### 1. 多行字符串
 
 ```typescript
 let str = `lsjfkaj
@@ -39,31 +37,31 @@ fkdsajfk
 adsjf
 kdajfkdjad`;
 ```
-### 2. 字符串模板
+#### 2. 字符串模板
 
 ```typescript
 let text = 'World';
 
 let getName = function () {
-	return 'World';
+    return 'World';
 }
 
 console.log(`Hello ${text}`); // Hello World
 console.log(`Hello ${getName()}`); // Hello World
 ```
-### 3. 自动拆分字符串
+#### 3. 自动拆分字符串
 
 ```typescript
 function test (temp, name, age) {
-	console.log(temp);
-	console.log(name);
-	console.log(age);
+    console.log(temp);
+    console.log(name);
+    console.log(age);
 }
 
 let myMame = 'zhang san';
 
 let getAge = function () {
-	return 18;
+    return 18;
 }
 
 test`Hello my name is ${myName}, I'm ${getAge()}`;
@@ -71,7 +69,7 @@ test`Hello my name is ${myName}, I'm ${getAge()}`;
 
 ## 参数新特性
 
-### 1. 参数类型
+#### 1. 参数类型
 
 语法 **标识符: 类型**
 
@@ -82,8 +80,8 @@ test`Hello my name is ${myName}, I'm ${getAge()}`;
 let myname: string = 'zhongxing';
 
 let obj: any = {
-	a: 'xxxxxxxxxxx',
-	b: 121212
+    a: 'xxxxxxxxxxx',
+    b: 121212
 }
 
 let age: number = 32;
@@ -91,12 +89,12 @@ let age: number = 32;
 let man: boolean = true;
 ```
 
-### 2. 自定义类型
+#### 2. 自定义类型
 
 ```typescript
 class Person {
-	name: string;
-	age: number;
+    name: string;
+    age: number;
 }
 
 let zhangsan: Person = new Person();
@@ -105,15 +103,15 @@ zhangsan.name = 'lisi';
 zhangsan.age = 18;
 ```
 
-### 3. 参数默认值&可选参数
+#### 3. 参数默认值&可选参数
 
 ```typescript
 // 以方法为例，普通变量见上方例子
 // ? 为可选参数，可选参数必须申明在必选参数之后
 function test (a: string, b?: string, c: string = 'xxxxx') {
-	console.log(a);
-	console.log(b);
-	console.log(c);
+    console.log(a);
+    console.log(b);
+    console.log(c);
 }
 
 test('aaxx', 'bbxx', 'ccxx');
@@ -124,16 +122,16 @@ test('aaxx', 'bbxx');
 
 ## 函数新特性
 
-### 1. Rest and Spread操作符
+#### 1. Rest and Spread操作符
 
 用来声明任意数量的方法参数
 
 ```typescript
 // ...args 可以传任意多个参数
 function fun1(...args) {
-	args.forEach(function (arg) {
-		console.log(arg);
-	})
+    args.forEach(function (arg) {
+        console.log(arg);
+    })
 }
 
 fun1(1, 2, 3); // 1 2 3
@@ -144,9 +142,9 @@ fun1('a', 'b', 'c0', 'd0'); // a b c0 d0
 ```typescript
 // 把任意长度的数组参数，转换为固定参数方法调用
 function fun2(a, b, c) {
-	console.log(a);
-	console.log(b);
-	console.log(c);
+    console.log(a);
+    console.log(b);
+    console.log(c);
 }
 
 let args1 = [1, 2];
@@ -156,19 +154,19 @@ let args2 = [3, 3, 5, 6, 8, 9];
 fun2(...args2); // 3 3 5
 ```
 
-### 2. generator函数
+#### 2. generator函数
 
 控制函数的执行过程，手工暂停和恢复代码执行。
 
 ```typescript
 // 方法前面加*号
 function* doSomething () {
-	console.log('start');
+    console.log('start');
 	
-	// 相当于断点
-	yield;
+    // 相当于断点
+    yield;
 	
-	console.log('finish');
+    console.log('finish');
 }
 
 // 方法使用，不能直接调用 doSomething();
@@ -183,9 +181,9 @@ fun1.next();
 ```typescript
 // 买股票的例子
 function* getStockPrice(stock) {
-	while(true) {
-		yield Math.random()*100;
-	}
+    while(true) {
+        yield Math.random()*100;
+    }
 }
 
 // 买IBM的股票
@@ -197,28 +195,28 @@ let price = 100;
 
 // 当股票价格大于 limitPrice时，就再去取一次价格
 while (price > limitPrice) {
-	price = priceGenerator.next().value;
-	console.log(`the generator return ${price}`);
+    price = priceGenerator.next().value;
+    console.log(`the generator return ${price}`);
 }
 
 console.log(`buying at ${price}`);
 ```
 
-### 3. destructuring析构表达式
+#### 3. destructuring析构表达式
 
 通过析构表达式将**对象属性**或**数组**拆解成任意数量的变量。
 
 ```typescript
 // 通过析构表达式将对象拆解成任意数量的变量
 function getStock () {
-	return {
-		code: 'IBM',
-		price: 100,
-		obj: {
-			a: 12154,
-			b: 10000
-		}
-	}
+    return {
+        code: 'IBM',
+        price: 100,
+        obj: {
+            a: 12154,
+            b: 10000
+        }
+    }
 }
 
 // es5实现
@@ -237,7 +235,6 @@ let {code: codeXX, price, obj: {b}} = getStock();
 console.log(codeXX); // IBM
 
 console.log(b); // 10000
-
 ```
 
 ```typescript
@@ -252,16 +249,16 @@ console.log(others); // [5, 6]
 
 // 函数中调用
 function doSomething ([num1, , , num2, ...others]) {
-	console.log(num1); // 1
-	console.log(num2); // 4
-	console.log(others); // [5, 6]
+    console.log(num1); // 1
+    console.log(num2); // 4
+    console.log(others); // [5, 6]
 }
 doSomething(arr);
 ```
 
 ## 表达式和循环
 
-### 1. 箭头表达式
+#### 1. 箭头表达式
 
 用来声明匿名函数，消除传统匿名函数的this指针问题
 
@@ -270,20 +267,20 @@ doSomething(arr);
 let sum = (arg1, arg2) => arg1 + arg2;
 // 多行
 let sum2 = (arg1, arg2) => {
-	// ...
-	return arg1 + arg2;
+    // ...
+    return arg1 + arg2;
 }
 
 /** **********************************/
 // 编译后
 var sum = function (arg1, arg2) {
-	return arg1 + arg2;
+    return arg1 + arg2;
 }
 /** **********************************/
 
 // 一个参数
 let sum = arg1 => {
-	console.log(arg1);
+    console.log(arg1);
 }
 ```
 
@@ -294,7 +291,7 @@ console.log(arr.filter(value => value%2 == 0));
 // 结果 [2, 4]
 ```
 
-### 2. forEach(), for in 和 for of
+#### 2. forEach(), for in 和 for of
 
 **forEach** 不支持break，会忽略数组的属性
 
@@ -304,36 +301,34 @@ console.log(arr.filter(value => value%2 == 0));
 
 ```typescript
 let arr = [1, 2, 3, 4];
-	arr.desc = 'four number';
+    arr.desc = 'four number';
 
 // forEach
 arr.forEach(val => {
-	// desc属性被忽略
-	console.log(val); // 1 2 3 4
+    // desc属性被忽略
+    console.log(val); // 1 2 3 4
 });
 
 // for in
 for (let key in arr) {
-	console.log(key); // 0 1 2 3 desc
+    console.log(key); // 0 1 2 3 desc
 }
 
 // for of
 // 可以使用break
 for (let val of arr) {
-	// desc属性被忽略
-	console.log(val); // 1 2 3 4
+    // desc属性被忽略
+    console.log(val); // 1 2 3 4
 }
 ```
 
-## 面向对象特性
-
-### 1. 类 (Class)
+## 面向对象特性/类 (Class)
 
 **类**是TypeScript的核心，使用TypeScript开发时，大部分代码都是写在类里的。
 
-#### 类的定义
+#### 1. 类的定义
 
-控制符 **public、  private、  protected**  
+控制符 public、  private、  protected
 
 * **public** 公有方法，类内部及外面均可调用。
 
@@ -344,37 +339,37 @@ for (let val of arr) {
 ```typescript
 // 定义类
 class Person {
-	// public name; // 可不必声明控制符
+    // public name; // 可不必声明控制符
+
+    constructor(public name: string) { // 必须声明控制符
+        console.log(this.name);
+    }
 	
-	constructor(public name: string) { // 必须声明控制符
-		console.log(this.name);
-	}
-	
-	eat () {
-		console.log(this.name + ' eating');
-	}
+    eat () {
+        console.log(this.name + ' eating');
+    }
 }
 // 实例化
 let p1 = new Person('superman');
-//	p1.name = 'batman';
-	p1.eat(); // superman eating
+//  p1.name = 'batman';
+    p1.eat(); // superman eating
 ```
 
-#### 构造函数 constructor
+#### 2. 构造函数 constructor
 
 外部实例化类时调用，且只会调用一次。
 
 ```typescript
 class Person {
-	// 构造函数
-	constructor () {
-		console.log('Hello world!');
-	}
+    // 构造函数
+    constructor () {
+        console.log('Hello world!');
+    }
 }
 ```
 
 
-#### 类的继承
+#### 3. 类的继承
 
 关键字 **extends、 super**
 
@@ -383,46 +378,46 @@ class Person {
 
 ```typescript
 class Person {
-	constructor(public name: string) {
-		console.log(this.name);
-	}
+    constructor(public name: string) {
+        console.log(this.name);
+    }
 }
 
 // Employee 继承Person的所有属性和方法
 class Employee extends Person {
 	// ...
-	constructor(name: string, code: string) {
-		// 调用父类的constructor
-		super(name);
-		console.log('super');
-		this.code = code;
-	}
+    constructor(name: string, code: string) {
+        // 调用父类的constructor
+        super(name);
+        console.log('super');
+        this.code = code;
+    }
 	
-	// 新的属性、方法
-	code: string;
+    // 新的属性、方法
+    code: string;
 	
-	work () {
-		// 调用父类的方法
-		super.eat();
-	}
+    work () {
+        // 调用父类的方法
+        super.eat();
+    }
 }
 
 let el = new Employee('naem', '1');
-	el.work();
+    el.work();
 ```
 
-### 2. 泛型 (generic)
+#### 4. 泛型 (generic)
 
 参数化的类型，一般用于限制集合的内容。
 
 ```typescript
 // 引用上面的类 Person(name) Employee(name, code)
 let workers: Array<Person> = [];
-	workers[0] = new Person('张三');
-	workers[1] = new Employee('李四', '2');
+    workers[0] = new Person('张三');
+    workers[1] = new Employee('李四', '2');
 ```
 
-### 3. 接口 (Interface)
+#### 5. 接口 (Interface)
 
 用来建立某种代码约定，使得其它开发者在调用某个方法或创建新的类时必须遵循接口所定义的代码约定。
 
@@ -432,34 +427,34 @@ let workers: Array<Person> = [];
 ```typescript
 // 声明一个接口IPerson，同时设置两个属性
 interface IPerson {
-	name: string;
-	age: number;
+    name: string;
+    age: number;
 }
 
 // 作为方法()参数的类型声明
 class Person {
-	constructor(public config: IPerson) {
-	}
+    constructor(public config: IPerson) {
+    }
 }
 // 参数必须与接口声明的参数相同
 let p1 = new Person({
-	name: 'zhangsna',
-	age: 18
+    name: 'zhangsna',
+    age: 18
 });
 ```
 * ES5
 ```typescript
 // 编译后
 var Person = (function () {
-	funtion Person(config) {
-		this.config = config;
-	}
-	return Person;
+    funtion Person(config) {
+        this.config = config;
+    }
+    return Person;
 }());
 
 var p1 = new Person({
-	name: 'zhangsna',
-	age: 18
+    name: 'zhangsna',
+    age: 18
 });
 ```
 
@@ -468,45 +463,45 @@ var p1 = new Person({
 * ts
 ```typescript
 interface Animal {
-	eat();
+    eat();
 }
 
 // 所有声明这个接口的类，都要实现这个接口的方法
 class Sheep implements Animal {
-	eat () {
-		console.log('I eat grass');
-	}
+    eat () {
+        console.log('I eat grass');
+    }
 }
 
 class Tiger implements Animal {
-	eat () {
-		console.log('I eat meat');
-	}
+    eat () {
+        console.log('I eat meat');
+    }
 }
 ```
 * ES5
 ```typescript
 // 编译后
 var Sheep = (function () {
-	funtion Sheep () {
-	}
-	Sheep.prototype.eat = function () {
-		console.log('I eat grass');
-	}
-	return Sheep;
+    funtion Sheep () {
+    }
+    Sheep.prototype.eat = function () {
+        console.log('I eat grass');
+    }
+    return Sheep;
 }());
 
 var Tiger = (function () {
-	funtion Tiger () {
-	}
-	Tiger.prototype.eat = function () {
-		console.log('I eat meat');
-	}
-	return Tiger;
+    funtion Tiger () {
+    }
+    Tiger.prototype.eat = function () {
+        console.log('I eat meat');
+    }
+    return Tiger;
 }());
 ```
 
-### 4. 模块 (Module)
+#### 6. 模块 (Module)
 
 模块可以帮助开发者将代码分割为可重用的单元。开发者可以自己决定将模块中的哪些资源(类、方法、变量)暴露出去供外部使用，哪些资源只在模块内使用。
 
@@ -543,7 +538,7 @@ func1();
 new Class1();
 ```
 
-### 5. 注解 (annotation)
+#### 7. 注解 (annotation)
 
 注解为程序的元素(类、方法、变量)加上更直观更明了的说明，这些说明信息与程序的业务逻辑无关，而是供指定的工具或框架使用的。
 
@@ -553,17 +548,17 @@ import { Component } from '@angular/core';
 
 // 注解
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
-	title = 'app works';
+    title = 'app works';
 }
 ```
 
-### 6. 类型定义文件 (*.d.ts)
+#### 8. 类型定义文件 (*.d.ts)
 
 类型定义文件用来帮助开发者在TypeScript中使用已有的JavaScript的工具包。如jQuery
 
@@ -577,13 +572,13 @@ export class AppComponent {
  */
 
 declare module "jquery" {
-	export = $;
+    export = $;
 }
 
 declare let jQuery: JQueryStatic;
 declare let $: JQueryStatic;
 ```
 
-**代码来源**：[https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped, '_blank')
+**代码来源**：https://github.com/DefinitelyTyped/DefinitelyTyped
 
-**安装工具**：[https://github.com/typings/typings](https://github.com/typings/typings, '_blank')
+**安装工具**：https://github.com/typings/typings

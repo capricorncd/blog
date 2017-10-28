@@ -45,7 +45,7 @@ else
 ```
 function 函数名()
 {
-     函数代码;
+    函数代码;
 }
 ```
 
@@ -133,13 +133,16 @@ window.open([URL], [窗口名称], [参数字符串])
 **URL：** 可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。  
 **窗口名称：** 可选参数，被打开窗口的名称。
 
-    1.该名称由字母、数字和下划线字符组成。
-    2."_top"、"_blank"、"_self"具有特殊意义的名称。
-       _blank：在新窗口显示目标网页
-       _self：在当前窗口显示目标网页
-       _top：框架网页中在上部窗口中显示目标网页
-    3.相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。
-    4.name 不能包含有空格。
+```
+1.该名称由字母、数字和下划线字符组成。
+2."_top"、"_blank"、"_self"具有特殊意义的名称。
+    _blank：在新窗口显示目标网页
+    _self：在当前窗口显示目标网页
+    _top：框架网页中在上部窗口中显示目标网页
+3.相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。
+4.name 不能包含有空格。
+```
+
 **参数字符串：** 可选参数，设置窗口参数，各参数用逗号隔开。
 
 #### 参数表:
@@ -174,18 +177,18 @@ mywin.close();
 
 ```html
 <html>
-	<body>
-		<div>
-			<p>
-				<a href="http://www.javascript.com">JavaScript DOM</a>
-			</p>
-		</div>
-		<ul>
-			<li>JavaScript</li>
-			<li>DOM</li>
-			<li>CSS</li>
-		</ul>
-	</body>
+    <body>
+        <div>
+            <p>
+                <a href="http://www.javascript.com">JavaScript DOM</a>
+            </p>
+        </div>
+        <ul>
+            <li>JavaScript</li>
+            <li>DOM</li>
+            <li>CSS</li>
+        </ul>
+    </body>
 </html>
 ```
 
@@ -227,28 +230,27 @@ Object.innerHTML
 
 ```html
 <html>
-	<head>
-		<title>innerHTML</title>
-	</head>
-	<body>
-		<div>
-			<p>
-				<a href="http://www.javascript.com">JavaScript DOM</a>
-			</p>
-		</div>
-		<ul>
-			<li id="con">JavaScript</li>
-			<li>DOM</li>
-			<li>CSS</li>
-		</ul>
-		<script>
-			var con = document.getElementById("con");
-			document.write('原始标签的内容：' + con.innerHTML);
-			// 新内容
-			con.innerHTML = '新输入的内容';
-			document.write('修改后的内容：' + con.innerHTML);
-		</script>
-	</body>
+    <head>
+        <title>innerHTML</title>
+    </head>
+    <body>
+        <div>
+            <p>
+                <a href="http://www.javascript.com">JavaScript DOM</a>              </p>
+        </div>
+        <ul>
+            <li id="con">JavaScript</li>
+            <li>DOM</li>
+            <li>CSS</li>
+        </ul>
+        <script>
+            var con = document.getElementById("con");
+            document.write('原始标签的内容：' + con.innerHTML);
+            // 新内容
+            con.innerHTML = '新输入的内容';
+            document.write('修改后的内容：' + con.innerHTML);
+        </script>
+    </body>
 </html>
 ```
 
@@ -259,10 +261,10 @@ HTML DOM 允许 JavaScript 改变 HTML 元素的样式。
 ```
 <p id="pcon">Hello World!</p>
 <script>
-   var mychar = document.getElementById("pcon");
-   mychar.style.color="red";
-   mychar.style.fontSize="20";
-   mychar.style.backgroundColor ="blue";
+    var mychar = document.getElementById("pcon");
+    mychar.style.color="red";
+    mychar.style.fontSize="20";
+    mychar.style.backgroundColor ="blue";
 </script>
 ```
 

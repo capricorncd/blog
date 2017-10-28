@@ -1,17 +1,14 @@
 # JavaScript 正则表达式
 
-Regular Expression 使用单个字符串来描述、匹配一系列符合`某个句法规则`的字符串。  
-按某种`规则`去匹配符合条件的字符串。  
-不同编程语言的正则表达式略有不同。
+Regular Expression 使用单个字符串来描述、匹配一系列符合`某个句法规则`的字符串。
+按某种`规则`去匹配符合条件的字符串。不同编程语言的正则表达式略有不同。
 
-w3school文档： [http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp](http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp?_blank)
+图形工具(正则表达式在线工具)：http://regexper.com
 
-imooc视频： [http://www.imooc.com/learn/706](http://www.imooc.com/learn/706?_blank)
-
-### 一、语法
+## 一、语法
 JavaScript通过内置对象 RegExp 支持正则表达式，有两种方法实例化RegExp对象：字面量和构造函数。
 
-- 字面量
+#### 1. 字面量
 
 ```javascript
 // 实例化一个正则表达式，匹配字符串中的is单词
@@ -21,7 +18,7 @@ var reg = /\bis\b/g;
 // 结果 'She IS girl, This IS a computer.'
 ```
 
-- 构造函数
+#### 2. 构造函数
 
 ```javascript
 var reg = new RegExp('\\bis\\b', 'g'); 
@@ -29,11 +26,7 @@ var reg = new RegExp('\\bis\\b', 'g');
 // 结果 'She IS girl, This IS a computer.'
 ```
 
-- 图形工具
-
-  正则表达式在线工具：[http://regexper.com](http://regexper.com?_blank)
-
-### 二、元字符
+## 二、元字符
 
 正则表达式由两种基本字符类型组成：原义文本字符和元字符。`元字符`是在正则表达式中`有特殊含义`的`非字母`字符。
   
@@ -132,7 +125,7 @@ ab\d.
 | {n, m} | 出现n到m次|
 | {n,} | 至少出现n次|
 
-### 三、贪婪模式与非贪婪模式
+## 三、贪婪模式与非贪婪模式
 
 #### 1.贪婪模式
 
@@ -150,7 +143,7 @@ ab\d.
 '123456789'.match(/\d{3,6}?/g); // ['123', '456', '789']
 ```
 
-### 四、分组、或、反向引用(分组捕获)、忽略分组
+## 四、分组、或、反向引用(分组捕获)、忽略分组
 
 #### 1.分组
 
@@ -192,7 +185,7 @@ ab\d.
 (?:Byron).(ok)
 ```
 
-### 五、前瞻、后顾(后瞻)
+## 五、前瞻、后顾(后瞻)
 
 正则表达式从文本头部向尾部开始解析，文本尾部方向，称为`前`。  
 `前瞻`就是在正则表达式匹配到规则的时候，向前检查是否符合断言，后顾/后瞻方向相反。
@@ -217,7 +210,7 @@ JavaScript不支持后顾。
 'a2*34vv' .repalce(/\w(?!\d)/g, 'X'); // aX*3XXX
 ```
 
-### 六、对象属性
+## 六、对象属性
 
 | 字符 | 含义 | 默认值 |
 |----| ---- | ---- |
@@ -229,9 +222,9 @@ JavaScript不支持后顾。
 
 ```javascript
 var mulStr = '
-	@123
-	@456
-	@789
+    @123
+    @456
+    @789
 ';
 
 mulStr.replace(/^@\d/g, 'X');
@@ -245,7 +238,7 @@ mulStr.replace(/^@\d/gm, 'X');
 // X89'
 ```
 
-### 七、RegExp对象方法test与exec
+## 七、RegExp对象方法test与exec
 
 #### 1、test()
 
@@ -279,7 +272,7 @@ exec() 方法的功能非常强大，它是一个通用的方法，而且使用�
 
   但是，当 RegExpObject 是一个全局正则表达式时，exec() 的行为就稍微复杂一些。它会在 RegExpObject 的 lastIndex 属性指定的字符处开始检索字符串 string。当 exec() 找到了与表达式相匹配的文本时，在匹配后，它将把 RegExpObject 的 lastIndex 属性设置为匹配文本的最后一个字符的下一个位置。这就是说，您可以通过反复调用 exec() 方法来遍历字符串中的所有匹配文本。当 exec() 再也找不到匹配的文本时，它将返回 null，并把 lastIndex 属性重置为 0。
   
-### 八、支持正则表达式的 String 对象的方法
+## 八、支持正则表达式的 String 对象的方法
 
 | 方法 | 描述 |
 | --- | --- |
@@ -287,3 +280,9 @@ exec() 方法的功能非常强大，它是一个通用的方法，而且使用�
 | match | 找到一个或多个正则表达式的匹配。|
 | replace | 替换与正则表达式匹配的子串。|
 | split | 把字符串分割为字符串数组。 |
+
+## 资源
+
+w3school文档： http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp
+
+imooc视频： http://www.imooc.com/learn/706

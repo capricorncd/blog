@@ -212,11 +212,11 @@ var myArray = new Array(8);
 
 ```javascript
 var myArray = new Array(); //创建一个新的空数组
-	myArray[0] = 66; //存储第1个人的成绩
-	myArray[1] = 80; //存储第2个人的成绩
-	myArray[2] = 90; //存储第3个人的成绩
-	myArray[3] = 77; //存储第4个人的成绩
-	myArray[4] = 59; //存储第5个人的成绩
+    myArray[0] = 66; //存储第1个人的成绩
+    myArray[1] = 80; //存储第2个人的成绩
+    myArray[2] = 90; //存储第3个人的成绩
+    myArray[3] = 77; //存储第4个人的成绩
+    myArray[4] = 59; //存储第5个人的成绩
 ```
 
 **注意：**数组每个值有一个索引号，从0开始。
@@ -299,9 +299,9 @@ document.write('数组长度为： ' + arr.length); // 数组长度为： 16
 var myArray = new Array(); //先声明一维
 for(var i = 0; i < 2; i++) {   //一维长度为2
 myArray[i] = new Array();  //再声明二维 
-	for(var j = 0; j < 3; j++) {   //二维长度为3
-		myArray[i][j] = i + j;   // 赋值，每个数组元素的值为i+j
-	}
+    for(var j = 0; j < 3; j++) {   //二维长度为3
+        myArray[i][j] = i + j;   // 赋值，每个数组元素的值为i+j
+    }
 }
 ```
 
@@ -333,7 +333,7 @@ myArray[0][1] = 5; //将5的值传入到数组中，覆盖原有值。
 
 ```javascript
 if (条件) {
-	条件成立时执行代码
+    条件成立时执行代码
 }
 ```
 
@@ -343,9 +343,9 @@ if (条件) {
 
 ```
 if (条件) {
-	条件成立时执行的代码
+    条件成立时执行的代码
 } else {
-	条件不成立时执行的代码
+    条件不成立时执行的代码
 }
 ```
 
@@ -355,15 +355,15 @@ if (条件) {
 
 ```
 if (条件1) {
-	条件1成立时执行的代码
+    条件1成立时执行的代码
 } else if (条件2) {
-	条件2成立时执行的代码
+    条件2成立时执行的代码
 }
 ...
 else if (条件n) {
-	条件n成立时执行的代码
+    条件n成立时执行的代码
 } else {
-	条件1、2至n不成立时执行的代码
+    条件1、2至n不成立时执行的代码
 }
 ```
 
@@ -373,18 +373,18 @@ else if (条件n) {
 
 ```
 switch (表达式) {
-	case 值1:
-		// 执行代码块 1
-  	break;
-  case 值2:
-  	// 执行代码块 2
-  	break;
-  ...
-  case 值n:
-		// 执行代码块 n
-		break;
-	default:
-		// 与 case 值1 、 case 值2...case 值n 不同时执行的代码
+    case 值1:
+        // 执行代码块 1
+        break;
+    case 值2:
+        // 执行代码块 2
+        break;
+    ...
+    case 值n:
+        // 执行代码块 n
+        break;
+    default:
+        // 与 case 值1 、 case 值2...case 值n 不同时执行的代码
 }
 ```
 
@@ -394,7 +394,7 @@ switch (表达式) {
 
 ```bash
 for (初始化变量; 循环条件; 循环迭代) {
-	// 循环语句 
+    // 循环语句
 }
 ```
  
@@ -402,9 +402,9 @@ for (初始化变量; 循环条件; 循环迭代) {
 var myArray = ['A', 'B', 'C', 'D', 'N'];
 // 输出数组每个元素
 for (var i = 0; i < myArray.length; i++) {
-	// 控制台日志输出
-	console.log(myArray[i] + '\n'); 
-	// \n 代表回车换行，可用<br>代替
+    // 控制台日志输出
+    console.log(myArray[i] + '\n');
+    // \n 代表回车换行，可用<br>代替
 }
 ```
 
@@ -414,7 +414,7 @@ for (var i = 0; i < myArray.length; i++) {
 
 ```
 while (判断条件) {
-	// 循环语句
+    // 循环语句
 }
 ```
 例子
@@ -422,8 +422,8 @@ while (判断条件) {
 var num = 0; // 初始化值
 while (num <= 6) // 条件判断
 {
-  document.write("取出第" + num + "个球<br/>");
-  num++; // 条件值更新
+    document.write("取出第" + num + "个球<br/>");
+    num++; // 条件值更新
 }
 ```
 
@@ -441,8 +441,8 @@ do {
 ```javascript
 var num = 1;
 do {
-	document.write("数值为:" + num + "<br />");
-	num++; // 更新条件
+    document.write("数值为:" + num + "<br />");
+    num++; // 更新条件
 } while (num <= 5)
 ```
 
@@ -452,10 +452,10 @@ for、switch、while、do...while循环中使用**break语句**退出当前循�
 
 ```
 for (初始条件; 判断条件; 循环后条件值更新) {
-	if (特殊情况) {
-		break; // 退出整个循环
-	}
-	循环代码
+    if (特殊情况) {
+        break; // 退出整个循环
+    }
+    循环代码
 }
 ```
 
@@ -465,21 +465,21 @@ continue的作用是仅仅跳过本次循环，而整个循环体继续执行。
 
 ```
 for (初始条件; 判断条件; 循环后条件值更新) {
-	if (特殊情况) {
-		continue; // 跳过该步，执行循环
-	}
-	循环代码
+    if (特殊情况) {
+        continue; // 跳过该步，执行循环
+    }
+    循环代码
 }
 ```
 例子
 ```javascript
 var scores = [70, 80, 66, 90, 50, 100, 89]; // 定义数组scores并赋值
 for(var i = 0; i < scores.length; i++) {
-	if(scores[i] < 60) {
-		continue;
-		document.write("成绩不及格，不输出！" + "<br>");
-	}
-	document.write("成绩:" + scores[i] + "及格，输出!" + "<br>");
+    if(scores[i] < 60) {
+        continue;
+        document.write("成绩不及格，不输出！" + "<br>");
+    }
+    document.write("成绩:" + scores[i] + "及格，输出!" + "<br>");
 }
 ```
 
@@ -492,13 +492,13 @@ for(var i = 0; i < scores.length; i++) {
 ```
 // 不带参数的函数
 function 函数名() {
-	函数体;
+    函数体;
 }
 
 // 有参数的函数
 function 函数名(参数1, 参数2) {
-	函数代码
-	// 在函数代码中使用参数1、参数2
+    函数代码
+    // 在函数代码中使用参数1、参数2
 }
 ```
 
@@ -510,8 +510,8 @@ function 函数名(参数1, 参数2) {
 // 定义函数
 // 两个数求和并显示结果的功能
 function add2(x, y) {
-	var sum = x + y;
-	document.write('x + y 的结果为： ' + sum);
+    var sum = x + y;
+    document.write('x + y 的结果为： ' + sum);
 }
 // 使用函数
 // js代码中直接调用，直接写函数名（带参数的函数传入参数）
@@ -525,14 +525,14 @@ function add2(x, y) {
 <head>
 <script type="text/javascript">
 function add2() {
-	var sum = 5 + 6;
-	alert(sum);
+    var sum = 5 + 6;
+    alert(sum);
 }
 </script>
 </head>
 <body>
-	<!-- 按钮,onclick点击事件，直接写函数名 -->
-	<button onclick="add2()">点我，执行函数</button>
+    <!-- 按钮,onclick点击事件，直接写函数名 -->
+    <button onclick="add2()">点我，执行函数</button>
 </body>
 </html>
 ```
@@ -542,12 +542,12 @@ function add2() {
 ```javascript
 // 定义一个带参函数
 function add2(x, y) {
-	var sum = x + y;
-	return sum;
+    var sum = x + y;
+    return sum;
 }
 // 或
 function add2(x, y) {
-	return x + y;
+    return x + y;
 }
 // 使用函数
 ​var result = add2(2, 4); // 将结果赋值给result，即result=6
@@ -594,12 +594,12 @@ function add2(x, y) {
 <head>
 <script type="text/javascript">
 function message() {
-	alert('请输入用户名');
+    alert('请输入用户名');
 }
 </script>
 </head>
 <body>
-	<input name="username" type="text" placeholder="请输入用户名" onfocus="message()">
+    <input name="username" type="text" placeholder="请输入用户名" onfocus="message()">
 </body>
 </html>
 ```
@@ -617,12 +617,12 @@ function message() {
 <head>
 <script type="text/javascript">
 function message() {
-	alert('您触发了onselect事件');
+    alert('您触发了onselect事件');
 }
 </script>
 </head>
 <body>
-	<input name="Text" type="text" value="很多文字内容" onselect="message()">
+    <input name="Text" type="text" value="很多文字内容" onselect="message()">
 </body>
 </html>
 ```
@@ -648,13 +648,12 @@ function message() {
 <title> 卸载事件 </title>
 </head>
 <body>
-	 欢迎学习JavaScript。
-	 
-	<script type="text/javascript">   
-		window.onunload = function () {   
-		  alert("您确定离开该网页吗？");   
-		}   
-	</script>  
+    欢迎学习JavaScript。
+    <script type="text/javascript">
+        window.onunload = function () {
+            alert("您确定离开该网页吗？");
+        }
+    </script>
 </body>
 </html>
 ```
@@ -1155,7 +1154,7 @@ var arr2 = new Array("80", "16", "50", "6", "100", "1");
 arr1.sort(); // ["Hello", "JavaScript", "John", "love"]
 arr2.sort(); // ["1", "100", "16", "50", "6", "80"]
 arr2.sort(function (a, b) {
-	return a - b;
+    return a - b;
 }); // ["1", "6", "16", "50", "80", "100"]
 ```
 
@@ -1198,7 +1197,7 @@ window对象是BOM的核心，window对象指当前的浏览器窗口。
 ##### setInterval()
 
 ```
-setInterval(代码,交互时间);
+setInterval(函数, 交互时间);
 ```
 
 参数说明：
@@ -1226,7 +1225,7 @@ clearInterval(id_of_setInterval)
 setTimeout()计时器，在载入后延迟指定时间后,去执行一次表达式,仅执行一次。
 
 ```
-setTimeout(代码,延迟时间);
+setTimeout(函数, 延迟时间);
 ```
 
 参数说明：
@@ -1243,9 +1242,9 @@ setTimeout(代码,延迟时间);
 
 var num=0;
 function numCount () {
-	document.getElementById('txt').value = num;
-	num = num + 1;
-	setTimeout("numCount()", 1000);
+    document.getElementById('txt').value = num;
+    num = num + 1;
+    setTimeout("numCount()", 1000);
 }
 ```
 
@@ -1448,21 +1447,21 @@ window.screen.属性
 ```html
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>DOM（Document Object Model）</title>
-	</head>
-	<body id="Bdoy">
-	  <h2 id="con">I love JavaScript</h2>
-	  <p> JavaScript使网页显示动态效果并实现与用户交互功能。</p>
-	  
-	  <script type="text/javascript">
-	   var gid = document.getElementById('con');
-	   gid.style.color='red';
-	   gid.style.backgroundColor='#CCC';
-	   gid.style.display="none";
-	  </script>
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <title>DOM（Document Object Model）</title>
+    </head>
+    <body id="Bdoy">
+        <h2 id="con">I love JavaScript</h2>
+        <p> JavaScript使网页显示动态效果并实现与用户交互功能。</p>
+
+        <script type="text/javascript">
+            var gid = document.getElementById('con');
+            gid.style.color='red';
+            gid.style.backgroundColor='#CCC';
+            gid.style.display="none";
+        </script>
+    </body>
 </html>
 ```
 
@@ -1477,7 +1476,7 @@ window.screen.属性
 ##### 节点属性:
 
 | 方法| 描述 |
-| -- | -- |
+| :-- | :-- |
 | nodeName | 返回一个字符串，其内容是给定节点的名字 |
 | nodeType | 返回一个整数，数值代表给定节点的类型 |
 | nodeValue | 返回给定节点的当前值 |
@@ -1485,7 +1484,7 @@ window.screen.属性
 ##### 遍历节点树:
 
 | 方法| 描述 |
-| -- | -- |
+| :-- | :-- |
 | childNodes | 返回一个数组，由给定元素节点的子节点构成 |
 | firstChild | 返回第一个子节点 |
 | lastChild | 返回最后一个子节点 |
@@ -1497,7 +1496,7 @@ window.screen.属性
 ##### DOM操作:
 
 | 方法| 描述 |
-| -- | -- |
+| :-- | :-- |
 | createElement(element) | 创建一个新的元素节点 |
 | createTextNode() | 创建一个包含给定文本的新文本节点 |
 | appendChild() | 指定节点的最后一个子节点之后添加一个新的子节点 |

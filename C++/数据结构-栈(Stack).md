@@ -35,52 +35,50 @@ using namespace std;
 
 int main(viod)
 {
-	// 实例化对象
-	MyStack *pStack = new MyStack(5);
+    // 实例化对象
+    MyStack *pStack = new MyStack(5);
 	
-	/**
-	 * 测试
-	 */
+    /**
+     * 测试
+     */
 	
-	// 入栈：往栈内添加元素
-	pStack->push('a'); // 底
-	pStack->push('e');
-	pStack->push('l');
-	pStack->push('l');
-	pStack->push('p'); // 顶
+    // 入栈：往栈内添加元素
+    pStack->push('a'); // 底
+    pStack->push('e');
+    pStack->push('l');
+    pStack->push('l');
+    pStack->push('p'); // 顶
+
+    // 遍历栈元素
+    pStack->stackTraverse(true);
+
+    // 出栈：取出元素
+    char elem = 0;
+    pStack->pop(elem);
 	
-	// 遍历栈元素
-	pStack->stackTraverse(true);
+    cout << endl;
+    cout << elem << endl;
 	
-	// 出栈：取出元素
-	char elem = 0;
-	pStack->pop(elem);
+    // 输出栈内元素个数
+    cout << pStack->stackLength() << endl;
 	
-	cout << endl;
-	cout << elem << endl;
-	
-	// 输出栈内元素个数
-	cout << pStack->stackLength() << endl;
-	
-	// 是否为空
-	if (pStack->stackEmpty())
-	{
-		cout << "栈为空" << endl;
-	}
-	// 是否已满
-	if (pStack->stackFull())
-	{
-		cout << "栈已满" << endl;
-	}
-	
-	
-	
-	// 销毁实例化对象
-	delete pStack;
-	pStack = NULL;
-	
-	system("pause");
-	return 0;
+    // 是否为空
+    if (pStack->stackEmpty())
+    {
+        cout << "栈为空" << endl;
+    }
+    // 是否已满
+    if (pStack->stackFull())
+    {
+        cout << "栈已满" << endl;
+    }
+
+    // 销毁实例化对象
+    delete pStack;
+    pStack = NULL;
+
+    system("pause");
+    return 0;
 }
 
 ```
@@ -94,21 +92,21 @@ MyStack.h
 
 class MyStack
 {
-	public:
-		MyStack(int size); // 分配内存初始化栈空间，设定栈容量size，栈顶
-		~MyStack(); // 回收栈空间内存
-		bool stackEmpty(); // 判断栈是否为空，为空返回true，非空返回false
-		bool stackFull(); // 判断栈是否已满，为满返回true，否则返回false
-		void clearStack(); // 清空栈
-		int stackLength(); // 已有元素的个数
-		bool push(char elem); // 元素入栈，栈顶上升
-		bool pop(char &elem); // 元素出栈，栈顶下降
-		void stackTraverse(bool isFromBottom); // 遍历栈内所有元素
-		
-	private:
-		char *m_pBuffer; // 栈空间指针
-		int m_iSize; // 栈容量
-		int m_iTop; // 栈顶，栈中元素个数
+    public:
+        MyStack(int size); // 分配内存初始化栈空间，设定栈容量size，栈顶
+        ~MyStack(); // 回收栈空间内存
+        bool stackEmpty(); // 判断栈是否为空，为空返回true，非空返回false
+        bool stackFull(); // 判断栈是否已满，为满返回true，否则返回false
+        void clearStack(); // 清空栈
+        int stackLength(); // 已有元素的个数
+        bool push(char elem); // 元素入栈，栈顶上升
+        bool pop(char &elem); // 元素出栈，栈顶下降
+        void stackTraverse(bool isFromBottom); // 遍历栈内所有元素
+
+    private:
+        char *m_pBuffer; // 栈空间指针
+        int m_iSize; // 栈容量
+        int m_iTop; // 栈顶，栈中元素个数
 };
 ```
 
@@ -123,64 +121,64 @@ using namespace std;
 // 分配内存初始化栈空间，设定栈容量size，栈顶
 MyStack::MyStack(int size)
 {
-	m_iSize = size;
-	m_pBuffer = new char[size];
-	m_iTop = 0;
+    m_iSize = size;
+    m_pBuffer = new char[size];
+    m_iTop = 0;
 } 
 
 // 析构函数 destructor
 // 回收栈空间内存
 MyStack::~MyStack()
 {
-	delete []m_pBuffer;
+    delete []m_pBuffer;
 }
 
 // 判断栈是否为空，为空返回true，非空返回false
 bool MyStack::stackEmpty()
 {
-	if (0 == m_iTop) // m_iTop == 0
-	{ 
-		return true;
-	}
-	return false;
-	// return 0 == m_iTop ? true : false;
+    if (0 == m_iTop) // m_iTop == 0
+    {
+        return true;
+    }
+    return false;
+    // return 0 == m_iTop ? true : false;
 }
 		
 // 判断栈是否已满，为满返回true，否则返回false
 bool MyStack::stackFull()
 {
-	if (m_iTop == m_iSize) // m_iTop >= m_iSize
-	{ 
-		return true;
-	}
-	return false;
-	// return m_iTop == m_iSize ? true : false;
+    if (m_iTop == m_iSize) // m_iTop >= m_iSize
+    {
+        return true;
+    }
+    return false;
+    // return m_iTop == m_iSize ? true : false;
 } 
 
 // 清空栈
 void MyStack::clearStack()
 {
-	m_iTop = 0;
+    m_iTop = 0;
 }
 		
 // 已有元素的个数
 int MyStack::stackLength()
 {
-	return m_iTop;
+    return m_iTop;
 } 
 
 // 元素入栈，栈顶上升
 bool MyStack::push(char elem)
 {
-	// 站未满才可以入栈
-	if (stackFull()) 
-	{
-		return false;
-	}
+    // 站未满才可以入栈
+    if (stackFull())
+    {
+        return false;
+    }
 	
-	m_pBuffer[m_iTop] = elem;
-	m_iTop++; // 此时m_iTop指向一个空位置
-	return true;
+    m_pBuffer[m_iTop] = elem;
+    m_iTop++; // 此时m_iTop指向一个空位置
+    return true;
 }
 
 
@@ -188,45 +186,45 @@ bool MyStack::push(char elem)
 /*
 char MyStack::pop()
 {
-	if (stackEmpty())
-	{
-		throw 1; // 抛出异常
-	}
-	else
-	{
-		m_iTop--;
-		return m_pBuffer[m_iTop];
-	}
+    if (stackEmpty())
+    {
+        throw 1; // 抛出异常
+    }
+    else
+    {
+        m_iTop--;
+        return m_pBuffer[m_iTop];
+    }
 }
 */
 bool MyStack::pop(char &elem)
 {
-	if (stackEmpty()) 
-	{
-		return false;
-	}
-	m_iTop--;
-	elem = m_pBuffer[m_iTop];
-	return true;
+    if (stackEmpty())
+    {
+        return false;
+    }
+    m_iTop--;
+    elem = m_pBuffer[m_iTop];
+    return true;
 }
 
 // 遍历栈内所有元素
 void MyStack::stackTraverse(bool isFromBottom)
 {
-	if (isFromBottom)
-	{
-		for (int i = 0; i < m_iTop; i++)
-		{
-			cout << m_pBuffer[i] << ",";
-		}
-	}
-	else
-	{
-		for (int i = m_iTop - 1; i >= 0; i--)
-		{
-			cout << m_pBuffer[i] << ",";
-		}
-	}
+    if (isFromBottom)
+    {
+        for (int i = 0; i < m_iTop; i++)
+        {
+            cout << m_pBuffer[i] << ",";
+        }
+    }
+    else
+    {
+        for (int i = m_iTop - 1; i >= 0; i--)
+        {
+            cout << m_pBuffer[i] << ",";
+        }
+    }
 }
 
 ```
@@ -297,4 +295,4 @@ int *ptr = a;
 ptr++; 
 ```
  
-更多阅读: [http://www.cnblogs.com/ggjucheng/archive/2011/12/13/2286391.html](http://www.cnblogs.com/ggjucheng/archive/2011/12/13/2286391.html, "_blank")
+更多阅读: http://www.cnblogs.com/ggjucheng/archive/2011/12/13/2286391.html
