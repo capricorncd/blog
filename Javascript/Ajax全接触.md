@@ -213,8 +213,98 @@ request.onreadystatechange = function () {
 }
 ```
 
+## JSON
+
+JSON：JavaScript对象表示法(JavaScript Object Notation)
+
+JSON 是存储和交换文本信息的语法，类似于XML。JSON采用键值对的方式来组织，易于阅读和编写，同时也易于机器解析和生成。
+
+JSON 是独立于语言的，即不管什么语言，都可以解析json，只需要按照json个规则来就行。
+
+#### JSON与XML
+
+json 长度和xml格式相比较小
+
+json 读写的速度更快
+
+json 可以使用JavaScript内建的方法直接进行解析，转换成JavaScript对象非常方便。
+
+## jQuery的Ajax
+
+```javascript
+jQuery.ajax([settings])
+```
+
+- type: 类型，"POST"或"GET"，默认为"GET"
+
+- url: 发送请求的地址
+
+- data: 是一个对象，连同请求发送到服务器的数据
+
+- dataType：预期服务器返回的数据类型。如果不指定，jQuery将自动根据HTTP包MIME信息来智能判断。一般我们采用json格式，可以设置为"json"
+
+- success()：请求成功后的回调函数。参数为服务器返回数据。
+
+- error()：请求失败时的回调函数。传入XMLHttpRequest对象。
+
+## 跨域
+
+![XMLHttpRequest跨域](img/ajax-cross-domain-1.png)
+
+JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。
+
+**跨域** 简单地理解就是因为JavaScript同源策略的限制，a.com域名下的js无法操作b.com或c.a.com域名下的对象。
+
+#### 处理跨域的方法
+
+- 代理
+
+    通过在同域域名的web服务器端创建一个代理。
+
+```
+// 北京服务器：www.bj.com
+// 上海服务器：www.sh.com
+/* 在北京服务器后台 */
+// 创建www.bj.com/proxy-sh-service.php来请求上海服务器，然后把响应结果返回给前端。
+```
+
+- JSONP
+
+    JSONP 可用于解决主流浏览器的跨域数据访问的问题。**只支持GET请求**。
+
+```html
+// www.bj.com的html页面
+<script>
+    function jsonp(data) {
+        alert(data['name']);
+    }
+</script>
+<script src="http://www.sh.com/jsonp.js"></script>
+```
+
+```js
+// www.sh.com的jsonp.js文件
+jsonp({'name': '蒙奇·D·路飞','job':'海贼'});
+```
+
+- XHR2
+
+    HTML5提供的XMLHTTPRequest Level2已经实现了跨域访问以及其他的一些新功能。
+
+    IE10以下版本不支持此方法
+
+    在服务器端做一些设置，跨域解决跨域问题：
+
+    > header('Access-Control-Allow-Origin: *');
+
+    > header('Access-Control-Allow-Methods: POST, GET');
+
+- IE实现跨域
+
+    // ...
+
 ## Remarks
 
-讲师： 姜维_Wayne
+w3school：http://www.w3school.com.cn/xmldom/dom_http.asp
 
-视频地址：http://www.imooc.com/learn/250
+视频教程：http://www.imooc.com/learn/250
