@@ -251,6 +251,8 @@ jQuery.ajax([settings])
 
 ![XMLHttpRequest跨域](img/ajax-cross-domain-1.png)
 
+当协议、子域名、主域名、端口号中任意一个不同时，都算作不同域。
+
 JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。
 
 **跨域** 简单地理解就是因为JavaScript同源策略的限制，a.com域名下的js无法操作b.com或c.a.com域名下的对象。
