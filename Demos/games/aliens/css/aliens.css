@@ -22,7 +22,7 @@
   border-radius: 50%;
 }
 
-.canon {
+.cannon {
   position: absolute;
   bottom: 10px;
   left: 140px;
@@ -30,7 +30,7 @@
   height: 20px;
   background-color: #ff0;
 }
-.canon:after {
+.cannon:after {
   position: absolute;
   left: 7px;
   top: -6px;

@@ -4,6 +4,30 @@ var GameAliens = function () {
     return document.querySelector(selector);
   }
 
+  var binaryTree =  new BinaryTree();
+  // init alienSiteArray
+  var nodesForAlien = [];
+
+  var keys = [];
+
+  // var nodesForAlien = [];
+  for (var i = 0; i < 20; i++) {
+    var key = Math.floor(Math.random() * 281);
+    binaryTree.insert(key);
+    nodesForAlien.push({
+      key: key,
+      selected: false
+    })
+    keys.push(key);
+  }
+
+  // activate first alienSite
+  var alienNodeSelect = Math.floor(Math.random() * 20);
+  // binaryTree.updateSelected(alienNodeSelect, true);
+
+  nodesForAlien[alienNodeSelect] = binaryTree.search(keys[alienNodeSelect]);
+  nodesForAlien[alienNodeSelect].selected = true;
+
   // Game section
   var alienX,
       alienY = 20,
@@ -27,14 +51,14 @@ var GameAliens = function () {
   var palyGame = function () {
     shotsRemaning -= 1;
     shotsMade += 1;
-    gameState = '炮弹：' + '， 数量：' + shotsRemaning;
+    gameState = '炮弹数量：' + shotsRemaning;
 
     guessX = parseInt(inputX.value);
     guessY = parseInt(inputY.value);
 
     var alienNode = binaryTree.search(guessX);
     if (alienNode !== null && alienNode.selected === true) {
-      if (guessY > alienY && guessY <= alienY + 10) {
+      if (guessY >= alienY && guessY <= alienY + 20) {
         gameWon = true;
         endGame();
       }
@@ -51,7 +75,8 @@ var GameAliens = function () {
     // 没有击中，改变外星人位置
     if (!gameWon) {
       nodesForAlien[alienNodeSelect].selected = false;
-      alienNodeSelect = Math.floor(Math.random() * 9);
+      alienNodeSelect = Math.floor(Math.random() * 20);
+      nodesForAlien[alienNodeSelect] = binaryTree.search(keys[alienNodeSelect]);
       nodesForAlien[alienNodeSelect].selected = true;
       alienX = nodesForAlien[alienNodeSelect].key;
       alienY += 30;
@@ -89,7 +114,7 @@ var GameAliens = function () {
     }
     button.removeEventListener('click', clickHandler, false);
     button.disabled = true;
-    window.removeEventListener('keydown', keydownHandler, false);
+    window.removeEventListener('keyup', keyupHandler, false);
     inputX.disabled = true;
     inputY.disabled = true;
   }
@@ -108,19 +133,21 @@ var GameAliens = function () {
   }
 
   var clickHandler = function (e) {
+    e.stopPropagation();
     validateInput();
   }
 
-  var keydownHandler = function (e) {
-    validateInput();
+  var keyupHandler = function (e) {
+    e.stopPropagation();
+    if (e.keyCode === 13) {
+      validateInput();
+    }
   }
-
-  button.addEventListener('click', clickHandler, false);
-  window.addEventListener('keydown', keydownHandler, false);
 
   return {
     init: function () {
-
+      button.addEventListener('click', clickHandler, false);
+      window.addEventListener('keyup', keyupHandler, false);
     }
   }
 

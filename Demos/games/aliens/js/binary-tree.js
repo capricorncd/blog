@@ -13,6 +13,7 @@ var BinaryTree = function () {
     this.key = key;
     this.left = null;
     this.right = null;
+    this.selected = false;
   }
 
   // 插入节点
@@ -113,7 +114,7 @@ var BinaryTree = function () {
   // 指定值查找
   var searchNode = function (node, key) {
     if (node === null) {
-      return false;
+      return null;
     }
 
     if (key < node.key) {
@@ -121,7 +122,7 @@ var BinaryTree = function () {
     } else if (key > node.key) {
       return searchNode(node.right, key);
     } else {
-      return true;
+      return node;
     }
   }
 
@@ -179,6 +180,13 @@ var BinaryTree = function () {
 
   BinaryTree.prototype.remove = function (key) {
     return removeNode(this.root, key);
+  }
+
+  // 更新节点选中状态
+  BinaryTree.prototype.updateSelected = function (key, selected) {
+    var node = this.search(key);
+    if (node === null) return;
+    node.selected = selected ? true : false;
   }
 
   return BinaryTree;
