@@ -182,7 +182,7 @@ var minNode = function (node) {
     while (node && node.left !== null) {
       node = node.left;
     }
-    return node.key;
+    return node;
   }
   return null;
 }
@@ -195,7 +195,7 @@ BinaryTree.prototype.min = function () {
 例子：
 
 ```js
-console.log('Min node is: ' + binaryTree.min());
+console.log('Min node is: ' + binaryTree.min().key);
 // 结果：Min node is: 1
 ```
 
@@ -210,7 +210,7 @@ var maxNode = function (node) {
     while (node && node.right !== null) {
       node = node.right;
     }
-    return node.key;
+    return node;
   }
   return null;
 }
@@ -223,7 +223,7 @@ BinaryTree.prototype.max = function () {
 例子：
 
 ```js
-console.log('Max node is: ' + binaryTree.max());
+console.log('Max node is: ' + binaryTree.max().key);
 // 结果：Max node is: 14
 ```
 
@@ -235,7 +235,7 @@ console.log('Max node is: ' + binaryTree.max());
 // 指定值查找
 var searchNode = function (node, key) {
   if (node === null) {
-    return false;
+    return null;
   }
 
   if (key < node.key) {
@@ -243,7 +243,7 @@ var searchNode = function (node, key) {
   } else if (key > node.key) {
     return searchNode(node.right, key);
   } else {
-    return true;
+    return node;
   }
 }
 
@@ -256,13 +256,13 @@ BinaryTree.prototype.search = function (key) {
 
 ```js
 console.log(binaryTree.search(7));
-// 结果：true
+// 结果：{key: 7, ...}
 ```
 
 ## 二叉树删除节点
 
 ```js
-// 查找右子树的最小节点
+// 查找从指定节点开始的最小节点
 var findMinNode = function (node) {
   if (node) {
     while (node && node.left !== null) {
