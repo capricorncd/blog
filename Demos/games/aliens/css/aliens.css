@@ -54,8 +54,8 @@
 
 .alien {
   position: absolute;
-  top: 20px;
-  left: 80px;
+  top: 0;
+  left: 0;
   width: 20px;
   height: 20px;
   background-color: sandybrown;

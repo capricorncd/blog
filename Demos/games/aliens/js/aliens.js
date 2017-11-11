@@ -4,36 +4,16 @@ var GameAliens = function () {
     return document.querySelector(selector);
   }
 
-  var binaryTree =  new BinaryTree();
-  // init alienSiteArray
-  var nodesForAlien = [];
-
-  var keys = [];
-
-  // var nodesForAlien = [];
-  for (var i = 0; i < 20; i++) {
-    var key = Math.floor(Math.random() * 281);
-    binaryTree.insert(key);
-    nodesForAlien.push({
-      key: key,
-      selected: false
-    })
-    keys.push(key);
-  }
-
-  // activate first alienSite
-  var alienNodeSelect = Math.floor(Math.random() * 20);
-  // binaryTree.updateSelected(alienNodeSelect, true);
-
-  nodesForAlien[alienNodeSelect] = binaryTree.search(keys[alienNodeSelect]);
-  nodesForAlien[alienNodeSelect].selected = true;
-
   // Game section
   var alienX,
-      alienY = 20,
+      alienY = 0,
       guessX = 0,
       guessY = 0,
-      shotsRemaning = 8,
+      missileX = 0,
+      missileY = 0,
+      // cannonX = 0,
+      // cannonY = 0,
+      shotsRemaning = 8000,
       shotsMade = 0,
       gameState = '',
       gameWon = false;
@@ -47,6 +27,20 @@ var GameAliens = function () {
       output = q('.output'),
       button = q('.button-hook');
 
+  // 实例化BinaryTree()
+  var binaryTree =  new BinaryTree();
+  // 外星人节点
+  var nodesForAlien = {};
+  // 随机生成一个外星人位置key
+  var alienNodeKey;
+  // 随机生成的外星人节点key数组
+  var keys = [];
+
+  // 随机设置alien当前alienX位置
+  var getRandomKey = function () {
+    return keys[Math.floor(Math.random() * 20)];
+  }
+
   // 开始游戏
   var palyGame = function () {
     shotsRemaning -= 1;
@@ -57,7 +51,7 @@ var GameAliens = function () {
     guessY = parseInt(inputY.value);
 
     var alienNode = binaryTree.search(guessX);
-    if (alienNode !== null && alienNode.selected === true) {
+    if (alienNode !== null && nodesForAlien[alienNode.key].selected === true) {
       if (guessY >= alienY && guessY <= alienY + 20) {
         gameWon = true;
         endGame();
@@ -74,12 +68,13 @@ var GameAliens = function () {
 
     // 没有击中，改变外星人位置
     if (!gameWon) {
-      nodesForAlien[alienNodeSelect].selected = false;
-      alienNodeSelect = Math.floor(Math.random() * 20);
-      nodesForAlien[alienNodeSelect] = binaryTree.search(keys[alienNodeSelect]);
-      nodesForAlien[alienNodeSelect].selected = true;
-      alienX = nodesForAlien[alienNodeSelect].key;
+      nodesForAlien[alienNodeKey].selected = false;
+      alienNodeKey = getRandomKey();
+      nodesForAlien[alienNodeKey].selected = true;
+      alienX = alienNodeKey;
       alienY += 30;
+      missileX = guessX;
+      missileY = guessY;
     }
 
     // 重新绘制stage
@@ -93,8 +88,8 @@ var GameAliens = function () {
 
     cannon.style.left = guessX + 'px';
 
-    missile.style.left = guessX + 'px';
-    missile.style.top = guessY + 'px';
+    missile.style.left = missileX + 'px';
+    missile.style.top = missileY + 'px';
 
     if (gameWon) {
       explosion.style.display = 'block';
@@ -144,10 +139,38 @@ var GameAliens = function () {
     }
   }
 
+  // 初始化游戏
+  var initGame = function () {
+
+    guessX = 140;
+    missileX = 142;
+    missileY = 272;
+
+    for (var i = 0; i < 20; i++) {
+      // 随机生成key
+      var key = Math.floor(Math.random() * 281);
+      // 创建外星人X轴位置排序二叉树
+      binaryTree.insert(key);
+      // 初始化外星人节点数组，key与外星人二叉树key值相同
+      nodesForAlien[key] = { selected: false }
+      // 存储随机生成的key值
+      keys.push(key);
+    }
+
+    // 随机生成一个外星人位置key
+    alienNodeKey = getRandomKey();
+    alienX = alienNodeKey;
+    nodesForAlien[alienNodeKey].selected = true;
+
+    button.addEventListener('click', clickHandler, false);
+    window.addEventListener('keyup', keyupHandler, false);
+
+    render();
+  }
+
   return {
     init: function () {
-      button.addEventListener('click', clickHandler, false);
-      window.addEventListener('keyup', keyupHandler, false);
+      initGame();
     }
   }
 

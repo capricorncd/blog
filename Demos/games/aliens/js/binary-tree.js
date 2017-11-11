@@ -87,7 +87,7 @@ var BinaryTree = function () {
       while (node && node.left !== null) {
         node = node.left;
       }
-      return node.key;
+      return node;
     }
     return null;
   }
@@ -102,7 +102,7 @@ var BinaryTree = function () {
       while (node && node.right !== null) {
         node = node.right;
       }
-      return node.key;
+      return node;
     }
     return null;
   }
