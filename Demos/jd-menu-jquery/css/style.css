@@ -1,0 +1,96 @@
+.wrap {
+  position:relative;
+  width: 200px;
+  left: 50px;
+  top: 50px;
+}
+
+ul {
+  margin: 0;
+  padding: 15px 0;
+  list-style: none;
+  background: #6c6669;
+  color: #fff;
+  border-right-width: 0;
+}
+
+li {
+  display: block;
+  position: relative;
+  padding-left: 12px;
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/**
+ * 不使用伪类hover的原因：方便js操作
+ * 什么情况下用js操作，什么情况下用css控制？
+ */
+li.active {
+  background: #999395;
+}
+
+li span:hover {
+  color: #c81623;
+}
+
+.none {
+  display: none;
+}
+
+/**
+ * 子容器
+ */
+#sub {
+  position: absolute;
+  left: 200px;
+  top: 0;
+  margin: 0;
+  padding: 10px;
+  width: 600px;
+  background: #f7f7f7;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, .3);
+  border: 1px solid #f7f7f7;
+  box-sizing: border-box;
+}
+
+.sub-content a {
+  font-size: 12px;
+  color: #666;
+  text-decoration: none;
+}
+
+.sub-content dl {
+  overflow: hidden;
+}
+
+.sub-content dt {
+  position: relative;
+  float: left;
+  clear: left;
+  width: 70px;
+  font-weight: bold;
+}
+
+.sub-content dt i {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 4px;
+  height: 14px;
+  font: 400 9px/14px consolas;
+}
+
+.sub-content dd {
+  float: left;
+  margin: 0 0 5px 5px;
+  border-top: 1px solid #eee;
+}
+
+.sub-content dd a {
+  margin: 4px 0;
+  padding: 0 10px;
+  border-left: 1px solid #e0e0e0;
+}
