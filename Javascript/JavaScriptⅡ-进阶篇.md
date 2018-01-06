@@ -46,28 +46,28 @@
 #### 3. 变量声明及赋值
 
 ```
-声明变量语法: var 变量名;   
+声明变量语法: var 变量名;
 ```
 
 `var`就相当于找盒子的动作，在JavaScript中是关键字（即保留字），这个关键字的作用是声明变量，并为**变量**准备位置(即内存）。
 
 ```javascript
 // 声明一个变量num1
-var num1, mun2; 
+var num1, mun2;
 // 声明一个变量mynum并赋值
-var mynum = 10; 
+var mynum = 10;
 
 // 123是数值
 var num1 = 123;
-// "一二三"是字符串   
+// "一二三"是字符串
 var num2 = "一二三";
 // 布尔值true（真），false(假)
-var num3 = true;    
+var num3 = true;
 ```
 
 其中，num1变量存储的内容是数值；num2变量存储的内容是字符串，字符串需要用一对引号""括起来，num3变量存储的内容是布尔值(true、false)。
 
-**注意:** 
+**注意:**
 1. 等号 "="的作用是给变量赋值，不是等于号。
 2. 变量也可以不声明，直接使用，但为了规范，需要先声明，后使用。
 
@@ -111,7 +111,7 @@ JavaScript中还有很多这样的操作符，例如，算术操作符(`+`、`-`
 
 ```javascript
 // mystring的值“JavaScript”这个字符串
-var mystring = "Java" + "Script"; 
+var mystring = "Java" + "Script";
 ```
 
 #### 2. 自加一，自减一 ( ++和--)
@@ -172,8 +172,8 @@ b > a && b < c
 
 `!`是逻辑非操作符，也就是**'不是'**的意思,非真即假，非假即真。
 
-| A | !A |  
-| :--: | :--: |  
+| A | !A |
+| :--: | :--: |
 | 真(true) | 假(false) |
 | 假(false) | 真(true) |
 
@@ -202,9 +202,9 @@ var maArray = [];
 ```
 
  我们创建数组的同时，还可以为数组指定长度，长度可任意指定。
- 
+
 ```javascript
-// 创建数组，存储8个数据。 
+// 创建数组，存储8个数据。
 var myArray = new Array(8);
 ```
 
@@ -239,7 +239,7 @@ var myArray = [66, 80, 90, 77, 59]; // 直接输入一个数组（称 “字面�
 
 ```javascript
 // 使用一个新索引，为数组增加一个新元素
-myArray[5] = 88; 
+myArray[5] = 88;
 // 或
 myArray.push(88);
 ```
@@ -248,7 +248,7 @@ myArray.push(88);
 
 ![数组](img/js2-3.png)
 
-要得到一个数组元素的值，只需引用数组变量并提供一个索引，如：  
+要得到一个数组元素的值，只需引用数组变量并提供一个索引，如：
 ```javascript
 // 获取第一个人的成绩
 var score1 = myArray[0];
@@ -298,7 +298,7 @@ document.write('数组长度为： ' + arr.length); // 数组长度为： 16
 ```javascript
 var myArray = new Array(); //先声明一维
 for(var i = 0; i < 2; i++) {   //一维长度为2
-myArray[i] = new Array();  //再声明二维 
+myArray[i] = new Array();  //再声明二维
     for(var j = 0; j < 3; j++) {   //二维长度为3
         myArray[i][j] = i + j;   // 赋值，每个数组元素的值为i+j
     }
@@ -397,7 +397,7 @@ for (初始化变量; 循环条件; 循环迭代) {
     // 循环语句
 }
 ```
- 
+
 ```javascript
 var myArray = ['A', 'B', 'C', 'D', 'N'];
 // 输出数组每个元素
@@ -705,7 +705,7 @@ var result = str.toUpperCase(); // 使用字符串对象方法
 **日期对象**可以储存任意一个日期，并且可以精确到毫秒数（1/1000 秒）。
 
 ```javascript
-var nowDate = new Date(); 
+var nowDate = new Date();
 ```
 定义nowDate成为日期对象，并且已有初始值：当前时间(当前电脑系统时间)。
 
@@ -731,11 +731,11 @@ var d = new Date('Oct 1, 2016'); // 2016年10月1日
 | get/setSeconds() | 返回/设置秒钟数 |
 | get/setTime() | 返回/设置时间（毫秒为单位） |
 
-* **get/setFullYear()** 返回/设置年份 
+* **get/setFullYear()** 返回/设置年份
 
 ```javascript
 var myDate = new Date(); // 当前时间2016年8月6日
-console.log(myDate); 
+console.log(myDate);
 // Sun Aug 06 2016 22:05:09 GMT+0800 (中国标准时间)
 // 1. 结果格式依次为：星期、月、日、年、时、分、秒、时区。(谷歌浏览器)
 // 2. 不同浏览器，时间格式有差异。
@@ -754,7 +754,7 @@ getDay() 返回星期，返回的是0-6的数字，0 表示星期天。如果要
 ```javascript
 var myDate = new Date();//定义日期对象
 var weekDays = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-//定义数组对象,给每个数组项赋值 
+//定义数组对象,给每个数组项赋值
 var week = myDate.getDay(); // 返回值存储在变量mynum中
 document.write(week); // 输出getDay()获取值
 document.write("今天是：" + weekday[week]); // 输出星期几
@@ -782,7 +782,7 @@ var len = str.length;
 // 访问字符串对象的方法：
 // 使用 toUpperCase()方法将字符串小写字母转换为大写
 var upperCaseStr = str.toUpperCase(); // I LOVE JAVASCRIPT!
-``` 
+```
 
 * **charAt** 返回指定位置的字符
 
@@ -809,9 +809,9 @@ stringObject.indexOf(substring, startpos)
 | substring | 必须。规定需要检索的字符或字符串 |
 | startpos | 可选的整数参数。规定字符串开始检索的位置。<br>其合法范围：0 - stringObject.length-1 |
 
-1.该方法将从头到尾地检索字符串 stringObject，看它是否含有子串 substring。  
-2.可选参数，从stringObject的startpos位置开始查找substring，如果没有此参数将从stringObject的开始位置查找。  
-3.如果找到一个 substring，则返回 substring 的第一次出现的位置。stringObject 中的字符位置是从 0 开始的。  
+1.该方法将从头到尾地检索字符串 stringObject，看它是否含有子串 substring。
+2.可选参数，从stringObject的startpos位置开始查找substring，如果没有此参数将从stringObject的开始位置查找。
+3.如果找到一个 substring，则返回 substring 的第一次出现的位置。stringObject 中的字符位置是从 0 开始的。
 4.如果要检索的字符串值没有出现，则该方法返回 -1。
 
 * **split** 字符串分割
@@ -833,7 +833,7 @@ stringObject.split(separator, limit)
 ```javascript
 var str = "86-010-85468578";
 
-var arr1 = str.split('-'); 
+var arr1 = str.split('-');
 // ["86", "010", "85468578"]
 var arr2 = str.split('');
 // ["8", "6", "-", "0", "1", "0", "-", "8", "5", "4", "6", "8", "5", "7", "8"]
@@ -846,7 +846,7 @@ var arr3 = str.split('',3);
 **substring()**方法用于提取字符串中介于两个指定下标之间的字符。
 
 ```
-stringObject.substring(startPos, stopPos) 
+stringObject.substring(startPos, stopPos)
 ```
 | 参数 | 说明 |
 | -- | -- |
@@ -881,7 +881,7 @@ stringObject.substr(startPos, length)
 | startPos | 必需。要提取的子串的起始位置，必须为数值。 |
 | length | 可选。提取字符串的长度。若省略，则返回stringObject的开始位置startPos到结尾的所有字符。 |
 
-**注意：**  
+**注意：**
 
 如果参数startPos是负数，则从字符串尾部开始倒计。也就是说，-1 指字符串中最后一个字符，-2 指倒数第二个字符，以此类推。
 
@@ -1001,7 +1001,7 @@ random() 方法可返回介于 0 ~ 1（大于或等于 0 但小于 1 )之间的�
 ```
 Math.random();
 // 返回一个大于或等于 0 但小于 1 的符号为正的数字值。
-// 因为是随机数，所以每次运行结果不一样，但是0 ~ 1的数值。 
+// 因为是随机数，所以每次运行结果不一样，但是0 ~ 1的数值。
 ```
 
 ```javascript
@@ -1078,7 +1078,7 @@ join()方法用于把数组中的所有元素放入一个字符串。元素是�
 | -- | -- |
 | separator | 可选。指定要使用的分隔符。若省略，则使用逗号作为分隔符 |
 
-注意：返回一个字符串，该字符串把数组中的各个元素串起来，用<分隔符>置于元素与元素之间。这个方法不影响数组原本的内容。 我们使用join（）方法，将数组的所有元素放入一个字符串中，代码如下： 
+注意：返回一个字符串，该字符串把数组中的各个元素串起来，用<分隔符>置于元素与元素之间。这个方法不影响数组原本的内容。 我们使用join（）方法，将数组的所有元素放入一个字符串中，代码如下：
 
 ```javascript
 var arr = ['I', 'love', 'Javascript', '!'];
@@ -1095,7 +1095,7 @@ arrayObject.reverse()
 
 * **slice()** 选定元素
 
-slice() 方法可从已有的数组中返回选定的元素。  
+slice() 方法可从已有的数组中返回选定的元素。
 
 ```
 arrayObject.slice(start, end)
@@ -1141,14 +1141,14 @@ arrayObject.sort(方法函数)
 
 **注意: **
 
-该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下： 
+该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：
 
-> 若返回值 <= -1，则表示 A 在排序后的序列中出现在 B 之前。  
-> 若返回值 >  -1 && < 1，则表示 A 和 B 具有相同的排序顺序。  
+> 若返回值 <= -1，则表示 A 在排序后的序列中出现在 B 之前。
+> 若返回值 >  -1 && < 1，则表示 A 和 B 具有相同的排序顺序。
 > 若返回值 >=  1，则表示 A 在排序后的序列中出现在 B 之后。
 
 ```javascript
-var arr1 = new Array("Hello", "John", "love", "JavaScript"); 
+var arr1 = new Array("Hello", "John", "love", "JavaScript");
 var arr2 = new Array("80", "16", "50", "6", "100", "1");
 
 arr1.sort(); // ["Hello", "JavaScript", "John", "love"]
@@ -1187,9 +1187,9 @@ window对象是BOM的核心，window对象指当前的浏览器窗口。
 
 * 计时器
 
-在JavaScript中，我们可以在设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行。  
+在JavaScript中，我们可以在设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行。
 
-**计时器类型：**  
+**计时器类型：**
 1. `setTimeout()` 一次性计时器：仅在指定的延迟时间之后触发一次。
 
 2. `setInterval()` 间隔性触发计时器：每隔一定的时间间隔就触发一次。
@@ -1307,7 +1307,7 @@ window.history.forward();
 // 注意：等价点击前进按钮。
 ```
 
-forward()相当于go(1),代码如下: 
+forward()相当于go(1),代码如下:
 
 ```javascript
 window.history.go(1);
@@ -1515,4 +1515,12 @@ window.screen.属性
 document.getElementsByName(name)
 ```
 
-》》》
+### # 备注
+
+笔记作者： Capricorncd
+
+主页：https://github.com/capricorncd
+
+原讲师：未知
+
+出处：https://www.imooc.com/learn/10

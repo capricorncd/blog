@@ -86,7 +86,7 @@ document.write("<span style='white-space:pre;'>"+"  1        2    3    "+"</span
 ### 6. 警告（alert 消息对话框）
 
 ```
-alert(字符串或变量);  
+alert(字符串或变量);
 ```
 1. 在点击对话框"确定"按钮前，不能进行任何其它操作。
 
@@ -104,7 +104,7 @@ alert(字符串或变量);
 confirm(str);
 ```
 #### 返回值:
-当用户点击"确定"按钮时，返回true  
+当用户点击"确定"按钮时，返回true
 当用户点击"取消"按钮时，返回false
 
 ### 8. 提问（prompt 消息对话框）
@@ -130,7 +130,7 @@ window.open([URL], [窗口名称], [参数字符串])
 
 #### 参数说明:
 
-**URL：** 可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。  
+**URL：** 可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。
 **窗口名称：** 可选参数，被打开窗口的名称。
 
 ```
@@ -167,7 +167,7 @@ window.close();   //关闭本窗口
 
 ```
 //将新打的窗口对象，存储在变量mywin中
-var mywin=window.open('http://www.imooc.com'); 
+var mywin=window.open('http://www.imooc.com');
 mywin.close();
 ```
 
@@ -205,7 +205,7 @@ HTML文档可以说由节点构成的集合，三种常见的DOM节点:
 标签的id属性值是唯一的
 
 ```
-document.getElementById(“id”) 
+document.getElementById(“id”)
 ```
 
 **结果:** `null`或`[object HTMLParagraphElement]`
@@ -226,7 +226,7 @@ Object.innerHTML
 
 2.注意书写，innerHTML区分大小写。
 
-我们通过`id="con"`获取`<p>`元素，并将元素的内容输出和改变元素内容，代码如下: 
+我们通过`id="con"`获取`<p>`元素，并将元素的内容输出和改变元素内容，代码如下:
 
 ```html
 <html>
@@ -297,3 +297,13 @@ object.className = classname
 
 2. 为网页内的某个元素指定一个css样式来更改该元素的外观
 
+
+### # 备注
+
+笔记作者： Capricorncd
+
+主页：https://github.com/capricorncd
+
+原讲师：未知
+
+出处：https://www.imooc.com/learn/36

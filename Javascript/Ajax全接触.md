@@ -1,10 +1,10 @@
 # Ajax全接触
 
-**AJAX**即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。  
-**AJAX** = 异步 JavaScript和XML（标准通用标记语言的子集）。  
-**AJAX** 是一种用于创建快速动态网页的技术。  
-**AJAX** 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。  
-通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。  
+**AJAX**即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。
+**AJAX** = 异步 JavaScript和XML（标准通用标记语言的子集）。
+**AJAX** 是一种用于创建快速动态网页的技术。
+**AJAX** 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。
+通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
 传统的网页（不使用 AJAX）如果需要更新内容，必须重载整个网页页面。
 
 
@@ -41,7 +41,7 @@ http是一种无状态协议，即不建立持久的连接。
 
 一个完整的HTTP请求过程，通常有以下7个步骤：
 
-1. 建立TCP连接  
+1. 建立TCP连接
 2. 浏览器向Web服务器发送请求命令
 3. 浏览器发送请求头信息
 4. 服务器应答
@@ -56,7 +56,7 @@ http是一种无状态协议，即不建立持久的连接。
 3. 请求头，包含一些客户端环境信息，身份验证信息等
 4. 请求体，即请求正文。请求正文中可以包含客户提交的查询字符串、表单数据等等
 
- **GET** 一般用于信息获取，使用URL传递参数，对所发送信息的数量有限制，一般在2000个字符。GET请求是**幂等**的。 幂等 http://www.i3geek.com/archives/841  
+ **GET** 一般用于信息获取，使用URL传递参数，对所发送信息的数量有限制，一般在2000个字符。GET请求是**幂等**的。 幂等 http://www.i3geek.com/archives/841
  **POST** 一般用于修改服务器上的资源，对所发送信息的数据大小无限制。
 
 #### Response/响应
@@ -301,12 +301,18 @@ jsonp({'name': '蒙奇·D·路飞','job':'海贼'});
 
     > header('Access-Control-Allow-Methods: POST, GET');
 
-- IE实现跨域
+- IE跨域实现
 
     // ...
 
 ## Remarks
 
-w3school：http://www.w3school.com.cn/xmldom/dom_http.asp
+笔记作者： Capricorncd
 
-视频教程：http://www.imooc.com/learn/250
+主页：https://github.com/capricorncd
+
+原讲师：姜维_Wayne
+
+出处：http://www.imooc.com/learn/250
+
+w3school：http://www.w3school.com.cn/xmldom/dom_http.asp

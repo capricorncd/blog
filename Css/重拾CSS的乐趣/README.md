@@ -1,7 +1,5 @@
 # 重拾CSS的乐趣
 
-演讲作者：CSS魔法
-
 ### # Css icon
 
 ![Css icon](img/css-icon.png)
@@ -205,3 +203,12 @@ radial-gradient() 径向渐变
 linear-gradient()
 
 
+### # 备注
+
+笔记作者： Capricorncd
+
+主页：https://github.com/capricorncd
+
+原讲师：CSS魔法
+
+出处：https://www.imooc.com/learn/588

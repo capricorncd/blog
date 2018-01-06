@@ -328,3 +328,13 @@ binaryTree.remove(3);
 binaryTree.inOrderTraverse(callback);
 // 结果：1 4 6 7 8 13 14
 ```
+
+### # 备注
+
+笔记作者： Capricorncd
+
+主页：https://github.com/capricorncd
+
+原讲师：coding迪斯尼
+
+出处：https://www.imooc.com/learn/888

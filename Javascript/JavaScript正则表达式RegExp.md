@@ -21,7 +21,7 @@ var reg = /\bis\b/g;
 #### 2. 构造函数
 
 ```javascript
-var reg = new RegExp('\\bis\\b', 'g'); 
+var reg = new RegExp('\\bis\\b', 'g');
 'She is girl, This is a computer.'.replace(reg, 'IS');
 // 结果 'She IS girl, This IS a computer.'
 ```
@@ -29,7 +29,7 @@ var reg = new RegExp('\\bis\\b', 'g');
 ## 二、元字符
 
 正则表达式由两种基本字符类型组成：原义文本字符和元字符。`元字符`是在正则表达式中`有特殊含义`的`非字母`字符。
-  
+
 ```bash
 * + $ ^ . | \ () {} []
 ```
@@ -43,23 +43,23 @@ var reg = new RegExp('\\bis\\b', 'g');
 
 #### 1.字符类
 
-- 匹配单个字符  
+- 匹配单个字符
   一般情况下正则表达式一个字符对应字符串一个字符，表达式`ab\t`的含义是'ab' + table键
-  
-- 匹配一类字符[]  
-  可以使用元字符`[]`来构建一个简单的类。所谓`类`就是指符合某些特性的对象，一个泛指，而不是特指某个字符。  
+
+- 匹配一类字符[]
+  可以使用元字符`[]`来构建一个简单的类。所谓`类`就是指符合某些特性的对象，一个泛指，而不是特指某个字符。
   表达式`[abc]`把字符a或b或c归为一类，表达式可以匹配这类的字符，即可以匹配a或b或c中的任一个。
-  
+
 ```javascript
 'a1b2c3d4'.replace(/[abc]/g, 'X'); // 结果：'X1X2X3d4'
 ```
 
-- 字符类取反  
+- 字符类取反
 
-  使用元字符`^`创建 反向类/负向类。反向类的意思是不属于某类的内容。  
+  使用元字符`^`创建 反向类/负向类。反向类的意思是不属于某类的内容。
  表达式`[^abc]`表示不是字符a或b或c的内容
- 
-   
+
+
 ```javascript
 'a1b2c3d4'.replace(/[^abc]/g, 'X'); // 结果：'aXbXcXXX'
 ```
@@ -152,7 +152,7 @@ ab\d.
 ```bash
 // 匹配字符串 'Byron' 连续出现3次的场景。
  Byron{3}  // 匹配'n'连续出现了3次的场景
-(Byron){3} // 匹配'Byron'连续出现了3次的场景 
+(Byron){3} // 匹配'Byron'连续出现了3次的场景
 ```
 
 ```javascript
@@ -187,7 +187,7 @@ ab\d.
 
 ## 五、前瞻、后顾(后瞻)
 
-正则表达式从文本头部向尾部开始解析，文本尾部方向，称为`前`。  
+正则表达式从文本头部向尾部开始解析，文本尾部方向，称为`前`。
 `前瞻`就是在正则表达式匹配到规则的时候，向前检查是否符合断言，后顾/后瞻方向相反。
 
 JavaScript不支持后顾。
@@ -247,10 +247,10 @@ test() 方法用于检测一个字符串是否匹配某个模式。
 ```javascript
 RegExpObject.test(string);
 ```
-`string` 必需。要检测的字符串。   
-- 返回值  
-如果字符串 string 中含有与 RegExpObject 匹配的文本，则返回 true，否则返回 false。  
-- 说明  
+`string` 必需。要检测的字符串。
+- 返回值
+如果字符串 string 中含有与 RegExpObject 匹配的文本，则返回 true，否则返回 false。
+- 说明
  调用 RegExp 对象 r 的 test() 方法，并为它传递字符串 s，与这个表示式是等价的：(r.exec(s) != null)。
 
 #### 2、exec(str)
@@ -262,16 +262,16 @@ RegExpObject.test(string);
 // exec() 方法用于检索字符串中的正则表达式的匹配。
 RegExpObject.exec(string)
 ```
-- 返回值  
+- 返回值
 返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
 
-- 说明   
+- 说明
 exec() 方法的功能非常强大，它是一个通用的方法，而且使用起来也比 test() 方法以及支持正则表达式的 String 对象的方法更为复杂。
 
   如果 exec() 找到了匹配的文本，则返回一个结果数组。否则，返回 null。此数组的第 0 个元素是与正则表达式相匹配的文本，第 1 个元素是与 RegExpObject 的第 1 个子表达式相匹配的文本（如果有的话），第 2 个元素是与 RegExpObject 的第 2 个子表达式相匹配的文本（如果有的话），以此类推。除了数组元素和 length 属性之外，exec() 方法还返回两个属性。index 属性声明的是匹配文本的第一个字符的位置。input 属性则存放的是被检索的字符串 string。我们可以看得出，在调用非全局的 RegExp 对象的 exec() 方法时，返回的数组与调用方法 String.match() 返回的数组是相同的。
 
   但是，当 RegExpObject 是一个全局正则表达式时，exec() 的行为就稍微复杂一些。它会在 RegExpObject 的 lastIndex 属性指定的字符处开始检索字符串 string。当 exec() 找到了与表达式相匹配的文本时，在匹配后，它将把 RegExpObject 的 lastIndex 属性设置为匹配文本的最后一个字符的下一个位置。这就是说，您可以通过反复调用 exec() 方法来遍历字符串中的所有匹配文本。当 exec() 再也找不到匹配的文本时，它将返回 null，并把 lastIndex 属性重置为 0。
-  
+
 ## 八、支持正则表达式的 String 对象的方法
 
 | 方法 | 描述 |
@@ -281,8 +281,15 @@ exec() 方法的功能非常强大，它是一个通用的方法，而且使用�
 | replace | 替换与正则表达式匹配的子串。|
 | split | 把字符串分割为字符串数组。 |
 
-## 资源
+
+### # 备注
+
+笔记作者： Capricorncd
+
+主页：https://github.com/capricorncd
+
+原讲师：Samaritan89
+
+出处：https://www.imooc.com/learn/706
 
 w3school文档： http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp
-
-imooc视频： http://www.imooc.com/learn/706
