@@ -4,29 +4,19 @@
 
 ## JavaScript六种数据类型
 
-Number类型、String类型、boolean类型、null类型、undefined类型、Object类型
+原始类型（Number类型、String类型、boolean类型、null类型、undefined类型）、Object类型
 
-* 原始类型
+* number
 
-  number
+* string
 
-  string
+* boolean
 
-  boolean
+* null
 
-  null
+* undefined
 
-  undefined
-
-* object对象
-
-  Function
-
-  Array
-
-  Date
-
-  ...
+* object对象（Function、Array、Date...）
 
 ## JavaScript隐式转换
 
