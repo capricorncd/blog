@@ -125,8 +125,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (imgUrl) {
 	        el.style.backgroundImage = 'url(' + imgUrl + ')'
 	      }
-	      var index = Math.min(time / me.interval | 0, len - 1)
-	      var position = postions[index].split(' ')
+	      var index = Math.min(time / me.interval | 0, len)
+	      var position = postions[index - 1].split(' ')
 	      // 改变dom对象的背景图片位置
 	      el.style.backgroundPosition = position[0] + 'px ' + position[1] + 'px'
 	      if (index === len - 1) {
@@ -319,6 +319,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	  if (this.index === this.taskQueue.length) {
 	    this.dispose()
+      return
 	  }
 	  var task = this.taskQueue[this.index]
 	  if (task.type === TASK_SYNC) {
@@ -544,6 +545,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	function TimeLine() {
 	  this.state = STATE_INITIAL
+	  this.animationHandler = 0
 	}
 
 	var fn = TimeLine.prototype
@@ -553,8 +555,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @param time 从动画开始到当前执行的时间
 	 */
 	fn.onenterframe = function (time) {
-	  this.state = STATE_INITIAL
-	  timeline.animationHandler = 0
 	}
 
 	/**

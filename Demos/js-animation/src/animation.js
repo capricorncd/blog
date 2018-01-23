@@ -69,8 +69,8 @@ fn.changePosition = function (el, postions, imgUrl) {
       if (imgUrl) {
         el.style.backgroundImage = 'url(' + imgUrl + ')'
       }
-      var index = Math.min(time / me.interval | 0, len - 1)
-      var position = postions[index].split(' ')
+      var index = Math.min(time / me.interval | 0, len)
+      var position = postions[index - 1].split(' ')
       // 改变dom对象的背景图片位置
       el.style.backgroundPosition = position[0] + 'px ' + position[1] + 'px'
       if (index === len - 1) {

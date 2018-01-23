@@ -38,6 +38,7 @@ var cancelAnimationFrame = (function () {
  */
 function TimeLine() {
   this.state = STATE_INITIAL
+  this.animationHandler = 0
 }
 
 var fn = TimeLine.prototype
@@ -47,8 +48,6 @@ var fn = TimeLine.prototype
  * @param time 从动画开始到当前执行的时间
  */
 fn.onenterframe = function (time) {
-  this.state = STATE_INITIAL
-  timeline.animationHandler = 0
 }
 
 /**
@@ -99,11 +98,12 @@ fn.restart = function () {
  * @param startTime 动画开始时间
  */
 function startTimeline (timeline, startTime) {
+  // 记录上一次回调的时间轴
+  var lastTick = +new Date()
+
   timeline.startTime = startTime
   nextTick.interval = timeline.interval
 
-  // 记录上一次回调的时间轴
-  var lastTick = +new Date()
   nextTick()
 
   // 每一帧执行的函数
