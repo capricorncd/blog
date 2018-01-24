@@ -3,11 +3,16 @@
  * https://github.com/capricorncd
  */
 'use strict';
-
-import layer from './components/layer/layer'
+import './css/common.css'
+import Layer from './components/layer/layer'
 
 const App = function () {
-  console.log(layer)
+  const dom = document.getElementById('app')
+  const layer = new Layer()
+  dom.innerHTML = layer.tpl({
+    name: 'Hello',
+    arr: ['aaaa', 'bbbbbb', 'ccccccccccccccccccc']
+  })
 }
 
 new App()
