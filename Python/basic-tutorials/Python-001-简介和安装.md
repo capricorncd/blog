@@ -86,10 +86,14 @@ print 'Hello, World!'
 
 ## 参考资料
 
-笔记作者： zx1984
+笔记作者：zx1984
 
-主页：https://github.com/zx1984
+https://github.com/zx1984
+
+腾讯课堂：python零基础入门到精通
+
+https://ke.qq.com/course/206902
 
 原讲师：廖雪峰
 
-出处：https://www.imooc.com/learn/177
+https://www.imooc.com/learn/177
