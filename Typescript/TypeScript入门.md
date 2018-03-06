@@ -37,6 +37,7 @@ fkdsajfk
 adsjf
 kdajfkdjad`;
 ```
+
 #### 2. 字符串模板
 
 ```typescript
@@ -49,7 +50,10 @@ let getName = function () {
 console.log(`Hello ${text}`); // Hello World
 console.log(`Hello ${getName()}`); // Hello World
 ```
+
 #### 3. 自动拆分字符串
+
+用字符串模板去调用一个方法，同时把模板里的参数传给表达式。
 
 ```typescript
 function test (temp, name, age) {
@@ -73,7 +77,7 @@ test`Hello my name is ${myName}, I'm ${getAge()}`;
 
 语法 **标识符: 类型**
 
-默认类型：string number boolean any
+默认类型：`string`, `number`, `boolean`, `any`, `void`(针对function无返回值)
 
 ```typescript
 
@@ -87,6 +91,11 @@ let obj: any = {
 let age: number = 32;
 
 let man: boolean = true;
+
+function Fun (): void {
+  // ...
+  // void类型，不能使用return返回值
+}
 ```
 
 #### 2. 自定义类型
@@ -162,10 +171,10 @@ fun2(...args2); // 3 3 5
 // 方法前面加*号
 function* doSomething () {
     console.log('start');
-	
+
     // 相当于断点
     yield;
-	
+
     console.log('finish');
 }
 
@@ -177,6 +186,8 @@ fun1.next();
 // 每调一次next()，程序就执行到一个yield位置
 fun1.next();
 ```
+
+买股票的例子
 
 ```typescript
 // 买股票的例子
@@ -218,12 +229,16 @@ function getStock () {
         }
     }
 }
+```
 
+```
 // es5实现
 var stock = getStock();
 var code = stock.code;
 var price = stock.price;
+```
 
+```
 // 析构表达式
 let {code, price} = getStock(); // code, price 必须与getStock()属性相同
 
@@ -236,6 +251,8 @@ console.log(codeXX); // IBM
 
 console.log(b); // 10000
 ```
+
+通过析构表达式将数组拆解成任意数量的变量
 
 ```typescript
 // 通过析构表达式将数组拆解成任意数量的变量
@@ -344,7 +361,7 @@ class Person {
     constructor(public name: string) { // 必须声明控制符
         console.log(this.name);
     }
-	
+
     eat () {
         console.log(this.name + ' eating');
     }
@@ -392,10 +409,10 @@ class Employee extends Person {
         console.log('super');
         this.code = code;
     }
-	
+
     // 新的属性、方法
     code: string;
-	
+
     work () {
         // 调用父类的方法
         super.eat();
@@ -410,8 +427,11 @@ let el = new Employee('naem', '1');
 
 参数化的类型，一般用于限制集合的内容。
 
+用来指定一个数组，只能存放指定类型的元素。
+
 ```typescript
 // 引用上面的类 Person(name) Employee(name, code)
+// 只能存放Person类型的元素
 let workers: Array<Person> = [];
     workers[0] = new Person('张三');
     workers[1] = new Employee('李四', '2');
@@ -558,6 +578,14 @@ export class AppComponent {
 }
 ```
 
+app.component.html
+
+```html
+<h1>
+  {{title}}
+</h1>
+```
+
 #### 8. 类型定义文件 (*.d.ts)
 
 类型定义文件用来帮助开发者在TypeScript中使用已有的JavaScript的工具包。如jQuery
@@ -570,7 +598,6 @@ export class AppComponent {
 /**
  * 此处省略n多代码
  */
-
 declare module "jquery" {
     export = $;
 }
@@ -582,3 +609,16 @@ declare let $: JQueryStatic;
 **代码来源**：https://github.com/DefinitelyTyped/DefinitelyTyped
 
 **安装工具**：https://github.com/typings/typings
+
+## 扩展
+
+#### # Array.filter()
+
+```
+var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+
+console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+```
