@@ -98,7 +98,7 @@ $.ajax('http://url.cn', {
 
 #### # 栗子
 
-```js
+```javascript
 new Promise(
   /* 执行器 executor */
   function (resolve, reject) {
@@ -134,7 +134,56 @@ Promise 状态一经改变，不会再变。
 
 ![Promise](./img/promise-1.jpg)
 
+#### # 分两次，顺序依次执行
 
+```javascript
+new Promise(
+   function (resolve) {
+     setTimeout(function () {
+       resolve('hello')
+     }, 2000)
+   }
+ )
+   .then(function (res) {
+     console.log(res)
+     return new Promise(function (resolve) {
+       setTimeout(function () {
+         resolve('world!')
+       }, 2000)
+     })
+   })
+   .then(function (value) {
+     console.log(value + ' world!')
+   })
+
+// 结果
+// Here we go!
+// hello
+// world! world!
+```
+
+#### # 假设一个Promise已执行完，再`.then`会怎样？
+
+```
+console.log('start ...')
+
+let promise = new Promise((resolve) => {
+  setTimeout(() => {
+    console.log('the promise fulfilled')
+    resolve('hello world')
+  }, 1000)
+})
+
+setTimeout(() => {
+  promise.then(value => {
+    console.log('after 3000: ' + value)
+  })
+}, 3000)
+// 结果：
+// start ...
+// the promise fulfilled
+// after 3000: hello world
+```
 
 ## 备注
 
