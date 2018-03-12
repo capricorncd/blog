@@ -34,7 +34,7 @@
 | Name | [Link](./C%2B%2B) |
 | :--- | :---: |
 | webpack | [[view]](./Webpack/webpack) |
-| vue-loader-webpack | [[view]](./Webpack/vue-loader-webpack) |
+| vue-loader-webpack | [[view]](./Webpack/vue-loader%2Bwebpack) |
 
 #### C/C++
 
