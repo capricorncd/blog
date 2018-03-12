@@ -626,6 +626,254 @@ Good  evening
 , everyone
 ```
 
+## Promise.reject()
+
+返回一个rejected的Promise实例
+
+* Promise.reject()不认thenable
+
+* 参见./js/example-reject.js
+
+```
+let promise = Promise.reject('something wrong')
+
+promise
+  .then(function () {
+    console.log('it\'s not ok')
+  })
+  .catch(function (msg) {
+    console.log(msg)
+    console.log('no, it\'s not ok')
+    return Promise.reject({
+      then() {
+        console.log('it vill be ok')
+      },
+      catch() {
+        console.log('not yet')
+      }
+    })
+  })
+```
+
+结果：
+
+```
+something wrong
+no, it's not ok
+```
+
+## Promise.race()
+
+类似 Promise.all(),区别在于它有任意一个完成，就算完成。
+
+* 参见./js/example-race.js
+
+```
+console.log('start ...')
+
+let p1 = new Promise(function (resolve) {
+  setTimeout(function () {
+    resolve('I\'m P1')
+  }, 10000)
+})
+
+let p2 = new Promise(function (resolve) {
+  setTimeout(function () {
+    resolve('I\'m P2')
+  }, 2000)
+})
+
+Promise.race([p1, p2])
+  .then(function (val) {
+    console.log(val)
+  })
+```
+
+结果：
+
+```
+start ...
+// 2秒后输出
+I'm P2
+// 10秒后结束进程
+```
+
+#### # 常见用法
+
+* 把异步操作和定时器放在一起
+
+* 如果定时器先触发，就认为超时，告知用户。
+
+## 应用
+
+#### # 把回调包装成Promise
+
+把回调包装成Promise最为常见。它有两个显而易见的好处：
+
+* 可读性更好
+
+* 返回的结果可以加入任何Promise队列
+
+* 参见./js/example-wrap.js
+
+```
+const fs = require('./file-system')
+
+fs.readFile('../README.md', 'utf-8')
+  .then(function (content) {
+    console.log(content)
+  })
+
+```
+
+file-system.js
+
+```
+const fs = require('fs')
+
+module.exports = {
+  readDir (path, options) {
+    return new Promise((resolve) => {
+      fs.readdir(path, options, (err, files) => {
+        if (err) {
+          throw err
+        }
+        resolve(files)
+      })
+    })
+  },
+  readFile (path, options) {
+    return new Promise((resolve) => {
+      fs.readFile(path, options, (err, content) => {
+        if (err) {
+          throw err
+        }
+        resolve(content)
+      })
+    })
+  }
+}
+```
+
+#### # 把任何异步操作包装成Promise
+
+假设需求：
+
+* 用户点击按钮，弹出确认窗体
+
+* 用户确认或取消有不同的处理
+
+* 样式问题不能使用window.confirm()
+
+* 参见./js/example-modal.js
+
+```
+// 弹出模态框
+let confirm = popupManager.confirm('你确定么？')
+confirm.promise
+  .then(() => {
+    // do confirm staff
+  })
+  .catch(() => {
+    // do cancel staff
+  })
+
+// 窗体的构造函数
+class Confirm {
+  constructor () {
+    this.promise = new Promise((resolve, reject) => {
+      this.confirmButton.onClick = resolve
+      this.cancelButton.onClick = reject
+    })
+  }
+}
+```
+
+## jQuery
+
+jQuery 已经实现了Promise
+
+jQuery 1.5版本就引入了Promise思维及功能
+
+```
+$.ajax(url, {
+  dataType: 'json'
+})
+  .then(json => {
+    // do something
+  })
+```
+
+#### # IE浏览器
+
+如果需要在IE中使用Promise， 有两个选择：
+
+* 只想实现异步队列，不需要使用Promise关键字：使用jQuery.defered即可
+
+* 需要兼容所有平台，需要使用Promise关键字：Bluebird类库，或Promise polyfill
+
+#### # Fetch API
+
+Fetch API是XMLHTTPRequest的现代化替代方案。
+
+* 相对ajax更强大，也更友好。
+
+* 直接返回一个Promise实例
+
+* 参见./js/example-fetch.js
+
+```
+fetch('some.json')
+  .then(response => {
+    return response.json()
+  })
+  .then(json => {
+    // do something with this josn
+    console.log(json)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+```
+
+## async/await
+
+ES2017新增运算符，新的语言元素
+
+* 赋予JavaScript以顺序手法编写异步脚本的能力
+
+* 既保留异步运算的无阻塞特性，还继续使用同步写法
+
+* 还能正常使用 return/try/catch
+
+#### #为什么还要学Promise
+
+* async/await 仍然需要Promise
+
+* 了解更多，请参考MDN async文档和await文档
+
+* ./js/example-await.js
+
+```
+function resolveAfter2Seconds (x) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(x)
+    }, 2000)
+  })
+}
+
+async function f1 () {
+  let x = await resolveAfter2Seconds(10)
+  console.log(x)
+}
+
+f1() // 10
+
+```
+
+![Promise async await](img/promise-async-await.png)
+
 ## 备注
 
 讲师：Meathill
