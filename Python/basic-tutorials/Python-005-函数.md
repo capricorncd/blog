@@ -257,7 +257,7 @@ def fact(n):
 
 https://github.com/zx1984
 
-腾讯课堂：python零基础入门到精通
+python零基础入门到精通
 
 https://ke.qq.com/course/206902
 

@@ -876,6 +876,10 @@ f1() // 10
 
 ## 备注
 
+笔记作者：zx1984
+
+https://github.com/zx1984
+
 讲师：Meathill
 
 视频讲解： https://www.imooc.com/learn/949
