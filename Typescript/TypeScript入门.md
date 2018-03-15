@@ -622,3 +622,9 @@ const result = words.filter(word => word.length > 6);
 console.log(result);
 // expected output: Array ["exuberant", "destruction", "present"]
 ```
+
+## 备注
+
+笔记作者：zx1984
+
+主页：https://github.com/zx1984

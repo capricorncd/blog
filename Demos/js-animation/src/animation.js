@@ -1,6 +1,6 @@
 /**
- * Created by Capricorncd 2018/1/19
- * https://github.com/capricorncd
+ * Create by zx1984
+ * https://github.com/zx1984
  */
 'use strict'
 

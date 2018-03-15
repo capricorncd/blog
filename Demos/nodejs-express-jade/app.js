@@ -1,3 +1,8 @@
+/**
+ * Create by zx1984
+ * https://github.com/zx1984
+ */
+
 var express = require('express')
 var path = require('path')
 var mongoose = require('mongoose')

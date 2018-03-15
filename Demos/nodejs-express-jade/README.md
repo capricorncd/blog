@@ -17,24 +17,25 @@
 mongo.conf
 
 ```
-#数据库路径  
-dbpath = D:\mongo\data  
+#数据库路径
+dbpath = D:\mongo\data
 
-#日志输出文件路径  
-logpath = D:\mongo\log\mongo.log  
+#日志输出文件路径
+logpath = D:\mongo\log\mongo.log
 
-#错误日志采用追加模式  
-logappend = true  
+#错误日志采用追加模式
+logappend = true
 
-#启用日志文件，默认启用  
-journal = true  
+#启用日志文件，默认启用
+journal = true
 
-#这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false  
-quiet = true  
+#这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false
+quiet = true
 
-#端口号 默认为27017  
-port = 27017 
+#端口号 默认为27017
+port = 27017
 ```
+
 **注意**
 
 1. 安装目录最好不要有空格，如'D:\Program Files\mongo'
@@ -45,8 +46,11 @@ port = 27017
 
   具体命令请见： http://www.runoob.com/mongodb/mongodb-create-database.html
 
-==== 
-by capricorncd 2017-10-26
+## 备注
+
+Create by zx1984
+
+https://github.com/zx1984
 
 
 

@@ -1,3 +1,7 @@
+/**
+ * Create by zx1984
+ * https://github.com/zx1984
+ */
 var GameAliens = function () {
 
   var q = function (selector) {

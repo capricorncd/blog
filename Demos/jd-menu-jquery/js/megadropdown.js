@@ -1,3 +1,8 @@
+/**
+ * Create by zx1984
+ * https://github.com/zx1984
+ */
+
 $(document).ready(function () {
   var sub = $('#sub')
   // 左边栏-激活的菜单

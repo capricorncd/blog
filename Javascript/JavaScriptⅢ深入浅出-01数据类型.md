@@ -137,9 +137,9 @@ new Object !== new Object // true
 
 ## 备注
 
-笔记作者： Capricorncd
+笔记作者：zx1984
 
-主页：https://github.com/capricorncd
+主页：https://github.com/zx1984
 
 原讲师：Bosn
 

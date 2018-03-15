@@ -1,5 +1,6 @@
 /**
- * Create by Carpricorncd
+ * Create by zx1984
+ * https://github.com/zx1984
  */
 var BinaryTree = function () {
 

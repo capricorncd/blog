@@ -1,6 +1,6 @@
 /**
- * Created by Capricorncd 2018/1/23
- * https://github.com/capricorncd
+ * Created by zx1984 2018/1/23
+ * https://github.com/zx1984
  */
 
 const path = require('path')

@@ -1,3 +1,8 @@
+/**
+ * Create by zx1984
+ * https://github.com/zx1984
+ */
+
 // 位运算
 function sameSign(a, b) {
   return (a ^ b) >= 0

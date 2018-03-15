@@ -2,60 +2,88 @@
 
 平时工作或学习中做的笔记。以前是写在纸上(或笔记本上)，后来发现携带和存放都是个问题，所以就用Markdown记录并放到网上，有网络的地方随时都可以查阅、温习...
 
-## 目录
+## DEMOS
 
-#### DEMOS
+#### [DEMOS](./Demos)
 
-| Name | [Link](./Demos) |
-| :--- | :---: |
-| nodejs-express-jade | [[view]](./Demos/nodejs-express-jade)  |
-| Promise | [[view]](./Demos/js-promise) |
-| indexedDB | [[view]](./Demos/indexeddb) |
-| animation | [[view]](./Demos/js-animation) |
+[nodejs-express-jade](./Demos/nodejs-express-jade)
 
-#### JavaScript
+[Promise](./Demos/js-promise)
 
-| Name | [Link](./Javascript) |
-| :--- | :---: |
-| Ajax全接触 | [[view]](./Javascript/Ajax全接触.md) |
-| JavaScriptⅠ-入门篇 | [[view]](./Javascript/JavaScriptⅠ-入门篇.md) |
-| JavaScriptⅡ-进阶篇 | [[view]](./Javascript/JavaScriptⅡ-进阶篇.md) |
-| JavaScript正则表达式RegExp | [[view]](./Javascript/JavaScript正则表达式RegExp.md) |
-| JavaScript二叉树算法 | [[view]](./Javascript/JavaScript二叉树算法.md) |
+[indexedDB](./Demos/indexeddb)
 
-#### TypeScript
+[animation](./Demos/js-animation)
 
-| Name | [Link](./Javascript) |
-| :--- | :---: |
-| TypeScript入门 | [[view]](./Typescript/TypeScript入门.md) |
+## JavaScript
 
-#### webpack
+#### [JavaScript](./Javascript)
 
-| Name | [Link](./C%2B%2B) |
-| :--- | :---: |
-| webpack | [[view]](./Webpack/webpack) |
-| vue-loader-webpack | [[view]](./Webpack/vue-loader%2Bwebpack) |
+[Ajax全接触](./Javascript/Ajax全接触.md)
 
-#### C/C++
+[JavaScriptⅠ-入门篇](./Javascript/JavaScriptⅠ-入门篇.md)
 
-| Name | [Link](./C%2B%2B) |
-| :--- | :---: |
-| C语言基础 | [[view]](./C++/C语言基础.md) |
-| 数据结构-栈(Stack) | [[view]](./C++/数据结构-栈(Stack).md) |
+[JavaScriptⅡ-进阶篇](./Javascript/JavaScriptⅡ-进阶篇.md)
 
-#### Python
+[JavaScript正则表达式RegExp](./Javascript/JavaScript正则表达式RegExp.md)
 
-| Name | [Link](./Python/basic-tutorials) |
-| :--- | :---: |
-| 001-简介和安装 | [[view]](./Python/basic-tutorials/Python-001-简介和安装.md) |
-| 002-0-变量和数据类型 | [[view]](./Python/basic-tutorials/Python-002-0-变量和数据类型.md) |
-| 002-a-字符串 | [[view]](./Python/basic-tutorials/Python-002-a-字符串.md) |
-| 002-b-整数和浮点数 | [[view]](./Python/basic-tutorials/Python-002-b-整数和浮点数.md) |
-| 002-c-布尔类型 | [[view]](./Python/basic-tutorials/Python-002-c-布尔类型.md) |
-| 002-d-list | [[view]](./Python/basic-tutorials/Python-002-d-list.md) |
-| 002-e-tuple | [[view]](./Python/basic-tutorials/Python-002-e-tuple.md) |
-| 002-数据类型（扩展） | [[view]](./Python/basic-tutorials/Python-002-数据类型（扩展）.md) |
-| 003-条件判断和循环 | [[view]](./Python/basic-tutorials/Python-003-条件判断和循环.md) |
-| 004-Dict和Set类型(1) | [[view]](./Python/basic-tutorials/Python-004-Dict和Set类型(1).md) |
-| 004-Dict和Set类型(2) | [[view]](./Python/basic-tutorials/Python-004-Dict和Set类型(2).md) |
-| 005-函数 | [[view]](./Python/basic-tutorials/Python-005-函数.md) |
+[JavaScript二叉树算法](./Javascript/JavaScript二叉树算法.md)
+
+## TypeScript
+
+[TypeScript](./Javascript)
+
+[TypeScript入门](./Typescript/TypeScript入门.md)
+
+## webpack
+
+[webpack](./C%2B%2B)
+
+[webpack](./Webpack/webpack)
+
+[vue-loader-webpack](./Webpack/vue-loader%2Bwebpack)
+
+## C/C++
+
+#### # [C/C++](./C%2B%2B)
+
+[C语言基础](./C++/C语言基础.md)
+
+[数据结构-栈(Stack)](./C++/数据结构-栈(Stack).md)
+
+#### # Basical Computor
+
+[二进制Binary](./BasicalComputor/binary.md)
+
+## Python
+
+#### # [Python入门](./Python/basic-tutorials)
+
+[001-简介和安装](./Python/basic-tutorials/Python-001-简介和安装.md)
+
+[002-1-变量和数据类型](./Python/basic-tutorials/Python-002-0-变量和数据类型.md)
+
+[002-2-字符串](./Python/basic-tutorials/Python-002-a-字符串.md)
+
+[002-3-整数和浮点数](./Python/basic-tutorials/Python-002-b-整数和浮点数.md)
+
+[002-4-布尔类型](./Python/basic-tutorials/Python-002-c-布尔类型.md)
+
+[002-5-list](./Python/basic-tutorials/Python-002-d-list.md)
+
+[002-6-tuple](./Python/basic-tutorials/Python-002-e-tuple.md)
+
+[002-数据类型（扩展）](./Python/basic-tutorials/Python-002-数据类型（扩展）.md)
+
+[003-条件判断和循环](./Python/basic-tutorials/Python-003-条件判断和循环.md)
+
+[004-Dict和Set类型(1)](./Python/basic-tutorials/Python-004-Dict和Set类型(1).md)
+
+[004-Dict和Set类型(2)](./Python/basic-tutorials/Python-004-Dict和Set类型(2).md)
+
+[005-函数](./Python/basic-tutorials/Python-005-函数.md)
+
+## 备注
+
+笔记作者：zx1984
+
+主页：https://github.com/zx1984
