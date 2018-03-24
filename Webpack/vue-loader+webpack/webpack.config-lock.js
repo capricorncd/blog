@@ -21,10 +21,6 @@ let config = {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
-      {
-        test: /\.jsx/,
-        loader: 'babel-loader'
-      },
       // {
       //   test: /\.js$/,
       //   exclude: /node_modules/,
@@ -63,12 +59,9 @@ let config = {
           'style-loader',
           'css-loader',
           {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true
-            }
-          },
-          'stylus-loader'
+            loader: 'stylus-loader'
+            // options: {}
+          }
         ]
       },
       // {

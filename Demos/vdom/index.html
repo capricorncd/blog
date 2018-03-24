@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="./vdom.js"></script>
+<script>
+  var vnodeData = {
+    tag: 'ul',
+    attrs: {
+      id: 'list'
+    },
+    children: [
+      {
+        tag: 'li',
+        attrs: {
+          class: 'item',
+          style: 'color: #f00'
+        },
+        children: ['Item 0001']
+      },
+      {
+        tag: 'li',
+        attrs: {
+          class: 'item'
+        },
+        children: ['Item 0002']
+      }
+    ]
+  }
+  var newData = {
+    tag: 'ul',
+    attrs: {
+      id: 'list'
+    },
+    children: [
+      {
+        tag: 'li',
+        attrs: {
+          class: 'item'
+        },
+        children: ['Item 0001']
+      },
+      {
+        tag: 'li',
+        attrs: {
+          class: 'item'
+        },
+        children: ['Item 0002']
+      },
+      {
+        tag: 'li',
+        attrs: {
+          class: 'item',
+          style: 'color: #f00; font-size: 24px'
+        },
+        children: ['Item 0003']
+      }
+    ]
+  }
+
+  var vdom = new Vdom()
+  vdom.patch('body', vnodeData)
+  // 3秒后更新
+  setTimeout(function () {
+    vdom.patch(vnodeData, newData)
+  }, 3000)
+</script>
+</body>
+</html>
