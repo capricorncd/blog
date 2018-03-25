@@ -77,6 +77,8 @@ Selection Sort : 0.19882 s
 
 思路：内层循环每次不进行位置交换。先将当前内层循环元素拷贝一个副本，然后一一与前面元素对比，对比完成后再交换位置。
 
+![插入排序优化Insetion Sort Optimize](img/004/insertion-sort-optimize.gif)
+
 ```c++
 void insertionSort(T arr[], int n) {
   for (int i = 1; i < n; i++) {
