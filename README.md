@@ -65,6 +65,8 @@
 
 * [004-选择排序SelectionSort](./AlgorithmsAndDataStructures/004-选择排序SelectionSort.md)
 
+* [005-插入排序InsertionSort](./AlgorithmsAndDataStructures/005-插入排序InsertionSort.md)
+
 ## Python
 
 #### # [Python入门](./Python/basic-tutorials)
