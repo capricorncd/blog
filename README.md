@@ -67,6 +67,10 @@
 
 * [005-插入排序InsertionSort](./AlgorithmsAndDataStructures/005-插入排序InsertionSort.md)
 
+* [006-归并排序MergeSort](./AlgorithmsAndDataStructures/006-归并排序MergeSort.md)
+
+* [007-快速排序QuickSort](./AlgorithmsAndDataStructures/007-快速排序QuickSort.md)
+
 ## Python
 
 #### # [Python入门](./Python/basic-tutorials)
@@ -95,8 +99,8 @@
 
 * [005-函数](./Python/basic-tutorials/Python-005-函数.md)
 
-## 备注
+## Copyright and license
 
-笔记作者：zx1984
+https://github.com/zx1984
 
-主页：https://github.com/zx1984
+Code and documentation copyright 2018. zx1984. Code released under the MIT License.
