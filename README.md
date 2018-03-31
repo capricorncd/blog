@@ -6,13 +6,16 @@
 
 #### [DEMOS](./Demos)
 
-[nodejs-express-jade](./Demos/nodejs-express-jade)
+* [animation](./Demos/js-animation)
 
-[Promise](./Demos/js-promise)
+* [drag-and-upload](./Demos/drag-and-upload)
 
-[indexedDB](./Demos/indexeddb)
+* [indexedDB](./Demos/indexeddb)
 
-[animation](./Demos/js-animation)
+* [nodejs-express-jade](./Demos/nodejs-express-jade)
+
+* [Promise](./Demos/js-promise)
+
 
 ## JavaScript
 
@@ -28,11 +31,17 @@
 
 * [JavaScript二叉树算法](./Javascript/JavaScript二叉树算法.md)
 
+#### # Other
+
+* [JavaScript历史](./Javascript/JavaScript/Lesson001.md)
+
+
 ## TypeScript
 
 #### # [TypeScript](./Javascript)
 
 * [TypeScript入门](./Typescript/TypeScript入门.md)
+
 
 ## webpack
 
@@ -70,6 +79,7 @@
 * [006-归并排序MergeSort](./AlgorithmsAndDataStructures/006-归并排序MergeSort.md)
 
 * [007-快速排序QuickSort](./AlgorithmsAndDataStructures/007-快速排序QuickSort.md)
+
 
 ## Python
 
