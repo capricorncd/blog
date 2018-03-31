@@ -1,5 +1,7 @@
 # Drag image and upload
 
+![Preview](preview.png)
+
 ondrag 事件在元素或者选取的文本被拖动时触发。
 
 拖放是 HTML5 中非常常见的功能。 更多信息可以查看我们 HTML 教程中的 HTML5 拖放。
