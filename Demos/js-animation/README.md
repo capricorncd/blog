@@ -91,6 +91,10 @@ demo.start(80)
 
 ## 备注
 
+原讲师：ustbhuangyi
+
+视频地址：https://www.imooc.com/learn/659
+
 Create by zx1984
 
 https://github.com/zx1984
