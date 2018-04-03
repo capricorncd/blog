@@ -33,7 +33,9 @@
 
 #### # Other
 
-* [JavaScript历史](./Javascript/JavaScript/Lesson001.md)
+* [JavaScript发展史](./Javascript/JavaScript/Lesson001.md)
+
+* [JavaScript入门、引入、变量、值类型、运算符](./Javascript/JavaScript/Lesson002.md)
 
 
 ## TypeScript
