@@ -476,7 +476,7 @@ https://webpack.js.org/concepts/loaders/
 
   ```json
   {
-    "bable": {
+    "babel": {
       "presets": ["env"]
     },
   }
