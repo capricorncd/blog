@@ -48,10 +48,10 @@ const $picView = $('.pic-view')
 // 鼠标是否按下
 let isMouseDown = false
 
-// 鼠标移动距离
+// 鼠标按下位置
 let mouseDownX = 0
 let mouseDownY = 0
-
+// 鼠标移动距离
 let mouseMoveX = 0
 let mouseMoveY = 0
 
@@ -251,7 +251,7 @@ function handleMoveClip () {
   resieClipMaskSize()
   handlePreview()
 }
-// 判断裁剪框是否在容器外
+// 获取裁剪框最大移动距离
 function getMoveMax () {
   return {
     x: CLIP_MAX_SIZE.width - clipBeforeWidth - clipBeforeLeft,
