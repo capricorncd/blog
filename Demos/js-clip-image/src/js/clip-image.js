@@ -303,42 +303,42 @@ setTimeout(function () {
 }, 300)
 
 
-const $box = $('#Box')
-const $span = $('#Span')
-
-log($box.__proto__)
-
-window.box = {
-  clientWidth: $box.clientWidth,
-  clientHeight: $box.clientHeight,
-  clientTop: $box.clientTop,
-  clientLeft: $box.clientLeft,
-  offsetWidth: $box.offsetWidth,
-  offsetHeight: $box.offsetHeight,
-  offsetTop: $box.offsetTop,
-  offsetLeft: $box.offsetLeft,
-  offsetParent: $box.offsetParent,
-  scrollWidth: $box.scrollWidth,
-  scrollHeight: $box.scrollHeight,
-  scrollTop: $box.scrollTop,
-  scrollLeft: $box.scrollLeft,
-  parent: $box.parentNode
-}
-
-window.span = {
-  clientWidth: $span.clientWidth,
-  clientHeight: $span.clientHeight,
-  clientTop: $span.clientTop,
-  clientLeft: $span.clientLeft,
-  offsetWidth: $span.offsetWidth,
-  offsetHeight: $span.offsetHeight,
-  offsetTop: $span.offsetTop,
-  offsetLeft: $span.offsetLeft,
-  offsetParent: $span.offsetParent,
-  scrollWidth: $span.scrollWidth,
-  scrollHeight: $span.scrollHeight,
-  scrollTop: $span.scrollTop,
-  scrollLeft: $span.scrollLeft,
-  parent: $span.parentNode
-}
-log(box, span)
+// const $box = $('#Box')
+// const $span = $('#Span')
+//
+// log($box.__proto__)
+//
+// window.box = {
+//   clientWidth: $box.clientWidth,
+//   clientHeight: $box.clientHeight,
+//   clientTop: $box.clientTop,
+//   clientLeft: $box.clientLeft,
+//   offsetWidth: $box.offsetWidth,
+//   offsetHeight: $box.offsetHeight,
+//   offsetTop: $box.offsetTop,
+//   offsetLeft: $box.offsetLeft,
+//   offsetParent: $box.offsetParent,
+//   scrollWidth: $box.scrollWidth,
+//   scrollHeight: $box.scrollHeight,
+//   scrollTop: $box.scrollTop,
+//   scrollLeft: $box.scrollLeft,
+//   parent: $box.parentNode
+// }
+//
+// window.span = {
+//   clientWidth: $span.clientWidth,
+//   clientHeight: $span.clientHeight,
+//   clientTop: $span.clientTop,
+//   clientLeft: $span.clientLeft,
+//   offsetWidth: $span.offsetWidth,
+//   offsetHeight: $span.offsetHeight,
+//   offsetTop: $span.offsetTop,
+//   offsetLeft: $span.offsetLeft,
+//   offsetParent: $span.offsetParent,
+//   scrollWidth: $span.scrollWidth,
+//   scrollHeight: $span.scrollHeight,
+//   scrollTop: $span.scrollTop,
+//   scrollLeft: $span.scrollLeft,
+//   parent: $span.parentNode
+// }
+// log(box, span)
