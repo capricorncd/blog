@@ -8,9 +8,15 @@
 
 * [animation](./Demos/js-animation)
 
-* [drag-and-upload](./Demos/drag-and-upload)
+* [js二叉树小蜜蜂游戏](./Demos/games/aliens)
 
-* [indexedDB](./Demos/indexeddb)
+* [js图片文件拖拽上传](./Demos/drag-and-upload)
+
+* [js图片裁剪效果实现](./Demos/js-clip-image)
+
+* [js电商网站无延时菜单实现](./Demos/jd-menu-jquery)
+
+* [indexedDB数据库操作](./Demos/indexeddb)
 
 * [nodejs-express-jade](./Demos/nodejs-express-jade)
 
