@@ -1,6 +1,8 @@
 node_modules/
 .DS_Store
 npm-debug.log
+learning-route.md
+
 .idea/
 .project
-resource/
+__psd/
