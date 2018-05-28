@@ -1,239 +1,211 @@
 # Hybrid
 
-## # Hybrid 应用场景
+## Hybrid是什么，为什么要用Hybrid
 
-* 选型问题
+#### Hybrid
 
-Native App优缺点
-Hybrid App优缺点
+Hybrid “混合”，即前端和客户端的混合开发
 
-|-|Native|Html5|Hybrid|
-|--:|:--:|:--:|:--:|
-|图形渲染|本地API渲染|Html、Canvas、CSS|混合|
-|性能|快|慢|慢|
-|原生界面|原生|模仿|模仿|
-|发布|App Store|Web|App Store|
+需要前端开发人员和客户端开发人员配合完成
 
-## # Native与H5的职责
+某些环节也可能涉及到server端
 
-* 界限问题
+#### 存在价值
 
-H5做业务
+可以快速迭代更新，无需app审核
 
-Native提供基础能力
+体验流畅（某些效果和NA的体验基本类似）
 
-Native做好必须Native做的业务
+## webview
 
-![Native与H5的职责](img/01-native-h5-duty.png)
+是app中的一个组件（app可以有webview，也可以没有）
 
-## # Hybrid的发展
+用于加载H5页面，即一个小型的浏览器内核
 
-React native, Weex
+## file协议
 
-## # H5与Native通信
+其实在一开始接触html开发时，就已经使用了file协议
 
-* App版本标志
+只不过你当没有“协议” “标准”等这些概念
 
-User Agent: haybrid_xxx_1.0.0
+再次强调“协议” “标准”的重要性
 
-User Agent: wechatdevtools/0.7.0 MicroMessenger/6.3.9
+#### 与http(s)区别
 
-* JavaScript Core
+file协议：本地文件，快
 
-![Native与H5的职责](img/02-js-core.png)
+http(s)协议：网络加载，相对慢
 
-当两种技术都能实现某一功能时，尽量选择比较成熟的那种
+## 具体实现
 
-* URL Schema
+不是所有场景都适合使用hybrid
 
-![URL Schema](img/03-url-schema.png)
+使用NA：体验要求极致，变化不频繁（如头条的首页）
 
-交换模型
+使用hybrid：体验要求高，变化频繁（如头条的新闻详情页）
 
-![交换模型](img/04-interactive-model.png)
+使用H5：体验不要求，不常用（如举报、反馈等页面）
 
-```javascript
-// JavaScriptCore == JS Bridge
-// URL Schema
+* 前端做好静态页面（html js css），将文件交给客户端
 
-const NativeBridge = {};
+* 客户端拿到静态文件，以文件形式存储在app中
 
-NativeBridge.getAddress = function (callback) {
-  // bridge在这个函数体里面有H5与Native通信的方式，抹平差异
-  requestHybird({
-    tagname: 'getAddressList',
-    callback: function (data) {
-      callback(data);
-    }
-  })
-  // xmq://getAddressList?a=22&b=33
-}
+* 客户端在一个webview中
+
+* 使用file协议加载静态页面
+
+![具体实现](img/01.jpg)
+
+## 更新上线流程
+
+![更新上线流程](img/03.jpg)
+
+#### 思考
+
+要替换每个客户端的静态文件，只能客户端来做（客户端是我们自己开发的）
+
+客户端去server下载最新的静态文件
+
+web开发维护server的静态文件
+
+#### 完整流程
+
+![完整流程](img/04.jpg)
+
+分版本，有版本号，如201805290018
+
+将静态文件压缩成zip包，上传到服务器
+
+客户端每次启动，都去服务器端检查版本号
+
+如果服务端版本号大于客户端，则需下载更新zip包
+
+下载完成解压，覆盖（删除）本地文件
+
+## hybrid和h5区别
+
+#### 优点
+
+体验更好，更NA体验基本一致
+
+可以快速迭代，无需app审核【关键】
+
+#### 缺点
+
+开发成本高。联调、测试、查bug都比较麻烦
+
+运维成本高。（参考之前的更新上线流程）
+
+#### 适用的场景
+
+hybrid：产品的稳定功能，体验要求高，迭代频繁；适合产品型
+
+h5：单次的运营活动（如xxx红包），或补常用功能；适合运营型
+
+## 前端和客户端通信
+
+#### JS和客户端通信的基本形式
+
+![JS和客户端通信的基本形式](img/05.jpg)
+
+JS访问客户端能力，传递参数和回调函数
+
+客户端通过回调函数返回内容
+
+#### schema协议简介和使用
+
+之前介绍了http(s)和file协议
+
+schema协议 —— 前端和客户端通讯的约定
+
+```
+// 扫一扫
+weixin://dl/scan
+// 朋友圈
+weixin://dl/moments
+// ...
 ```
 
-* 源码实现分析
-
 ```javascript
-// 处理参数
-let _getHybridUrl = function (params) {
-  let k
-  let paramStr = ''
-  let url = 'hybrid://'
-  let flag = '?'
-  // 时间戳，防止url不起效
-  url += params.tagname
-  if (params.callback) {
-    flag = '&'
-    url += '?callback=' + params.callback
-    // delete params.callback
-  }
-  let param = params.param
-  if (param) {
-    paramStr = typeof param === 'object' ? JSON.stringify(param) : ''
-    url = url + flag + 'param=' + encodeURIComponent(paramStr)
-  }
-  return url
-}
+let iframe = document.createElement('iframe')
 
-let bridgePostMsg = function (params) {
-  let url = _getHybridUrl(params)
-  // 兼容ios6
-  let ifr = $(`<iframe style="display: none" src="${url}"></iframe>`)
-  console.log(`${params.tagname}-hybrid请求发出-${+new Date()}+url:`)
-  if ($.os.android) {
-    // Android情况协议发的太快会有问题
-    setTimeout(_ => {
-      $('body').append(ifr)
-    })
-  } else {
-    $('body').append(ifr)
-  }
+iframe.style.display = 'none'
+iframe.src = 'weixin://dl/scan'
 
-  // 这样会阻断第二次请求
-  // window.location = url
-
-  setTimeout(_ => {
-    ifr.remove()
-    ifr = null
-  })
-}
-
-// h5与Native基本交互
-let requestHybrid = function (params) {
-  if (!params.tagname) alert('必须包含tagname')
-  // 生成唯一执行函数，执行后销毁
-  let tt = +new Date() + '_' + _.uniqueId() + '_'
-  // 生成一个唯一的字符串
-  let t = 'hybrid_' + params.tagname + '_' + tt
-  let tmpFn
-  // 处理有回调的情况
-  if (params.callback) {
-    tmpFn = params.callback
-    params.callback = t
-    window.Hybrid[t] = function (data) {
-      tmpFn(data)
-      // delete window.Hybrid[t]
-    }
-  }
-  // 解析callback，生成唯一的callbackid
-  // 将一个函数和一个字符串映射起来
-  // callbackid: function () {}
-  bridgePostMsg(params)
-}
-
-// hybrid://getAddressList?callback=id
-requestHybrid({
-  tagname: 'getAddressList',
-  param: {},
-  callback: function (data) {
-    // ...
-  }
+let body = document.body || document.getElementsByName('body')[0]
+body.appendChild(iframe)
+setTimeout(_ => {
+  body.removeChild(iframe)
+  iframe = null
 })
 ```
 
-## # 思维拓展
+#### schema使用的封装
 
-* 什么是收口
+```javascript
+// 实现
+(function () {
 
-Ajax请求收口
+  // 调用schema的封装
+  function _invoke (action, data, callback) {
+    // 拼装schema协议
+    let schema = 'myapp://utils/' + action
+    // 拼接参数
+    schema += '?'
+    for (let key in data) {
+      if (data.hasOwnProperty(key)) {
+        schema += `&${key}=${data[key]}`
+      }
+    }
+    // 处理callback
+    let callbackName = ''
+    if (typeof callback === 'string') {
+      callbackName = callback
+    } else {
+      callbackName = action + Date.now()
+      window[callbackName] = callback
+    }
 
-## # Hybrid核心交互
+    schema += `callback=${callbackName}`
 
-* 跳转
+    // 触发
+    let iframe = document.createElement('iframe')
+    iframe.style.display = 'none'
+    iframe.src = schema
+    let body = document.body || document.getElementsByName('body')[0]
+    body.appendChild(iframe)
+    setTimeout(_ => {
+      body.removeChild(iframe)
+      iframe = null
+    })
+  }
 
-forward
+  // 暴露到全局
+  window.invoke = {
+    share (data, callback) {
+      _invoke('share', data, callback)
+    },
+    login (data, callback) {
+      _invoke('login', data, callback)
+    },
+    scan (data, callback) {
+      _invoke('scan', data, callback)
+    }
+  }
+}(window))
+```
 
-动画
+#### 内置上线
 
-* 全局化
+将以上封装的代码打包，为invoke.js，内置到客户端
 
-back实现
+客户端每次启动webview，都默认执行invoke.js
 
-History乱了
+本地加载，免去网络加载的时间，更快
 
-Native Path化
+本地加载没有网络请求，黑客看不到schema协议，更安全
 
-* 思考-入口的设计
 
-鉴权的矛盾
 
-体系化
 
-## # 账号体系
 
-* 请求鉴权怎么做
-
-前后分离
-
-Webview中的鉴权
-
-* 登录的设计-公共业务
-
-![登录的设计-公共业务](img/05-common.png)
-
-## # Native能力的设计
-
-* Header组件的设计
-
-H5中的header组件
-
-Native中的header组件
-
-* Webview的生命周期
-
-onwebviewshow
-
-onwebviewhide
-
-* 分享
-
-NativeUI
-
-独立API
-
-## # 离线更新
-
-![离线更新](img/06-offline-update.png)
-
-* 增量问题
-
-App增大的取舍
-
-## # 做一个Hybrid项目
-
-* 如何落地
-
-共赢、调试、文档
-
-## # 总结
-
-一套代码三端运行
-
-H5效率高的伪命题
-
-H5体验差的错误认识
-
-技术体系化的作用
-
-http://www.cnblogs.com/yexiaochai
-
-https://github.com/yexiaochai/Hybrid
