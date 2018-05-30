@@ -181,7 +181,98 @@ console.log('server listening on ' + PORT)
 
 浏览器是最常用的http client（客服端）
 
+* curl 工具
+
 ```
 // 通过git bash请求网页
 curl zx1984.cn
+curl -v www.baidu.com
 ```
+
+## 跨域
+
+#### CORS预请求
+
+* 允许的方法：GET、HEAD、POST
+
+* 允许Content-Type
+
+  text/plain
+
+  multipart/form-data
+
+  application/x-www-form-urlencoded
+
+* 其他限制
+
+请求头限制
+
+https://fetch.spec.whatwg.org/
+
+XMLHTTPRequestUpload对象均没有注册任何事件监听器
+
+请求中没有使用ReadableStream对象
+
+```javascript
+const http = require('http')
+const PORT = 8000
+http.createServer((req, res) => {
+  console.log('request come', req.url)
+  // 允许跨域设置
+  res.writeHead(200, {
+    'Access-Control-Allow-Origin': '127.0.0.1:8001',
+    'Access-Control-Allow-Headers': 'X-Test-Cors',
+    'Access-Control-Allow-Methods': 'POST, PUT, DELETE',
+    // 设置的时间内，不用再发起预请求来验证
+    'Access-Control-Max-Age': '1001'
+  })
+  res.end('this is response message!')
+}).listen(PORT)
+```
+
+## 缓存Cache-Control
+
+#### 可缓存性
+
+public http请求返回数据过程中，经过的任何地方（如代理服务器，发出请求的客户端浏览器等）都可以缓存该数据，下次访问时可以直接读取缓存数据，不需要再到域名服务器去拿数据。
+
+private 只有发起请求的浏览器才能缓存
+
+no-cache 任何一个节点都不可以进行缓存
+
+#### 到期
+
+* max-age=<seconds>
+
+到期时间，浏览器
+
+* s-maxage=<seconds>
+
+代理服务器读取时间，专门为代理服务器设置的
+
+* max-stale=<seconds>
+
+即使缓存已过期，但在max-stale设置的时间内，仍然可以使用缓存的内容。
+
+#### 重新验证
+
+* must-revalidate
+
+max-age时间过期，就必须去原服务端获取数据，来验证本地数据是否已过期
+
+* proxy-revalidate
+
+该设置到期后，代理服务器必须重新去原服务器拉取数据，更新缓存
+
+#### 其他
+
+no-store
+
+永远都要取服务端拿最新的数据，浏览器和服务器都不能缓存。
+
+no-transform 告诉代理服务器不要随意改变返回的内容，比如压缩等
+
+> 以上是声明的内容，但不一定都会被遵守。有些代理服务器就不会遵守。
+
+
+
