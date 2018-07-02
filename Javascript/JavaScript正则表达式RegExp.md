@@ -206,8 +206,8 @@ JavaScript不支持后顾。
 ```
 
 ```javascript
-'a2*34v8' .repalce(/\w(?=\d)/g, 'X'); // X2*X4X8
-'a2*34vv' .repalce(/\w(?!\d)/g, 'X'); // aX*3XXX
+'a2*34v8'.replace(/\w(?=\d)/g, 'X'); // X2*X4X8
+'a2*34vv'.replace(/\w(?!\d)/g, 'X'); // aX*3XXX
 ```
 
 ## 六、对象属性
@@ -242,7 +242,7 @@ mulStr.replace(/^@\d/gm, 'X');
 
 #### 1、test()
 
-test() 方法用于检测一个字符串是否匹配某个模式。
+test(str) 方法用于检测一个字符串是否匹配某个模式。
 
 ```javascript
 RegExpObject.test(string);
