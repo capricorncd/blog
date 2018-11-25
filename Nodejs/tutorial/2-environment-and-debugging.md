@@ -42,5 +42,35 @@ module.exports.multipleFnc = multiple
 
 * 一旦出现某个模块被循环加载，就只输出已执行的部分，还未执行的部分不会输出。
 
-### fs
+## module & module.exports
 
+```javascript
+(
+  function (exports, require, module, __filename, __dirname) {
+    // user's code
+  }
+)
+
+// exports = module.exports
+
+// exports 只能扩张属性exports.method or exports.prop
+// 不能 exports = {}
+// 不能改变exports的指向
+// exports = {
+//   a: 1,
+//   b: 2,
+//   func: function () {
+//     // ...
+//   }
+// }
+
+// 只可以 module.exports = {}
+```
+
+## 调试
+
+https://nodejs.org/en/docs/guides/debugging-getting-started/
+
+Inspector
+
+VS code(IDE)
