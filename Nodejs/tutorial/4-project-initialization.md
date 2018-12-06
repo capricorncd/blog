@@ -1,6 +1,8 @@
 Static Resource Server
 
-## Git
+## 项目初始化
+
+### # Git
 
 https://git-scm.com
 
@@ -56,17 +58,58 @@ CHANGELOG (and its variants)
 LICENSE / LICENCE
 ```
 
-## 
-
 ### # IDE .editorconfig
 
 https://editorconfig.org
-
-##
 
 ### # 语法检测 ESlint
 
 https://cn.eslint.org
 
 https://eslint.org
+
+* .eslintrc.js
+
+* .eslintignore
+
+### # package.json
+
+https://docs.npmjs.com/files/package.json
+
+## 静态资源服务器
+
+https://nodejs.org/dist/latest-v11.x/docs/api/http.html
+
+```
+// https://nodejs.org/en/about/
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+### # handlebars
+
+http://handlebarsjs.com
+
+```
+<div class="entry">
+  <h1>{{title}}</h1>
+  <div class="body">
+    {{body}}
+  </div>
+</div>
+```
+
+
 

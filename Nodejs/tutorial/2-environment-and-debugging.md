@@ -67,10 +67,153 @@ module.exports.multipleFnc = multiple
 // 只可以 module.exports = {}
 ```
 
-## 调试
+## # fs
+
+https://nodejs.org/api/fs.html
+
+```
+const fs = require('fs')
+
+fs.readFile('./01_run.js', (err, buf) => {
+  if (err) {
+    console.log(err)
+    return
+  }
+  console.log(buf)
+  console.log(buf.toString())
+})
+
+fs.readFile('./1-NodeJS.md', (err, data) => {
+  if (err) throw err;
+  console.log(data.toString())
+})
+
+```
+
+#### chalk
+
+```
+npm i chalk -D
+```
+
+带颜色的日志输出模块
+
+```
+console.log(chalk.red('This is red text!'))
+```
+
+#### root
+
+全局安装模块的目录
+
+```
+npm root -g
+```
+
+## exports
+
+```
+(
+  function (exports, require, module, __filename, __dirname) {
+    // code
+  }
+)
+
+// exports = module.exports
+
+// exports 只能扩张属性exports.method or exports.prop
+// 不能 exports = {}
+// 不能改变exports的指向
+// exports = {
+//   a: 1,
+//   b: 2,
+//   func: function () {
+//     // ...
+//   }
+// }
+
+// 只可以 module.exports = {}
+
+```
+
+## global
+
+CommonJS
+
+Buffer、process、console
+
+timer
+
+### # global
+
+```
+const a = 1000
+
+global.b = 2000
+
+module.exports.a = a
+```
+
+### # process
+
+```
+/*
+  argv // node ./04_process.js a=1 b=2 c=3 ...
+  argv0 // argv0: a=1
+  execArgv // node --inspect 04_process.js, execArgv: ['--inspect']
+  execPath //
+*/
+
+/**
+ * process
+ */
+const { argv, argv0, execArgv, execPath } = process
+
+argv.forEach(item => {
+  console.log(item)
+})
+
+console.log(argv0)
+console.log(execArgv)
+console.log(execPath)
+
+/**
+ * env 环境
+ */
+const { env } = process
+
+console.log(env)
+```
+
+#### cwd() 打印出当前process执行的路径
+
+```
+process.cwd()
+```
+
+等同于shall `pwd`命令
+
+#### setImmediate() // last run
+
+```
+process.nextTick(_ => {
+  console.log('nextTick')
+})
+
+setTimeout(_ => {
+  console.log('setTimeout')
+})
+
+setImmediate(_ => {
+  console.log('setImmediate')
+})
+```
+
+## # 调试
 
 https://nodejs.org/en/docs/guides/debugging-getting-started/
 
 Inspector
 
 VS code(IDE)
+
