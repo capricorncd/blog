@@ -5,6 +5,8 @@
  */
 
 function testFunc (ctx) {
+  // 测试session-redis
+  ctx.session.count++
   console.log('testFunc: ' + ctx.path)
 }
 

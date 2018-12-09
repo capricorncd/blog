@@ -1,5 +1,7 @@
 const Person = require('../dbs/models/person')
+const Redis = require('koa-redis')
 
+const Store = new Redis().client
 
 module.exports = (router) => {
   router.get('/user', async (ctx, next) => {
@@ -75,6 +77,15 @@ module.exports = (router) => {
       }
     } catch (err) {
       ctx.body = err
+    }
+  })
+
+  // 直接操作redis
+  router.get('/redis', async ctx => {
+    const st = await Store.hset('redis', 'name', Math.random())
+    ctx.body = {
+      code: 0,
+      st
     }
   })
 }

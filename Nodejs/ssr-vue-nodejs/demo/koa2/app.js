@@ -20,6 +20,10 @@ const routesUser = require('./routes/users')
 const mongoose = require('mongoose')
 const dbsCfg = require('./dbs/config')
 
+// session & redis
+const session = require('koa-generic-session')
+const Redis = require('koa-redis')
+
 const app = new Koa()
 const router = new Router()
 
@@ -31,6 +35,19 @@ const port = process.env.PORT || config.port
 
 // error handler
 onerror(app)
+
+// session
+app.keys = [
+  'keys',
+  'keyss'
+]
+// 与redis建立链接
+app.use(session({
+  key: 'test',
+  prefix: 'pre',
+  // 无该配置项，session将直接使用内存存储
+  store: new Redis()
+}))
 
 // middlewares
 app.use(bodyparser())
