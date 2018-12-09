@@ -110,3 +110,10 @@ https://zh.nuxtjs.org/guide/vuex-store
 * SSR实现的原理
 
 * Vue SSR的渲染流程
+
+### # npx create-nuxt-app
+
+```
+npx create-nuxt-app project-name
+```
+
