@@ -95,9 +95,9 @@ demo.start(80)
 
 视频地址：https://www.imooc.com/learn/659
 
-Create by zx1984
+Create by Capricorncd
 
-https://github.com/zx1984
+https://github.com/capricorncd
 
 
 

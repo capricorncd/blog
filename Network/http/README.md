@@ -185,7 +185,7 @@ console.log('server listening on ' + PORT)
 
 ```
 // 通过git bash请求网页
-curl zx1984.cn
+curl capricorncd.cn
 curl -v www.baidu.com
 ```
 

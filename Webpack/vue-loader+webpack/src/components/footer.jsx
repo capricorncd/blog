@@ -3,7 +3,7 @@ import '../style/footer.styl'
 export default {
   data () {
     return {
-      author: 'zx1984'
+      author: 'capricorncd'
     }
   },
   render () {

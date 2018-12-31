@@ -16,7 +16,7 @@ module.exports = {
     path: __dirname + '/dist',
     filename: 'js/[name].[chunkhash].js',
     // 上线配置，生成的js文件路径前缀
-    publicPath: 'http://zx1984.cn/'
+    publicPath: 'http://capricorncd.cn/'
   },
   plugins: [
     new htmlWebpackPlugin({

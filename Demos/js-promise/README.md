@@ -876,9 +876,9 @@ f1() // 10
 
 ## 备注
 
-笔记作者：zx1984
+笔记作者：Capricorncd
 
-https://github.com/zx1984
+https://github.com/capricorncd
 
 讲师：Meathill
 

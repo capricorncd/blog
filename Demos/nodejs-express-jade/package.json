@@ -12,7 +12,7 @@
     "mongoose",
     "movie"
   ],
-  "author": "capricorncd",
+  "author": "Capricorncd",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",

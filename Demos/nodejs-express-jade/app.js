@@ -1,6 +1,6 @@
 /**
- * Create by zx1984
- * https://github.com/zx1984
+ * Create by Capricorncd
+ * https://github.com/capricorncd
  */
 
 var express = require('express')

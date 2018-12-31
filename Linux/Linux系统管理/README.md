@@ -93,9 +93,9 @@ COMMAND 产生此进程的命令名
 
 ## Remark
 
-笔记作者：zx1984
+笔记作者：Capricorncd
 
-https://github.com/zx1984
+https://github.com/Capricorncd
 
 视频讲师：Tony
 

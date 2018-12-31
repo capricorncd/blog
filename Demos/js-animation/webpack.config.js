@@ -1,6 +1,6 @@
 /**
- * Created by zx1984 2018/1/20
- * https://github.com/zx1984
+ * Created by Capricorncd 2018/1/20
+ * https://github.com/capricorncd
  */
 module.exports = {
   entry: {

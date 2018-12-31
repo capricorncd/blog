@@ -119,6 +119,6 @@
 
 ## Copyright and license
 
-https://github.com/zx1984
+https://github.com/capricorncd
 
-Code and documentation copyright 2018. zx1984. Code released under the MIT License.
+Code and documentation copyright 2018. Capricorncd. Code released under the MIT License.

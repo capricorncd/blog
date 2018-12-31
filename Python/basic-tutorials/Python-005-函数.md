@@ -253,9 +253,9 @@ def fact(n):
 
 ## 参考资料
 
-笔记作者：zx1984
+笔记作者：Capricorncd
 
-https://github.com/zx1984
+https://github.com/capricorncd
 
 python零基础入门到精通
 

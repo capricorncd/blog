@@ -56,9 +56,9 @@ Python支持对整数和浮点数直接进行四则混合运算，运算规则�
 
 ## 参考资料
 
-笔记作者：zx1984
+笔记作者：Capricorncd
 
-https://github.com/zx1984
+https://github.com/capricorncd
 
 腾讯课堂：python零基础入门到精通
 

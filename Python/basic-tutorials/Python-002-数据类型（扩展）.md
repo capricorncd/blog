@@ -85,15 +85,15 @@ int, float, bool, complex(复数)
 列表是写在方括号[]之间，用逗号分隔开的元素列表。
 
 ```python
->>> L = ['abc', 123, 2.3, 'capricorncd']
+>>> L = ['abc', 123, 2.3, 'Capricorncd']
 >>> L[0]
 'abc'
 >>> L[1:3]
 [123, 2.3]
 >>> L[2:]
-[2.3, 'capricorncd']
+[2.3, 'Capricorncd']
 >>> L*2
-['abc', 123, 2.3, 'capricorncd', 'abc', 123, 2.3, 'capricorncd']
+['abc', 123, 2.3, 'Capricorncd', 'abc', 123, 2.3, 'Capricorncd']
 ```
 
 ![Python List方法](img/002/4-list-methods.png)
@@ -187,9 +187,9 @@ list1.extend(list2)
 
 ## 参考资料
 
-笔记作者：zx1984
+笔记作者：Capricorncd
 
-https://github.com/zx1984
+https://github.com/capricorncd
 
 腾讯课堂：python零基础入门到精通
 

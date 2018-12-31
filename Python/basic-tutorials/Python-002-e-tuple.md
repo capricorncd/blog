@@ -109,9 +109,9 @@ tuple一开始指向的list并没有改成别的list，所以，tuple所谓的�
 
 ## 参考资料
 
-笔记作者：zx1984
+笔记作者：Capricorncd
 
-https://github.com/zx1984
+https://github.com/capricorncd
 
 腾讯课堂：python零基础入门到精通
 

@@ -11,7 +11,7 @@
     "image",
     "clip"
   ],
-  "author": "zx1984",
+  "author": "Capricorncd",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",

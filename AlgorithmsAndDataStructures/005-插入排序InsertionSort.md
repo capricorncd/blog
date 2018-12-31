@@ -152,8 +152,8 @@ Selection Sort : 0.197512 s
 
 ## Remark
 
-笔记作者： zx1984
+笔记作者： capricorncd
 
-主页：https://github.com/zx1984
+主页：https://github.com/capricorncd
 
 

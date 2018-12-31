@@ -86,9 +86,9 @@ print 'Hello, World!'
 
 ## 参考资料
 
-笔记作者：zx1984
+笔记作者：Capricorncd
 
-https://github.com/zx1984
+https://github.com/capricorncd
 
 腾讯课堂：python零基础入门到精通
 
