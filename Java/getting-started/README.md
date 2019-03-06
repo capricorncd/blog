@@ -12,9 +12,9 @@
 
 1995由Sun公司推出，2009被Oracle收购。
 
-### 核心概念：JVM/JDK/JRE
-
 ![JVM](img/se-ee-me.png)
+
+### 核心概念：JVM/JDK/JRE
 
 JVM: Java Virtual Machine
 
@@ -56,6 +56,8 @@ C:\Program Files\Java\jdk1.8.0_172\bin\jre\bin
 ```
 
 * Mac
+
+直接装`jdk-8u201-macosx-x64.dmg`就可以了。
 
 ### 使用工具开发Java程序
 
