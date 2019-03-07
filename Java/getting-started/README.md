@@ -89,3 +89,87 @@ java HelloWorld
 # Welcome to Java world.
 ```
 
+### 使用IDE开发
+
+集成开发环境（IDE）是一类软件
+
+将程序开发环境和程序调试环境集合在一起，提高开发效率。
+
+#### Eclipse
+
+开源免费的。下载地址 https://www.eclipse.org/downloads/
+
+开发流程:
+
+1 创建Java项目
+
+```
+file -> New -> Java Project
+# Project name: hello
+```
+
+2 创建程序包
+
+```
+# src 目录
+New -> Package
+# com.hello
+```
+
+3 编写Java源程序
+
+```
+com.hello -> New -> Class > Name: HelloTest
+```
+
+> IDE自动生成：HelloTest.java
+
+```java
+package com.hello;
+
+public class HelloTest {
+
+}
+```
+
+> 注意：类名`class HelloTest`一定要与文件名`HelloTest.java`相同。
+
+![](img/HelloTest.png)
+
+4 运行Java程序
+
+```
+代码编辑拦，空白处鼠标右键 -> Run As -> Java Application ...
+```
+
+![](img/HelloTestRun.png)
+
+> 或者点击编辑器左上角的"播放"图标，run ...
+
+#### MyEclipse
+
+MyEclipse是对Eclipse的扩展，是一个十分优秀的用于开发Java、JavaEE的Eclipse插件集合。
+
+https://www.myeclipsecn.com
+
+### 程序的移植
+
+从公司拷回屋里继续写...
+
+```
+拷贝项目代码
+-> 到家，开电脑，打开软件
+-> File
+-> Import
+-> General/Existing Project into Workspace
+-> Next
+-> Select root directory: [Broser]
+-> 找到文件
+-> Finish
+```
+
+### 来自巨人的经验
+
+多练、多问、自己动手，调试错误、复习和总结。
+
+学虽容易，学好不易，且学且珍惜。
