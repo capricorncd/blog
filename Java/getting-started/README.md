@@ -12,6 +12,8 @@
 
 1995由Sun公司推出，2009被Oracle收购。
 
+### Java平台应用
+
 ![JVM](img/se-ee-me.png)
 
 ### 核心概念：JVM/JDK/JRE
@@ -68,7 +70,7 @@ HelloWorld.java
 ```java
 public class HelloWorld {
   public static void main(String[] args) {
-    System.out.printIn("Welcome to Java world.");
+    System.out.println("Welcome to Java world.");
   }
 }
 ```
