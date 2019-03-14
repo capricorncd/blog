@@ -181,3 +181,35 @@ public class Array {
    ```
    Arrays.toString(数组名);
    ```
+
+### foreach
+
+foreach 并不是 Java 中的关键字，是 for 语句的特殊简化版本，在遍历数组、集合时， foreach 更简单便捷。
+
+```
+// 语法
+for (元素类型 元素变量 : 遍历对象) {
+  // do something
+}
+```
+
+```java
+for (int i : nums) {
+  System.out.println("print by foreach: " + i);
+}
+```
+
+### 二维数组
+
+声明数组/分配空间
+
+```
+数据类型[][] 数组名 = new 数据类型[行数][列数];
+```
+
+或
+
+````
+数据类型[][] 数组名;
+数组名 = new 数据类型[行数][列数];
+```
