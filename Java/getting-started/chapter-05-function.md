@@ -37,6 +37,7 @@ public void print(String str) {
 example
 
 ```java
+// Func.java
 public class Func {
     // 定义print方法
     public void print(String str) {
@@ -45,14 +46,14 @@ public class Func {
 
     public static void main(String[] args) {
         // 创建Func对象
-        Func f = new Func();
+        Func fn = new Func();
         // 调用print方法
-        f.print("Hello world");
+        fn.print("Hello world");
     }
 }
 ```
 
-无参带返回值方法的使用
+无参带返回值方法:
 
 ```java
 public int sum() {
@@ -68,7 +69,7 @@ public int sum() {
 
 3. 方法返回值的类型必须兼容，例如，如果返回值类型为 int ，则不能返回 String 型值。
 
-带参无返回值方法的使用
+带参无返回值方法:
 
 ```
 public int sum(int a, int b) {
@@ -83,3 +84,95 @@ public int sum(int a, int b) {
 3. 方法的参数可以是基本数据类型，如 int、double 等，也可以是引用数据类型，如 String、数组等
 
 4. 当方法参数有多个时，多个参数间以逗号分隔。
+
+带参有返回值方法:
+
+```
+public int sum(int a, int b) {
+  return a + b;
+}
+```
+
+### Java 中方法的重载
+
+什么是方法的重载呢？
+
+> 如果同一个类中包含了两个或两个以上方法名相同、方法参数的个数、顺序或类型不同的方法，则称为方法的重载，也可称该方法被重载了。如下所示 4 个方法名称都为 show ，但方法的参数有所不同，因此都属于方法的重载：
+
+```java
+// 无参数方法
+public void show() {
+    System.out.println("not arguments");
+}
+
+// 重载show方法，一个字符串参数
+public void show(String name) {
+    System.out.println("argument name: " + name);
+}
+
+// 重载show方法，两个参数
+public void show(String name, int age) {
+    System.out.println(name + " is " + age + " years old");
+}
+
+// 重载show方法，两个参数顺序不同
+public void show(int age, String name) {
+    System.out.println("The " + age + "-year-old people is " + name + ".");
+}
+```
+
+如何区分调用的是哪个重载方法呢？
+
+> 当调用被重载的方法时， Java 会根据参数的个数和类型来判断应该调用哪个重载方法，参数完全匹配的方法将被执行。如：
+
+```java
+public static void main(String[] args) {
+    Func fn = new Func();
+    fn.show(); // 调用无参数的show方法
+    fn.show("Juny"); // 调用带有一个参数的show方法
+    fn.show("Juny", 15); // 调用带有字符串+整型参数的show方法
+}
+```
+
+判断方法重载的依据：
+
+> 1、 必须是在同一个类中
+
+> 2、 方法名相同
+
+> 3、 方法参数的个数、顺序或类型不同
+
+> 4、 与方法的修饰符或返回值没有关系
+
+Test.java
+
+```java
+package com.test;
+
+import java.util.Arrays;
+
+/*
+ * 创建指定长度的 int 型数组，
+ * 并生成 100 以内随机数为数组中的每个元素赋值，
+ * 然后输出数组
+ */
+public class Test {
+    public static void main(String[] args) {
+        Test ts = new Test();
+        // create array
+        int[] arr = ts.createArray(8);
+
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public int[] createArray(int length) {
+        int[] arr = new int[length];
+        for (int i = 0; i < length; i++) {
+            arr[i] = (int)(Math.random() * 100);
+        }
+        return arr;
+    }
+}
+```
+
+
