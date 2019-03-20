@@ -184,7 +184,7 @@ public class useTelphone {
 
 2 局部变量：在类的`方法`中定义，在方法中临时保存数据。
 
-![成员变量和局部变量](img/global-local-varibable.png)
+![成员变量和局部变量](img/global-local-variable.png)
 
 区别
 
@@ -199,8 +199,123 @@ public class useTelphone {
 
 ### 构造方法
 
-使用`new 构造方法` 创建一个新的对象。
-构造方法是定义在Java类中的一个用来初始化对象的方法，构造方法与类同名且没有返回值。
+1. 使用`new 构造方法` 创建一个新的对象。
+
+2. 构造方法是定义在Java类中的一个用来初始化对象的方法，构造方法与类同名且没有返回值。
+
+![](img/constractor.jpg)
+
+3. 无参构造方法的使用
+
+```
+main():
+    Telphone phone = new Telphone();
+
+class Telphone:
+    public Telphone() {
+        System.out.println("Telphone Constractor");
+    }
+```
+
+4. 带参构造方法的使用
+
+```
+main():
+    Telphone phone2 = new Telphone(5.0f);
+
+class Telphone:
+    public Telphone(float newScreen) {
+        screen = newScreen;
+    }
+```
+
+5. 当没有指定构造方法时，系统会自动添加无参的构造方法。
+
+6. 当有指定构造方法，无论是有参、无参的构造方法，系统都不会自动添加无参的构造方法。
+
+7. 构造方法的重载：方法名相同，但参数不同的多个方法，调用时会自动根据不同的参数选择相应的方法。
+
+8. 构造方法不但可以给对象的属性赋值，还可以保证给对象的属性赋一个合理的值
+
+```
+// Tp.java
+package com.test
+
+pubilc class Tp {
+    private float screen;
+
+    public Tp() {
+        System.out.println("com.test Tp无参构造方法执行了");
+    }
+
+    public Tp(float newScreen) {
+        if (newScreen < 3.5f) {
+            screen = 3.5f;
+        } else {
+            screen = newScreen;
+        }
+        System.out.println("有参的构造方法，screen: " + screen);
+    }
+}
+```
+
+### Java 中的 static 使用之静态变量
+
+Java 中被 `static` 修饰的成员称为静态成员或类成员。它属于整个类所有，而不是某个对象所有，即被类的所有对象所共享。静态成员可以使用类名直接访问，也可以使用对象名进行访问。当然，鉴于他作用的特殊性更推荐用类名访问~~
+
+使用 static 可以修饰变量、方法和代码块。
+
+![](img/static.jpg)
+
+注意：静态成员属于整个类，当系统第一次使用该类时，就会为其分配内存空间直到该类被卸载才会进行资源回收！
+
+### Java 中的 static 使用之静态方法
+
+与静态变量一样，使用 static 修饰的方法，称为静态方法或类方法。比如之前使用的 main 方法就是静态方法。静态方法的使用如：
+
+![](img/static-function.jpg)
+
+1. 静态方法中可以直接调用同类中的静态成员，但不能直接调用非静态成员。
+
+![](img/static-function1.jpg)
+
+如果希望在静态方法中调用非静态变量，可以通过创建类的对象，然后通过对象来访问非静态变量
+
+![](img/static-function2.jpg)
+
+2. 在普通成员方法中，则可以直接访问同类的非静态变量和静态变量
+
+![](img/static-function3.jpg)
+
+3. 静态方法中不能直接调用非静态方法，需要通过对象来访问非静态方法
+
+![](img/static-function4.jpg)
+
+### Java 中的 static 使用之静态初始化块
+
+Java 中可以通过初始化块进行数据赋值
+
+```java
+public class Hello {
+    String name; // 定义一个成员变量
+    // 通过初始化块，为成员变量赋值
+    {
+        name = "hello";
+    }
+}
+```
+
+在类的声明中，可以包含多个初始化块，当创建类的实例时，就会依次执行这些代码块。如果使用 static 修饰初始化块，就称为静态初始化块。
+
+注意：静态初始化块只在`类加载时执行`，且`只会执行一次`，同时静态初始化块`只能给静态变量赋值`，不能初始化普通的成员变量。
+
+![](img/static-block1.jpg)
+
+结果：
+
+![](img/static-block2.jpg)
+
+通过输出结果，我们可以看到，程序运行时静态初始化块最先被执行，然后执行普通初始化块，最后才执行构造方法。由于静态初始化块只在类加载时执行一次，所以当再次创建对象 hello2 时并未执行静态初始化块。
 
 ### 原课程地址
 
