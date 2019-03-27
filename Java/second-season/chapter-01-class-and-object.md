@@ -315,7 +315,51 @@ public class Hello {
 
 ![](img/static-block2.jpg)
 
-通过输出结果，我们可以看到，程序运行时静态初始化块最先被执行，然后执行普通初始化块，最后才执行构造方法。由于静态初始化块只在类加载时执行一次，所以当再次创建对象 hello2 时并未执行静态初始化块。
+通过输出结果，我们可以看到，程序运行时`静态初始化块`最先被执行，然后执行`普通初始化块`，最后才执行`构造方法`。由于静态初始化块只在类加载时执行一次，所以当再次创建对象 hello2 时并未执行静态初始化块。
+
+代码
+
+```java
+package com.test2;
+
+public class HelloWorld {
+	int num1;
+	int num2;
+	static int num3;
+	public HelloWorld () {
+		num1 = 91;
+		System.out.println("通过构造方法为变量num1赋值");
+	}
+	{
+		num2 = 74;
+		System.out.println("通过初始化块为变量num2赋值");
+	}
+	static {
+		num3 = 3;
+		System.out.println("通过静态初始化块为静态变量num3赋值");
+	}
+	public static void main (String[] args) {
+		HelloWorld h = new HelloWorld();
+		System.out.println("num1: " + h.num1);
+		System.out.println("num2: " + h.num2);
+		System.out.println("num3: " + HelloWorld.num3);
+		HelloWorld h2 = new HelloWorld();
+	}
+}
+```
+
+结果
+
+```
+通过静态初始化块为静态变量num3赋值
+通过初始化块为变量num2赋值
+通过构造方法为变量num1赋值
+num1: 91
+num2: 74
+num3: 3
+通过初始化块为变量num2赋值
+通过构造方法为变量num1赋值
+```
 
 ### 原课程地址
 
