@@ -45,7 +45,7 @@ public class Hello {
 
 解决同名文件冲突
 
-2、包的定义：package 报名
+2、包的定义：package 包名
 
 注意：必须放在Java源程序的第一行，包名间可以使用`.`号隔开，eg: `com.test.HelloWorld`
 
