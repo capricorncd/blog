@@ -16,7 +16,7 @@
 
     创建`子类`对象时，调用的方法为`子类重写`的方法或者`继承`的方法。
 
-    [[code]](src/code/polymorphic)
+    [[code]](code/polymorphic/src/com/polymorphic)
 
 ### 多态中的引用类型转换
 
@@ -101,7 +101,9 @@ public abstract void call();
 public abstract void message();
 ```
 
-例子 [[code]](src/code/abstract)
+例子
+
+[[code]](code/abstract/src/com/phone)
 
 ```java
 // Phone.java
@@ -139,5 +141,5 @@ public class CellPhone extends Phone {
 ```
 现有Shape图形类，用Rectangle矩形和Circle圆形子类，求图形的周长和面积
 ```
-
+[[code]](code/abstract/src/com/shape)
 
