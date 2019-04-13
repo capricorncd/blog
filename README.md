@@ -2,6 +2,10 @@
 
 平时工作或学习中做的笔记。以前是写在纸上(或笔记本上)，后来发现携带和存放都是个问题，所以就用Markdown记录并放到网上，有网络的地方随时都可以查阅、温习...
 
+## Java
+
+https://capricorncd.github.io/Java-Notes/
+
 ## DEMOS
 
 #### [DEMOS](./Demos)
