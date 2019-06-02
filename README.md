@@ -6,27 +6,6 @@
 
 https://capricorncd.github.io/Java-Notes/
 
-## DEMOS
-
-#### [DEMOS](./Demos)
-
-* [animation](./Demos/js-animation)
-
-* [js二叉树小蜜蜂游戏](./Demos/games/aliens)
-
-* [js图片文件拖拽上传](./Demos/drag-and-upload)
-
-* [js图片裁剪效果实现](./Demos/js-clip-image)
-
-* [js电商网站无延时菜单实现](./Demos/jd-menu-jquery)
-
-* [indexedDB数据库操作](./Demos/indexeddb)
-
-* [nodejs-express-jade](./Demos/nodejs-express-jade)
-
-* [Promise](./Demos/js-promise)
-
-
 ## JavaScript
 
 #### # [JavaScript](./Javascript)
@@ -54,23 +33,19 @@ https://capricorncd.github.io/Java-Notes/
 
 * [TypeScript入门](./Typescript/TypeScript入门.md)
 
-
-## webpack
-
-#### # [webpack](./C%2B%2B)
-
-* [webpack](./Webpack/webpack)
-
-* [vue-loader-webpack](./Webpack/vue-loader%2Bwebpack)
-
-
-## C/C++
+## C/C++/C#
 
 #### # C/C++
 
-* [C语言基础](./C++/C语言基础.md)
+* [C语言基础](./C/C语言基础.md)
 
-* [数据结构-栈(Stack)](./C++/数据结构-栈(Stack).md)
+* [数据结构-栈(Stack)](./C/数据结构-栈(Stack).md)
+
+#### # C#
+
+* [C#基础语法](./C/C-Sharp.md)
+
+* [C#面向对象编程](./C/C-Sharp-OPP.md)
 
 #### # Basical Computor
 
@@ -120,6 +95,35 @@ https://capricorncd.github.io/Java-Notes/
 * [004-Dict和Set类型(2)](./Python/basic-tutorials/Python-004-Dict和Set类型(2).md)
 
 * [005-函数](./Python/basic-tutorials/Python-005-函数.md)
+
+## DEMOS
+
+#### [DEMOS](./Demos)
+
+* [animation](./Demos/js-animation)
+
+* [js二叉树小蜜蜂游戏](./Demos/games/aliens)
+
+* [js图片文件拖拽上传](./Demos/drag-and-upload)
+
+* [js图片裁剪效果实现](./Demos/js-clip-image)
+
+* [js电商网站无延时菜单实现](./Demos/jd-menu-jquery)
+
+* [indexedDB数据库操作](./Demos/indexeddb)
+
+* [nodejs-express-jade](./Demos/nodejs-express-jade)
+
+* [Promise](./Demos/js-promise)
+
+
+## webpack
+
+#### # [webpack](./C%2B%2B)
+
+* [webpack](./Webpack/webpack)
+
+* [vue-loader-webpack](./Webpack/vue-loader%2Bwebpack)
 
 ## Copyright and license
 
