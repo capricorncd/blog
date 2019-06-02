@@ -6,7 +6,7 @@ C#(读作C Sharp)是微软公司发布的一种面向对象的、运行于.NET F
 
 Visual Studio 2013 控制台程序代码示例:
 
-```c-sharp
+```c#
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,13 +63,13 @@ Main() 方法是 `C#` 中的特殊方法，是程序的入口，就是说，如�
 
 使用关键字 `const` 定义。
 
-```c-sharp
+```c#
 const double PI = 3.1415926;
 ```
 
 ### 变量
 
-```c-sharp
+```c#
 int number = 100;
 double price = 99.99;
 char gender = '男';
@@ -94,19 +94,19 @@ int n = (int)9.5;// 9
 
 错误的标识符声明：
 
-```c-sharp
+```c#
 string $user; //错在使用了其他字符
 ```
 
 变量名不能用数字开头。
 
-```c-sharp
+```c#
 double 6h;//错在用数字开头
 ```
 
 不能用关键字当变量名。
 
-```c-sharp
+```c#
 char static ;//错在用关键字static做变量名
 ```
 
@@ -114,7 +114,7 @@ char static ;//错在用关键字static做变量名
 
 算术运算符
 
-```c-sharp
+```c#
 9 + 2.5; // 11.5
 9 + "2.5"; // 92.5
 15 - 20; // -5
@@ -132,7 +132,7 @@ int j = 0;
 
 比较运算符
 
-```c-sharp
+```c#
 int a = 1;
 int b = 1;
 
@@ -146,7 +146,7 @@ a <= b; // True
 
 逻辑运算符
 
-```c-sharp
+```c#
 int x = 1;
 int y = 2;
 // 逻辑非
@@ -160,7 +160,7 @@ x == 1 || y == 1; // True
 
 赋值运算符
 
-```c-sharp
+```c#
 int x = 2;
 x += 3; // 5
 
@@ -181,7 +181,7 @@ j %= 2; // 0
 
 if
 
-```c-sharp
+```c#
 if () {
   // do something
 } else {
@@ -191,13 +191,13 @@ if () {
 
 条件运算符
 
-```
+```c#
 条件 ? 表达式 : 表达式
 ```
 
 switch
 
-```
+```c#
 switch(变量)
 {
   case 1:
@@ -218,7 +218,7 @@ switch(变量)
 
 while
 
-```
+```c#
 while (条件) {}
 
 do {} while(条件)
@@ -226,7 +226,7 @@ do {} while(条件)
 
 for
 
-```c-sharp
+```c#
 for (int i = 0; i < 10; i++) {
   if (i == 5) continue;
   if (i >= 8) break;
@@ -295,7 +295,7 @@ for (int i = 0; i <= len; i++)
 
 一维数组
 
-```c-sharp
+```c#
 int[] arr = new int[3];
 arr[0] = 1;
 arr[1] = 2;
@@ -315,13 +315,13 @@ foreach (int i in num)
 
 二维数组
 
-```c-sharp
+```c#
 int[,] arr = new int[,]{{1, 3, 5}, {6, 7, 9}}; 
 ```
 
 ### 示例
 
-```c-sharp
+```c#
 using System;
 using System.Collections.Generic;
 using System.Linq;
