@@ -19,7 +19,7 @@
     "express": "^4.16.2",
     "jade": "^1.11.0",
     "moment": "^2.19.1",
-    "mongoose": "^4.12.4",
+    "mongoose": ">=5.7.5",
     "underscore": "^1.8.3"
   }
 }
