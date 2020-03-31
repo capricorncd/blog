@@ -6,11 +6,11 @@
 
 ### 可能困扰了你多年的英语学习问题：
 
-语法（Grammar）：语法**规则**太复杂，背不会，也不会用。
+语法（Grammar \[ˈɡræmə(r)\] ）：语法**规则**太复杂，背不会，也不会用。
 
-词汇（Vocabulary）：**词根词缀**记不住，一词多义更头疼。
+词汇（Vocabulary \[vəˈkæbjələri\] ）：**词根词缀**记不住，一词多义更头疼。
 
-语音（Pronunciation）：系统学过音标课，还是讲不出好听的英语。
+语音（Pronunciation \[prəˌnʌnsiˈeɪʃn]）：系统学过音标课，还是讲不出好听的英语。
 
 > 换种**思路**学习，你可能会效率高一些。
 
@@ -159,6 +159,8 @@ How to Be Proactive：走在别人前面，即积极主动地去做一件事。
 × 很多表达都是固定搭配，多读多背。
 ```
 
+![grammar-infomation.jpg](./img/grammar-infomation.jpg)
+
 #### 名词前面的多个形容词，到底咋排顺序？
 
 I like **big black** dogs.
@@ -235,11 +237,11 @@ She was wearing a **beautiful long red** dress.
 > （保护伞公司）它的政治、经济影响力无处不在。
 
 ```
-political 政治的
+political[pəˈlɪtɪkl] 政治的
 
 词根 ~polit~ 都市；政治(政府治理)
-politics 政治学
-politician 政治家
+politics[ˈpɒlətɪks] 政治学
+politician[ˌpɒləˈtɪʃn] 政治家
 ```
 
 所有的**现象**一旦规则化以后，就总有**不符合**规则的现象出现。
@@ -248,11 +250,11 @@ politician 政治家
 ~polit~
 ~polis~
 
-police 治理城市的人（警察） (c)->(s)
-policy 治理城市的策略（政策）
+police[pəˈliːs] 治理城市的人（警察） (c)->(s)
+policy[ˈpɒləsi] 治理城市的策略（政策）
 
-metropolis 大都市（母亲城市，若干城市中最大的一个，母体城市）
-metro -> mother 母亲
+metropolis[məˈtrɒpəlɪs] 大都市（母亲城市，若干城市中最大的一个，母体城市）
+metro[ˈmetrəʊ] -> mother[ˈmʌðə(r)] 母亲
 ```
 
 ```
@@ -283,7 +285,7 @@ t = s 同一器官发音字母
 ~mili(t)~ 军事的(x)
 t:尾缀，为了链接元音字母形成更长的词。
 
-mile 英里（1英里=古罗马人走1000步的距离，双脚迈完才算一步。
+mile[maɪl] 英里（1英里=古罗马人走1000步的距离，双脚迈完才算一步。
      两脚距离80cm，1步=80x2，所以1英里=1600m）
      所以～mili～为走路的意思，military是部队走路，即行军的=部队。
 ```
@@ -296,10 +298,10 @@ mile 英里（1英里=古罗马人走1000步的距离，双脚迈完才算一步
 
 ```
 mile 走
-mill 磨坊（围绕磨盘走动）
-windmill 风车（风提供动力，代替人走转动磨盘）
+mill[mɪl] 磨坊（围绕磨盘走动）
+windmill[ˈwɪndmɪl] 风车（风提供动力，代替人走转动磨盘）
 
-mull 权衡（把想法放脑子中，像磨盘一样转直到想清楚）
+mull[mʌl] 权衡（把想法放脑子中，像磨盘一样转直到想清楚）
 ```
 
 拼音语言问题1：读音对拼写产生的影响。
@@ -319,8 +321,8 @@ simil assimilate 同化
 中国古代有印刷术，国外只能靠手抄写，抄写过程中各人字体（写法）的原因（r->v/r->n），英语某些字母写法比较接近，导致新的单词频繁出现。
 
 ```
-clear 清除
-clean 干净
+clear[klɪə(r)] 清除
+clean[kliːn] 干净
 ```
 
 英文听读音，汉字看写法。
@@ -445,9 +447,7 @@ proper 英 [ˈprɒpə(r)]   美 [ˈprɑːpər]
 × 按照单词原本的语调读才是正确的。
 ```
 
-# 读音和拼写
-
-如何学百次记千词
+# 如何学百词记千词
 
 重审基础词汇，学会借力背词
 
@@ -455,63 +455,147 @@ proper 英 [ˈprɒpə(r)]   美 [ˈprɑːpər]
 
 ### 读音
 
-1. He is working in a rock band.
+**1.He is working in a rock band.**
 
-band n.乐队
+band \[bænd\] n.乐队
 
-2. The trees were bending in the wind.
+**2.The trees were bending in the wind.**
 
-bend vt.&vi. 弯曲
+bend \[bend\] vt.&vi. 弯曲
 
-3. Love binds then together.
+**3.Love binds them together.**
 
-bind vt.绑
+bind \[baɪnd\] vt.绑
 
-4. I have a special bond with him.
+**4.I have a special bond with him.**
 
-bond n.纽带
+bond \[bɒnd\] n.纽带
 
-5. They made bundles of money.
+**5.They made bundles of money.**
 
-bundle n.捆
+bundle \[ˈbʌndl\] n.捆
 
+![band-bind-bond-bend-bundle.jpg](./img/band-bind-bond-bend-bundle.jpg)
 
-> For within these rings was bound the strength and will to govern each race.
+！看到意思快速记住行，不要去当语言的研究者，你只是词汇的运用者。（不要去搞研究，走火入魔）
 
-> ——《全民英语背诵营·银屏经典》E39: The Lord of the Rings - The Prologue
+**For within these rings was bound the strength and will to govern each race.**
 
-bound adj. 一定会；受约束的，有义务的；被。。。所限制的
+——《全民英语背诵营·银屏经典》E39: The Lord of the Rings - The Prologue
+
+> 翻译略
+
+bound \[baʊnd] adj. 一定会；受约束的，有义务的；被。。。所限制的
 
 > be bound to do sth. 被绑着去做一件事情
 
 ### 拼写
 
-price n.价格；价值
+price \[praɪs]  n.价格；价值
 
-precious adj.珍贵的，宝贵的
+precious \[ˈpreʃəs] adj.珍贵的，宝贵的
 
-prize n.奖品；奖金
+prize \[praɪz] n.奖品；奖金
 
-praise vt.称赞；表扬；n.称赞，赞美
+praise \[preɪz] vt.称赞；表扬；n.称赞，赞美
 
 > 英语抄写时，将两个元音字母写反，导致后续传播单词写法被固定
 
+![price-precious-prize-praise.jpg](./img/price-precious-prize-praise.jpg)
+
 你是否认识以下单词？
 
-|one num.一；一个|reunion n.重聚|
+|one \[wʌn] num.一；一个|reunion \[ˌriːˈjuːniən] n.重聚|
 |:--|:--|
-|two num.二；两个|dubious adj.可疑的；半信半疑的|
-|three num.三；三个|thrive vi.繁荣；兴旺|
+|two \[tuː] num.二；两个|dubious \[ˈdjuːbiəs] adj.可疑的；半信半疑的|
+|three \[θriː] num.三；三个|thrive \[θraɪv] vi.繁荣；兴旺|
 
-|wear vt.穿；戴；n.衣物|coverage n.覆盖范围；新闻报道|
+|wear \[weə(r)] vt.穿；戴；n.衣物|coverage \[ˈkʌvərɪdʒ] n.覆盖范围；新闻报道|
 |:--|:--|
-|restaurant n.饭店|installment n.安装；分期付款|
-|mirror n.镜子|miraculous adj.不可思议的；奇迹的|
+|restaurant \[ˈrestrɒnt] n.饭店|installment \[ɪnˈstɔːlmənt] n.安装；分期付款|
+|mirror \[ˈmɪrə(r)] n.镜子|miraculous \[mɪˈrækjələs] adj.不可思议的；奇迹的|
 
 ### 一、读数字，懂单词
 
-one num.一；一个
+one \[wʌn] num.一；一个
 
 > an / any / alone / none
 
+```
+same 相同的
+some 某个（些）
+seem 好像
+```
+
 > 英语中有些单词的元音可以互换，就是语言传播过程中口型变化导致的，有些人发音口型大，有些人口型小
+
+中文繁体字 => 简体字
+
+英语造词**简写**：
+
+all one => alone 独自
+
+school => scholar 学者
+
+study => student 学生
+
+**简读**（中文象形文字没有简读）
+
+house bind => husband 和房子绑定的人（丈夫）
+
+```
+ any[i]
+ ↑
+ one[iː]
+ ↓ ↓
+-uni- 词根：一
+```
+
+```
+unit [ˈjuːnɪt] n. 单元
+unite [juˈnaɪt] vt.&vi 联合 *注意不发音的*e
+union [ˈjuːniən] n. 联盟；工会
+reunion [ˌriːˈjuːniən] n 重聚 re*
+例: class reunion 同学会
+```
+
+> *e release 去掉结尾`e`，容易误认为`releas`是`relea`的复数
+
+> re* 回；再；又；表示方向（上/下/前/后/里/外）
+
+```
+前缀:都是表方向，无一例外 re*
+后缀:表示词性
+```
+
+例子：
+
+```
+dislike [dɪsˈlaɪk] v.&n.不喜欢 dis* 反
+enrich [ɪnˈrɪtʃ] v.使富有（注入更多钱） en*→in 注入；不要把en翻译成'使'，不要直译
+encourage [ɪnˈkʌrɪdʒ] v.鼓励 en*注入（勇气courage[ˈkʌrɪdʒ] )
+```
+
+```
+shape 形态
+  ↓
+（造新词，读音简化，shape口型很夸张，ship低调些）
+          ↓
+friendship 友谊
+scholarship 奖学金
+```
+
+**?是人都不愿意记长单词，如...**
+
+——《全民英语背诵营·人文习俗》E51: The Unanimous Declaration of the Thirteen United States of America
+
+> ...
+
+```
+unanimous 一致同意的（一个鼻孔出气）
+ ↓   ↓
+uni animal （中）动物，会动的物体
+ 一  （英）字面意思：会呼吸的动物
+```
+
+
