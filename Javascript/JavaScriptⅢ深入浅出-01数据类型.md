@@ -18,6 +18,16 @@
 
 * object对象（Function、Array、Date...）
 
+> 新类型划分：
+
+> 值类型(基本类型)：字符串（String）、数字(Number)、布尔(Boolean)、对空（Null）、未定义（Undefined）、Symbol。
+
+> 引用数据类型：对象(Object)、数组(Array)、函数(Function)。
+
+```
+注：Symbol 是 ES6 引入了一种新的原始数据类型，表示独一无二的值。
+```
+
 ## JavaScript隐式转换
 
 JavaScript的数据类型是非常弱的（不然不会叫它做弱类型语言了）！在使用算术运算符时，运算符两边的数据类型可以是任意的，比如，一个字符串可以和数字相加。之所以不同的数据类型之间可以做运算，是因为JavaScript引擎在运算之前会悄悄的把他们进行了隐式类型转换。
