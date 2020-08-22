@@ -7,3 +7,5 @@ learning-route.md
 .project
 __psd/
 .rdb
+
+package-lock.json
