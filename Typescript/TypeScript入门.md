@@ -2,6 +2,8 @@
 
 TypeScript是一种由微软开发的自由和开源的编程语言。它是JavaScript的一个超集，而且本质上向这个语言**添加了可选的静态类型和基于类的面向对象编程**。其**遵循ES6规范**。
 
+https://www.typescriptlang.org/
+
 ## TypeScript的优势
 
 * 支持ES6规范
@@ -158,14 +160,20 @@ function fun2(a, b, c) {
 
 let args1 = [1, 2];
 fun2(...args1); // 1 2 undefiend
+// js
+// fun2.apply(void 0, args1);
 
 let args2 = [3, 3, 5, 6, 8, 9];
 fun2(...args2); // 3 3 5
+// js
+// fun2.apply(void 0, args2);
 ```
 
 #### 2. generator函数
 
 控制函数的执行过程，手工暂停和恢复代码执行。
+
+https://babeljs.io/
 
 ```typescript
 // 方法前面加*号
@@ -188,6 +196,8 @@ fun1.next();
 ```
 
 买股票的例子
+
+https://babeljs.io/repl
 
 ```typescript
 // 买股票的例子
@@ -231,14 +241,14 @@ function getStock () {
 }
 ```
 
-```
+```javascript
 // es5实现
 var stock = getStock();
 var code = stock.code;
 var price = stock.price;
 ```
 
-```
+```javascript
 // 析构表达式
 let {code, price} = getStock(); // code, price 必须与getStock()属性相同
 
@@ -443,7 +453,8 @@ let workers: Array<Person> = [];
 
 > JavaScript 中没有Interface的概念
 
-* ts
+* 接口定义 `interface`
+
 ```typescript
 // 声明一个接口IPerson，同时设置两个属性
 interface IPerson {
@@ -480,7 +491,8 @@ var p1 = new Person({
 
 ----------------- 华丽的分割线 -----------------
 
-* ts
+* 接口实现类 `implements`
+
 ```typescript
 interface Animal {
     eat();
@@ -499,7 +511,9 @@ class Tiger implements Animal {
     }
 }
 ```
+
 * ES5
+
 ```typescript
 // 编译后
 var Sheep = (function () {
@@ -562,6 +576,17 @@ new Class1();
 
 注解为程序的元素(类、方法、变量)加上更直观更明了的说明，这些说明信息与程序的业务逻辑无关，而是供指定的工具或框架使用的。
 
+```bash
+# angular application
+# dir
+app/
+  |- app.component.css
+  |- app.component.html
+  |- app.component.ts
+```
+
+app.component.ts
+
 ```typescript
 // Angular2
 import { Component } from '@angular/core';
@@ -609,22 +634,3 @@ declare let $: JQueryStatic;
 **代码来源**：https://github.com/DefinitelyTyped/DefinitelyTyped
 
 **安装工具**：https://github.com/typings/typings
-
-## 扩展
-
-#### # Array.filter()
-
-```
-var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-
-const result = words.filter(word => word.length > 6);
-
-console.log(result);
-// expected output: Array ["exuberant", "destruction", "present"]
-```
-
-## 备注
-
-笔记作者：capricorncd
-
-主页：https://github.com/capricorncd
