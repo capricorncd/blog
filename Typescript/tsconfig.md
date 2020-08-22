@@ -8,7 +8,7 @@ TypeScript通过config中，通过`strict`或者`strictNullChecks`严格校验�
 npm i -g typescript
 ```
 
-<a href="../../typescript/README.md" target="_blank">README.md</a>
+<a href="../Demos/typescript-config" target="_blank">demo code</a>
 
 ## strict
 
@@ -146,7 +146,7 @@ Specify ECMAScript target version:
 
 # 范型
 
-<a href="../../typescript/范型.md" target="_blank">README.md</a>
+<a href="./范型.md" target="_blank">范型.md</a>
 
 ```typescript
 // 数字相加，字符串串拼接不能使用
