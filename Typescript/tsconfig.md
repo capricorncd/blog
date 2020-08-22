@@ -143,31 +143,3 @@ student[key] = 'Tom'
 
 Specify ECMAScript target version:
 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'.
-
-# 范型
-
-<a href="./范型.md" target="_blank">范型.md</a>
-
-```typescript
-// 数字相加，字符串串拼接不能使用
-function add(arg1: number, arg2: number): number {
-  return arg1 + arg2;
-}
-// 使用
-add(1, 0)
-```
-
-使用范型，实现数字相加，也可以字符串拼接
-
-```typescript
-// T: 保证了参数类型的一致性
-// T为number时，a、b均为number，不可能a为umber，b为字符串；反之同理
-function add<T>(a: T, b: T): T {
-  return a + b;
-}
-
-// 使用
-add<number>(1, 0) // 1
-add<string>('1', '0') // 10
-```
-
