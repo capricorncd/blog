@@ -6,9 +6,10 @@ html, body {
 
 body {
   overflow: hidden;
+  padding-top: 60px;
 }
 
-aside {
+.aside-wrapper {
   position: fixed;
   z-index: 10;
   top: 60px;
@@ -42,4 +43,8 @@ main {
   left: 210px;
   bottom: 0;
   overflow-y: auto;
+}
+
+.font-size-zero {
+  font-size: 0;
 }

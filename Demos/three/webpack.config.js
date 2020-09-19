@@ -61,7 +61,13 @@ let webpackConfig
 if (isProd) {
  webpackConfig = merge(baseConfig, {})
 } else {
-  webpackConfig = merge(baseConfig, {})
+  webpackConfig = merge(baseConfig, {
+    // https://stackoverflow.com/questions/43209666/react-router-v4-cannot-get-url
+    devServer: {
+      // 解决react-router刷新页面后 cannot GET *url*问题
+      historyApiFallback: true,
+    },
+  })
 }
 
 module.exports = webpackConfig

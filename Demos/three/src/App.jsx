@@ -3,7 +3,7 @@
  * https://github.com/capricorncd
  * Date: 2020-09-13 20:55
  */
-import React, { Component } from 'react'
+import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,30 +11,41 @@ import {
   Link
 } from 'react-router-dom'
 import Header from './components/header'
-import Demo from './components/demo/index'
+import Home from './components/Home/index'
+import First3DScene from './components/First3DScene/index'
+import MultipleGeometry from './components/MultipleGeometry/index'
 
-class App extends Component {
-  render() {
-    return <div>
-      <Header/>
-      <Router>
-        <aside>
+export default function App () {
+  return (
+    <Router>
+      <div>
+        <Header/>
+        <nav className="aside-wrapper">
           <ul>
             <li>
               <Link to="/">Home</Link>
             </li>
+            <li>
+              <Link to="/First3DScene">First 3D Scene</Link>
+            </li>
+            <li>
+              <Link to="/MultipleGeometry">Multiple Geometry</Link>
+            </li>
           </ul>
-        </aside>
-        <main>
-          <Switch>
-            <Route path="/">
-              <Demo />
-            </Route>
-          </Switch>
-        </main>
-      </Router>
-    </div>
-  }
-}
+        </nav>
 
-export default App
+        <Switch>
+          <Route path="/First3DScene">
+            <First3DScene />
+          </Route>
+          <Route path="/MultipleGeometry">
+            <MultipleGeometry />
+          </Route>
+          <Route path="/">
+            <Home/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  )
+}
