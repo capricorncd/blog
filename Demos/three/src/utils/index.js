@@ -4,9 +4,9 @@
  * Date: 2020-09-19 22:47
  */
 import { createLight } from './create-light'
-import { createOrthographicCamera } from './create-camera'
+import { createRender } from './create-render'
 
 export {
-  createOrthographicCamera,
-  createLight
+  createLight,
+  createRender
 }

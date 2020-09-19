@@ -14,6 +14,7 @@ import Header from './components/header'
 import Home from './components/Home/index'
 import First3DScene from './components/First3DScene/index'
 import MultipleGeometry from './components/MultipleGeometry/index'
+import Materials from './components/Materials/index'
 
 export default function App () {
   return (
@@ -31,6 +32,9 @@ export default function App () {
             <li>
               <Link to="/MultipleGeometry">Multiple Geometry</Link>
             </li>
+            <li>
+              <Link to="/Materials">Materials</Link>
+            </li>
           </ul>
         </nav>
 
@@ -40,6 +44,9 @@ export default function App () {
           </Route>
           <Route path="/MultipleGeometry">
             <MultipleGeometry />
+          </Route>
+          <Route path="/Materials">
+            <Materials />
           </Route>
           <Route path="/">
             <Home/>

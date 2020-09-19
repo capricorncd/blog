@@ -13,11 +13,9 @@ import {
   MeshLambertMaterial,
   OctahedronGeometry,
   Scene,
-  SphereGeometry,
-  WebGLRenderer
+  SphereGeometry
 } from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import { createLight, createOrthographicCamera } from '../../utils'
+import { createLight, createRender } from '../../utils'
 
 export function init(el) {
   const scene = new Scene()
@@ -62,30 +60,6 @@ export function init(el) {
   const axesHelper = new AxesHelper(2000)
   scene.add(axesHelper)
 
-  const width = el.offsetWidth
-  const height = el.offsetHeight
-
-  const camera = createOrthographicCamera(scene, width, height)
-
-  /**
-   * light
-   * 光源
-   */
   createLight(scene)
-
-  const renderer = new WebGLRenderer()
-  renderer.setSize(width, height)
-  // set background color
-  renderer.setClearColor(0x333333, 1)
-
-  el.appendChild(renderer.domElement)
-
-  const controls = new OrbitControls(camera, el)
-  controls.addEventListener('change', render)
-
-  function render() {
-    renderer.render(scene, camera)
-  }
-
-  render()
+  createRender(scene, el)
 }
