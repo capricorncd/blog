@@ -15,6 +15,7 @@ import Home from './components/Home/index'
 import First3DScene from './components/First3DScene/index'
 import MultipleGeometry from './components/MultipleGeometry/index'
 import Materials from './components/Materials/index'
+import DrawLines from './components/DrawLines/index'
 
 export default function App () {
   return (
@@ -35,18 +36,24 @@ export default function App () {
             <li>
               <Link to="/Materials">Materials</Link>
             </li>
+            <li>
+              <Link to="/DrawLines">DrawLines</Link>
+            </li>
           </ul>
         </nav>
 
         <Switch>
-          <Route path="/First3DScene">
-            <First3DScene />
+          <Route path="/DrawLines">
+            <DrawLines />
+          </Route>
+          <Route path="/Materials">
+            <Materials />
           </Route>
           <Route path="/MultipleGeometry">
             <MultipleGeometry />
           </Route>
-          <Route path="/Materials">
-            <Materials />
+          <Route path="/First3DScene">
+            <First3DScene />
           </Route>
           <Route path="/">
             <Home/>

@@ -11,7 +11,7 @@ import {
   IcosahedronGeometry,
   Mesh,
   MeshLambertMaterial,
-  OctahedronGeometry,
+  OctahedronGeometry, PointLight,
   Scene,
   SphereGeometry
 } from 'three'
@@ -61,5 +61,11 @@ export function init(el) {
   scene.add(axesHelper)
 
   createLight(scene)
+
+  // 再增加一个点光源，消除背光面死黑
+  const pointLight = new PointLight(0x333333)
+  pointLight.position.set(-200, -200, -200)
+  scene.add(pointLight)
+
   createRender(scene, el)
 }

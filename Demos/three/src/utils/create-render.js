@@ -7,13 +7,16 @@ import { WebGLRenderer } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { createOrthographicCamera } from './create-camera'
 
-export function createRender(scene, el) {
+export function createRender(scene, el, camera) {
   const width = el.offsetWidth
   const height = el.offsetHeight
 
-  const camera = createOrthographicCamera(scene, width, height)
+  camera = camera || createOrthographicCamera(scene, width, height)
 
-  const renderer = new WebGLRenderer()
+  const renderer = new WebGLRenderer({
+    // 消除锯齿
+    antialias: true
+  })
   // 设置渲染区域尺寸
   renderer.setSize(width, height)
   // 设置背景颜色
