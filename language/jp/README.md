@@ -1,3 +1,4 @@
+# 符号
 
 |符号(ふご)|日本語|英語|
 |:--|:--|:--|
@@ -15,7 +16,7 @@
 |`"`|ダブル|double|
 |`:`|コロン|colon|
 |`;`|セミコロン|semicolon|
-|`<, >`|不等号|スペース|
+|`<, >`|不等号(ふとうごう)|スペース|
 |`=`|イコール|equal|
 |`+`|プラス|plus|
 |`*`|アステリスク|asterisk|
@@ -27,4 +28,17 @@
 |`@`|アット|at|
 |`_`|アンダーバー|underscore|
 |`~`|トップバー|top bar|
-|`\|` `0x7C`|縦棒(たてぼう)|vertical bar|
+|`\|`|縦棒(たてぼう)|vertical bar|
+
+### 不等号
+
+|不等号|日本語|英語|
+|:--|:--|:--|
+| `>` | 大なり(だいなり) | is greater than |
+| `<` | 小なり(こなり) | is less than |
+| `≧` | 大なりイコール | is greater than or equal to |
+| `≦` | 小なりイコール | is less than or equal to |
+
+## Remark
+
+https://www.sojson.com/ascii.html
