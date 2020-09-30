@@ -7,8 +7,9 @@ import {
   PerspectiveCamera, Scene, BoxGeometry, MeshNormalMaterial, Mesh, WebGLRenderer
 } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { COLORS } from '~/assets/constants/colors'
 
-let camera, scene, mesh, renderer
+let camera, scene, mesh, renderer, animeId
 
 function createObject(el) {
   const width = el.offsetWidth
@@ -27,7 +28,7 @@ function createObject(el) {
   renderer = new WebGLRenderer({ antialias: true })
   renderer.setSize(width, height)
   // set background color
-  renderer.setClearColor(0x333333)
+  renderer.setClearColor(COLORS.main)
 
   el.appendChild(renderer.domElement)
 
@@ -37,7 +38,7 @@ function createObject(el) {
 }
 
 function animate() {
-  requestAnimationFrame(animate)
+  animeId = requestAnimationFrame(animate)
 
   mesh.rotation.x += 0.01
   mesh.rotation.y += 0.02
@@ -48,4 +49,14 @@ function animate() {
 export function init(el) {
   createObject(el)
   animate()
+}
+
+export function destroy() {
+  scene.remove()
+  renderer.dispose()
+  camera = null
+  scene = null
+  mesh = null
+  renderer = null
+  cancelAnimationFrame(animeId)
 }

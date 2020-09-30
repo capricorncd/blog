@@ -4,7 +4,7 @@
  * Date: 2020-09-19 22:16
  */
 import React, { useEffect } from 'react'
-import { init } from './core'
+import { destroy, init } from './core'
 
 function MultipleGeometry() {
   let el = null
@@ -13,7 +13,10 @@ function MultipleGeometry() {
       el = document.querySelector('.multiple-geometry-el-hook')
       init(el)
     }
-  })
+    return () => {
+      destroy()
+    }
+  }, [])
   return <main className="multiple-geometry-el-hook font-size-zero"/>
 }
 

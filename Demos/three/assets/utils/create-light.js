@@ -4,8 +4,9 @@
  * Date: 2020-09-19 22:46
  */
 import { AmbientLight, PointLight } from 'three'
+import { COLORS } from '~/assets/constants/colors'
 
-export function createLight(scene, pointLightColor = 0xffffff, ambientLightColor = 0x444444) {
+export function createLight(scene, pointLightColor = 0xffffff, ambientLightColor = COLORS.last) {
   // 创建点光源
   const pointLight = new PointLight(pointLightColor)
   // 设置点光源位置
@@ -15,4 +16,9 @@ export function createLight(scene, pointLightColor = 0xffffff, ambientLightColor
   // 创建环境光
   const ambientLight = new AmbientLight(ambientLightColor)
   scene.add(ambientLight)
+
+  return {
+    pointLight,
+    ambientLight
+  }
 }

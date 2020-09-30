@@ -10,7 +10,10 @@ import {
   SphereGeometry
 } from 'three'
 
-import { createLight, createRender } from '../../utils'
+import { createLight, createRender } from '~/assets/utils'
+import { COLORS } from '~/assets/constants/colors'
+
+let scene, renderer
 
 /**
  * 初始化
@@ -19,7 +22,7 @@ import { createLight, createRender } from '../../utils'
 function init(el) {
   // create scene
   // 创建一个场景
-  const scene = new Scene()
+  scene = new Scene()
 
   /**
    * create mesh model
@@ -29,12 +32,12 @@ function init(el) {
    */
   // create geometry
   // 创建几何体
-  const sphereGeometry = new SphereGeometry(60, 100, 100)
+  const sphereGeometry = new SphereGeometry(100, 100, 100)
 
   // create material
   // 创建材质
   const material = new MeshLambertMaterial({
-    color: 0xff9999
+    color: COLORS.third
   })
 
   // create mesh
@@ -55,9 +58,17 @@ function init(el) {
    * create render
    * 创建渲染器
    */
-  createRender(scene, el)
+  renderer = createRender(scene, el)
+}
+
+function destroy() {
+  scene.remove()
+  renderer.dispose()
+  scene = null
+  renderer = null
 }
 
 export {
-  init
+  init,
+  destroy
 }

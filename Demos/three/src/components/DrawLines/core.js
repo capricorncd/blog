@@ -11,14 +11,15 @@ import {
   Scene, Vector3
 } from 'three'
 
-import { createRender } from '../../utils'
+import { createRender } from '~/assets/utils'
 
+let scene, renderer
 /**
  * 初始化
  * @param el 父DOM元素
  */
-function init(el) {
-  const scene = new Scene()
+export function init(el) {
+  scene = new Scene()
 
   // create geometry
   const geometry = new Geometry()
@@ -47,9 +48,12 @@ function init(el) {
   const camera = new PerspectiveCamera(50, el.offsetWidth / el.offsetHeight, 0.1, 1000)
   camera.position.y = 500
 
-  createRender(scene, el, camera)
+  renderer = createRender(scene, el, camera)
 }
 
-export {
-  init
+export function destroy() {
+  scene.remove()
+  renderer.dispose()
+  scene = null
+  renderer = null
 }

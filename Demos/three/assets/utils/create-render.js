@@ -6,6 +6,7 @@
 import { WebGLRenderer } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { createOrthographicCamera } from './create-camera'
+import { COLORS } from '~/assets/constants/colors'
 
 export function createRender(scene, el, camera) {
   const width = el.offsetWidth
@@ -20,7 +21,7 @@ export function createRender(scene, el, camera) {
   // 设置渲染区域尺寸
   renderer.setSize(width, height)
   // 设置背景颜色
-  renderer.setClearColor(0xff9999, 0.7)
+  renderer.setClearColor(COLORS.main, 1)
 
   el.appendChild(renderer.domElement)
 
@@ -33,4 +34,6 @@ export function createRender(scene, el, camera) {
   }
 
   render()
+
+  return renderer
 }

@@ -22,6 +22,9 @@ const baseConfig = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.jsx', '.ts', '.tsx', '.json'],
+    alias: {
+      '~': resolve('./')
+    }
   },
   module: {
     rules: [
@@ -46,6 +49,10 @@ const baseConfig = {
           'css-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.jpe?g|pne?g|svg$/,
+        loader: 'file-loader'
       }
     ]
   },

@@ -15,44 +15,47 @@ import {
   Scene,
   SphereGeometry
 } from 'three'
-import { createLight, createRender } from '../../utils'
+import { createLight, createRender } from '~/assets/utils'
+import { COLORS } from '~/assets/constants/colors'
+
+let scene, renderer
 
 export function init(el) {
-  const scene = new Scene()
+  scene = new Scene()
 
   // 长方体
   const boxGeometry = new BoxGeometry(100, 100, 100)
-  const boxMesh = new Mesh(boxGeometry, new MeshLambertMaterial({ color: 0x999999 }))
+  const boxMesh = new Mesh(boxGeometry, new MeshLambertMaterial({ color: COLORS.second }))
   scene.add(boxMesh)
 
   // 球体
   const sphereGeometry = new SphereGeometry(50, 40, 40)
-  const sphereMesh = new Mesh(sphereGeometry, new MeshLambertMaterial({ color: 0x999999 }))
+  const sphereMesh = new Mesh(sphereGeometry, new MeshLambertMaterial({ color: COLORS.third }))
   sphereMesh.translateX(100)
   scene.add(sphereMesh)
 
   // 圆柱体
   const cylinderGeometry = new CylinderGeometry(0, 30, 100, 30)
-  const cylinderMesh = new Mesh(cylinderGeometry, new MeshLambertMaterial({ color: 0x999999 }))
+  const cylinderMesh = new Mesh(cylinderGeometry, new MeshLambertMaterial({ color: COLORS.third }))
   cylinderMesh.translateY(100)
   scene.add(cylinderMesh)
 
   // 正八面体
   const octahedronGeometry = new OctahedronGeometry(50)
-  const octahedronMesh = new Mesh(octahedronGeometry, new MeshLambertMaterial({ color: 0x999999 }))
+  const octahedronMesh = new Mesh(octahedronGeometry, new MeshLambertMaterial({ color: COLORS.third }))
   octahedronMesh.translateX(-100)
   scene.add(octahedronMesh)
 
   // 正十二面体
   const dodecahedronGeometry = new DodecahedronGeometry(50)
-  const dodecahedronMesh = new Mesh(dodecahedronGeometry, new MeshLambertMaterial({ color: 0x999999 }))
+  const dodecahedronMesh = new Mesh(dodecahedronGeometry, new MeshLambertMaterial({ color: COLORS.third }))
   // dodecahedronMesh.translateZ(100)
   dodecahedronMesh.position.set(0, 0, 100)
   scene.add(dodecahedronMesh)
 
   // 正二十面体
   const icosahedronGeometry = new IcosahedronGeometry(50)
-  const icosahedronMesh = new Mesh(icosahedronGeometry, new MeshLambertMaterial({ color: 0x999999 }))
+  const icosahedronMesh = new Mesh(icosahedronGeometry, new MeshLambertMaterial({ color: COLORS.third }))
   icosahedronMesh.translateY(93)
   icosahedronMesh.translateX(100)
   scene.add(icosahedronMesh)
@@ -67,5 +70,12 @@ export function init(el) {
   pointLight.position.set(-200, -200, -200)
   scene.add(pointLight)
 
-  createRender(scene, el)
+  renderer = createRender(scene, el)
+}
+
+export function destroy() {
+  scene.remove()
+  renderer.dispose()
+  scene = null
+  renderer = null
 }

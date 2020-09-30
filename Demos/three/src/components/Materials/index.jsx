@@ -4,7 +4,7 @@
  * Date: 2020-09-20 00:02
  */
 import React, { useEffect } from 'react'
-import { init } from './core'
+import { init, destroy } from './core'
 
 function Materials() {
   let el = null
@@ -13,7 +13,10 @@ function Materials() {
       el = document.querySelector('.materials-el-hook')
       init(el)
     }
-  })
+    return () => {
+      destroy()
+    }
+  }, [])
   return <main className="materials-el-hook font-size-zero"/>
 }
 
