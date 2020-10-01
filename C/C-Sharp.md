@@ -317,7 +317,7 @@ foreach (int i in num)
 
 ```c#
 // Your site is having problems building: 
-// The variable {{1, 3, 5} on line 319 in C/C-Sharp.md was not properly closed with }}. 
+// The variable "{{1, 3, 5}" on line 319 in C/C-Sharp.md was not properly closed with "}}". 
 // For more information, see 
 // https://docs.github.com/github/working-with-github-pages/troubleshooting-jekyll-build-errors-for-github-pages-sites#tag-not-properly-terminated.
 int[,] arr = new int[,]{
