@@ -17,7 +17,7 @@ const baseConfig = {
     main: resolve(__dirname, './src/index.jsx')
   },
   output: {
-    path: resolve(__dirname, '../../dist/three'),
+    path: resolve(__dirname, '../../docs/three'),
     filename: '[name].js'
   },
   resolve: {
@@ -66,9 +66,7 @@ const baseConfig = {
 
 let webpackConfig
 if (isProd) {
- webpackConfig = merge(baseConfig, {
-
- })
+ webpackConfig = merge(baseConfig, {})
 } else {
   webpackConfig = merge(baseConfig, {
     // https://stackoverflow.com/questions/43209666/react-router-v4-cannot-get-url
