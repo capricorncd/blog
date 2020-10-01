@@ -16,7 +16,6 @@ body {
   left: 0;
   bottom: 0;
   width: 210px;
-  overflow-y: auto;
   ul, li {
     list-style: none;
     margin: 0;
@@ -48,4 +47,41 @@ main {
 
 .font-size-zero {
   font-size: 0;
+}
+
+@media screen and (max-width: 640px) {
+  header {
+    h1 {
+      font-size: 16px;
+    }
+    button {
+      display: block;
+    }
+  }
+  .aside-wrapper {
+    //display: none;
+    bottom: auto;
+    width: 100%;
+    background: rgba(255,255,255, 0.8);
+    transition: all 0.3s ease-in-out;
+    transform: scaleY(1);
+    opacity: 1;
+    transform-origin: center top;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -7px;
+      right: 64px;
+      border-bottom: 7px solid rgba(255,255,255, 0.6);
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+    }
+    &.hide {
+      transform: scaleY(0);
+      opacity: 0;
+    }
+  }
+  main {
+    left: 0;
+  }
 }

@@ -12,6 +12,7 @@ import {
 } from 'three'
 
 import { createRender } from '~/assets/utils'
+import { COLORS } from '~/assets/constants/colors'
 
 let scene, renderer
 /**
@@ -29,7 +30,7 @@ export function init(el) {
     vertexColors: true
   })
 
-  geometry.colors.push(new Color(0x222222), new Color(0xffff00))
+  geometry.colors.push(new Color(COLORS.second), new Color(COLORS.third))
 
   const v1 = new Vector3(-100, 0, 100)
   const v2 = new Vector3(100, 0, -100)

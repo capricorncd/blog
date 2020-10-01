@@ -4,12 +4,14 @@
  * Date: 2020-09-13 21:02
  */
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './index.scss'
 
 class Header extends Component {
   render() {
     return <header>
-      <h1>three.js demo</h1>
+      <h1>Three.js demo</h1>
+      <button onClick={e => this.props.clickMenu(e)}>Menu</button>
       <a href="https://github.com/capricorncd/blog"
         target="_blank" rel="noreferrer">
         <svg height="24" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true">
@@ -18,6 +20,10 @@ class Header extends Component {
       </a>
     </header>
   }
+}
+
+Header.propTypes = {
+  clickMenu: PropTypes.func
 }
 
 export default Header

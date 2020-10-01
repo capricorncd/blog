@@ -14,10 +14,10 @@ const isProd = argsArr.includes('production')
 
 const baseConfig = {
   entry: {
-    index: resolve(__dirname, './src/index.jsx')
+    main: resolve(__dirname, './src/index.jsx')
   },
   output: {
-    path: resolve(__dirname, 'dist'),
+    path: resolve(__dirname, '../../dist/three'),
     filename: '[name].js'
   },
   resolve: {
@@ -66,7 +66,9 @@ const baseConfig = {
 
 let webpackConfig
 if (isProd) {
- webpackConfig = merge(baseConfig, {})
+ webpackConfig = merge(baseConfig, {
+
+ })
 } else {
   webpackConfig = merge(baseConfig, {
     // https://stackoverflow.com/questions/43209666/react-router-v4-cannot-get-url

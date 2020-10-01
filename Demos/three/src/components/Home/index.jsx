@@ -4,7 +4,7 @@
  * Date: 2020-09-18 09:22
  */
 import React, { useEffect } from 'react'
-import { init, destroy } from './core'
+import { init, destroy } from '../Earth/core'
 
 function Home() {
   let el = null

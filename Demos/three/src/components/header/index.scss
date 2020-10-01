@@ -8,11 +8,27 @@ header {
   background: #24292e;
   h1 {
     color: #fff;
+    opacity: 0.8;
     line-height: 60px;
     margin: 0 0 0 20px;
     font-weight: 500;
     font-size: 24px;
     font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+  }
+  button {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 0;
+    color: #fff;
+    opacity: 0.6;
+    outline: none;
+    display: none;
+    &:active {
+      opacity: 0.8;
+    }
   }
   a {
     display: inline-block;

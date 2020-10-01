@@ -21,7 +21,7 @@ export function createRender(scene, el, camera) {
   // 设置渲染区域尺寸
   renderer.setSize(width, height)
   // 设置背景颜色
-  renderer.setClearColor(COLORS.main, 1)
+  renderer.setClearColor(COLORS.black, 1)
 
   el.appendChild(renderer.domElement)
 
