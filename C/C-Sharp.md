@@ -316,7 +316,7 @@ foreach (int i in num)
 二维数组
 
 ```c#
-int[,] arr = new int[,]{{1, 3, 5}, {6, 7, 9}}; 
+// int[,] arr = new int[,]{{1, 3, 5}, {6, 7, 9}}; 
 ```
 
 ### 示例
