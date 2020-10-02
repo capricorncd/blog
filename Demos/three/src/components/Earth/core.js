@@ -21,14 +21,51 @@ import MOON_IMG from '../SolarSystem/img/moon.jpg'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { COLORS } from '~/assets/constants/colors'
 
-let scene, renderer, animeId, clock, elapsed
+let scene, renderer, animeId, clock, elapsed, windowResizeFn
 
 const EARTH_RADIUS = 100
 const MOON_RADIUS = EARTH_RADIUS * 0.27
 
-export function init(el) {
-  const earthTexture = new TextureLoader().load(EARTH_IMG)
-  const moonTexture = new TextureLoader().load(MOON_IMG)
+function loadTexture() {
+  return new Promise((resolve, reject) => {
+    let count = 0
+    const total = 2
+    const errors = []
+    const res = {}
+    const textureLoader = new TextureLoader()
+    // earth
+    textureLoader.load(EARTH_IMG, texture => {
+      res.earthTexture = texture
+      countFn()
+    }, undefined, err => {
+      errors.push(err)
+      countFn()
+    })
+    // moon
+    textureLoader.load(MOON_IMG, texture => {
+      res.moonTexture = texture
+      countFn()
+    }, undefined, err => {
+      errors.push(err)
+      countFn()
+    })
+
+    function countFn() {
+      count++
+      if (count === total) {
+        if (errors.length > 0) {
+          reject(errors)
+        } else {
+          resolve(res)
+        }
+      }
+    }
+  })
+}
+
+function _init(el, { earthTexture, moonTexture }) {
+  // const earthTexture = new TextureLoader().load(EARTH_IMG)
+  // const moonTexture = new TextureLoader().load(MOON_IMG)
 
   clock = new Clock()
 
@@ -45,8 +82,8 @@ export function init(el) {
   meshMoon.position.x = 200
   scene.add(meshMoon)
 
-  const width = el.offsetWidth
-  const height = el.offsetHeight
+  let width = el.offsetWidth
+  let height = el.offsetHeight
 
   const camera = new PerspectiveCamera(45, width / height, 1, 20000)
   camera.position.set(800, 900, -800)
@@ -98,7 +135,27 @@ export function init(el) {
     renderer.render(scene, camera)
   }
 
+  windowResizeFn = function windowResizeFn(e) {
+    width = el.offsetWidth
+    height = el.offsetHeight
+    // reset camera aspect
+    camera.aspect = width / height
+    // 更新相机投影矩阵
+    camera.updateProjectionMatrix()
+    renderer.setSize(width, height)
+  }
+
+  window.addEventListener('resize', windowResizeFn)
+
   animate()
+}
+
+export function init(el) {
+  loadTexture().then(res => {
+    _init(el, res)
+  }).catch(errs => {
+    console.error.apply(null, errs)
+  })
 }
 
 export function destroy() {
@@ -107,4 +164,5 @@ export function destroy() {
   scene = null
   renderer = null
   cancelAnimationFrame(animeId)
+  window.removeEventListener('resize', windowResizeFn)
 }
