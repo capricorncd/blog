@@ -86,7 +86,7 @@ function _init(el, { earthTexture, moonTexture }) {
   let height = el.offsetHeight
 
   const camera = new PerspectiveCamera(45, width / height, 1, 20000)
-  camera.position.set(800, 900, -800)
+  camera.position.set(1500, 700, -100)
 
   // // 创建点光源
   // const pointLight = new PointLight()
