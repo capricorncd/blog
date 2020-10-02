@@ -18,7 +18,7 @@ const baseConfig = {
     main: resolve(__dirname, './src/index.jsx'),
   },
   output: {
-    path: resolve(__dirname, '../../docs'),
+    path: resolve(__dirname, '../../dist/three'),
     filename: '[name].js'
   },
   externals: {
