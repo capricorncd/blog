@@ -22,7 +22,7 @@ const baseConfig = {
     filename: '[name].js'
   },
   externals: {
-    react: 'React',
+    // react: 'React',
   },
   optimization: {
     splitChunks: {
