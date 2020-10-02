@@ -87,9 +87,9 @@ export function init(el) {
   geometry = new SphereGeometry(50, 40, 40)
   mesh = new Mesh(geometry, new MeshNormalMaterial({
     // color: COLORS.second,
-    bumpMap: new TextureLoader().load(EARTH_IMG, console.log, console.warn, console.error),
-    specular: 0x444444,
-    shininess: 30
+    bumpMap: new TextureLoader().load(EARTH_IMG, () => {}, console.warn, console.error)
+    // specular: 0x444444,
+    // shininess: 30
   }))
   mesh.translateX(-105)
   scene.add(mesh)

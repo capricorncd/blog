@@ -5,6 +5,7 @@
  */
 const { resolve } = require('path')
 const { merge } = require('webpack-merge')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const argsArr = process.argv.slice(2)
 
@@ -14,11 +15,34 @@ const isProd = argsArr.includes('production')
 
 const baseConfig = {
   entry: {
-    main: resolve(__dirname, './src/index.jsx')
+    main: resolve(__dirname, './src/index.jsx'),
   },
   output: {
-    path: resolve(__dirname, '../../docs/three'),
+    path: resolve(__dirname, '../../docs'),
     filename: '[name].js'
+  },
+  externals: {
+    react: 'React',
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        // https://github.com/webpack/webpack/tree/master/examples/common-chunk-and-vendor-chunk
+        // commons: {
+        //   chunks: "initial",
+        //   minChunks: 2,
+        //   maxInitialRequests: 5, // The default limit is too small to showcase the effect
+        //   minSize: 0 // This is example is too small to create commons chunks
+        // },
+        vendor: {
+          test: /node_modules/,
+          chunks: "initial",
+          name: "vendor",
+          priority: 10,
+          enforce: true
+        }
+      }
+    }
   },
   resolve: {
     extensions: ['.js', '.vue', '.jsx', '.ts', '.tsx', '.json'],
@@ -57,10 +81,12 @@ const baseConfig = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'index.html',
       filename: 'index.html'
-    })
+    }),
+    // https://github.com/danethurber/webpack-manifest-plugin
   ]
 }
 

@@ -28,8 +28,16 @@ body {
       display: block;
       padding: 0 20px;
       opacity: 0.8;
+      color: #24292e;
+      text-decoration: none;
       &:hover {
         opacity: 1;
+      }
+    }
+    &.is-current {
+      a {
+        font-weight: bold;
+        text-decoration: underline;
       }
     }
   }

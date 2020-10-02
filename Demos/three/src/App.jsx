@@ -4,7 +4,6 @@
  * Date: 2020-09-13 20:55
  */
 import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,6 +21,7 @@ import Earth from './components/Earth/index'
 
 function App () {
   const [visible, setVisible] = useState(false)
+  const [currentPath, setCurrentPath] = useState('/' + location.pathname.split('/').pop())
 
   function clickMenu (e) {
     setVisible(!visible)
@@ -33,15 +33,24 @@ function App () {
     className.push('hide')
   }
 
-  useEffect((...args) => {
-    console.log('useEffect', args, location)
-    return (...args) => {
-      console.log('useEffect return', args)
+  function docClickHandler() {
+    if (!visible) return
+    setVisible(false)
+  }
+
+  function handleSelect(item) {
+    setCurrentPath(item.path)
+  }
+
+  useEffect(() => {
+    document.addEventListener('click', docClickHandler)
+    return () => {
+      document.removeEventListener('click', docClickHandler)
     }
-  }, [location])
+  }, [visible])
 
   const routeLinks = routers.map((item, i) => {
-    return <li key={i}>
+    return <li key={i} onClick={() => handleSelect(item)} className={currentPath === item.path ? 'is-current' : ''}>
       <Link to={item.path}>{item.text}</Link>
     </li>
   })
@@ -77,16 +86,6 @@ function App () {
       </div>
     </Router>
   )
-}
-
-App.propTypes = {
-  router: PropTypes.shape({
-    history: PropTypes.shape({
-      push: PropTypes.func.isRequired,
-      replace: PropTypes.func.isRequired,
-      createHref: PropTypes.func.isRequired
-    }).isRequired
-  })
 }
 
 export default App
