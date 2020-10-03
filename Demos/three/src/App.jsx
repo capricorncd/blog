@@ -5,7 +5,7 @@
  */
 import React, { useEffect, useState } from 'react'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link
@@ -21,7 +21,7 @@ import Earth from './components/Earth/index'
 
 function App () {
   const [visible, setVisible] = useState(false)
-  const [currentPath, setCurrentPath] = useState('/' + location.pathname.split('/').pop())
+  const [currentPath, setCurrentPath] = useState(location.hash.split('#').pop())
 
   function clickMenu (e) {
     setVisible(!visible)
