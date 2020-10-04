@@ -18,6 +18,8 @@ import MultipleGeometry from './components/MultipleGeometry/index'
 import Materials from './components/Materials/index'
 import DrawLines from './components/DrawLines/index'
 import Earth from './components/Earth/index'
+import CanvasDemo from './components/CanvasDemo/index'
+import CanvasCurrentTime from './components/CurrentTime/index'
 
 function App () {
   const [visible, setVisible] = useState(false)
@@ -64,6 +66,12 @@ function App () {
         </nav>
 
         <Switch>
+          <Route path="/CanvasCurrentTime">
+            <CanvasCurrentTime />
+          </Route>
+          <Route path="/CanvasDemo">
+            <CanvasDemo />
+          </Route>
           <Route path="/Earth">
             <Earth />
           </Route>

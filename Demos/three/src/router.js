@@ -8,6 +8,8 @@ export const routers = [
   { text: 'First 3D Scene', path: '/First3DScene' },
   { text: 'Multiple Geometry', path: '/MultipleGeometry' },
   { text: 'Materials', path: '/Materials' },
-  { text: 'DrawLines', path: '/DrawLines' },
-  { text: 'Earth', path: '/Earth' }
+  { text: 'Draw Lines', path: '/DrawLines' },
+  { text: 'Earth', path: '/Earth' },
+  { text: 'Canvas Demo', path: '/CanvasDemo' },
+  { text: 'Current Time(balls)', path: '/CanvasCurrentTime' }
 ]
