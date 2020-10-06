@@ -3,15 +3,16 @@ html, body {
   padding: 0;
   font-size: 16px;
   height: 100%;
+  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
 }
 
 body {
   padding-top: 60px;
-  background-color: #87a7f5;
-  @include bgImage('../img/bg');
-  -webkit-background-size: 100% auto;
-  background-size: 100% auto;
-  background-position: center center;
+  background: linear-gradient(135deg, #8988df 10%, #8988df 20%, #8b9ce9 59%, #8b9ce9 60%, #8face3);
+  //@include bgImage('../img/bg');
+  //-webkit-background-size: 100% auto;
+  //background-size: 100% auto;
+  //background-position: center center;
   overflow: hidden;
 }
 

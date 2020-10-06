@@ -82,29 +82,26 @@ export default {
     // 是否为私密关系
     isPrivate () {
       const item = this.currentCard || {}
-      return App.jsBridge.uid > 0 && App.jsBridge.uid === +item.own_uid
+      return item.uid === 1
     },
     // card 标签
     cardLabel () {
       const distance = getDistance(this.currentCard, nativeAppData)
       // console.log('distance', distance)
       if (this.isPrivate) {
-        return '只有你能看见的私密卡片'
+        // 只有你能看见的私密卡片
+        return 'Private card that only you can see'
       } else if (distance === 0) {
         // return null
       }
       return distance < 100
-        ? '你们曾经相遇过'
+        // 您们曾经相遇过
+        ? 'You have met'
         : (distance <= 1000 ? `${distance}m away` : `${parseInt(distance / 1000)}km away`)
     },
     // 发送私密卡片显示状态
     privateBtnVisible () {
-      // 1.此功能出现逻辑为以下条件都被满足时（不分先后）：
-      //   a.当前使用用户与正在听的卡片用户不为互赞关系
-      //   b.当前使用用户已经从头到尾听完了两遍音乐
-      //   c.当前使用用户点赞成功
-      // 2.成功发布完成私密卡片后消失;切换下一张卡片时消失
-      return !this.isMutualPraise && this.playTimes >= 2 && this.isPraised && !this.isSentPrivateCard
+      return this.playTimes >= 1 && this.isPraised && !this.isSentPrivateCard
     }
   },
   data () {
@@ -121,7 +118,6 @@ export default {
       // 私密卡片和点赞
       isSentPrivateCard: false,
       isPraised: false,
-      isMutualPraise: false,
       // cards length
       total: 0,
       currentCard: null,
@@ -152,6 +148,7 @@ export default {
       this.isError = false
       this.isSentPrivateCard = false
       this.$audio.src = getCurrentUrl(item)
+      App.emit('audio-change')
     },
     // 播放
     play () {
@@ -235,7 +232,6 @@ export default {
      * next music card
      */
     next () {
-      // #8401
       // 没有卡片，或者已是最后一张，再切换下一个时，提示：is last card
       if (!this.currentCard || this.total === this.currentIndex + 1) {
         this.isNoCards = true
@@ -249,20 +245,9 @@ export default {
     sendPrivate () {
       console.log('sendPrivate')
       if (!this.currentCard) return
-      App.jsBridge.request({
-        method: 'musicCards',
-        data: {
-          action: 'SendPrivateCard',
-          ...this.currentCard
-        }
-      }, e => {
-        App.log('SendPrivateCard: App调用了callback方法')
-        App.log(e)
-        // 发送完成，隐藏发送按钮
-        this.isSentPrivateCard = true
-      })
       // 暂停音乐播放
       if (this.isPlay) this.pause()
+      alert('Interact with native app')
     },
     praiseStateChange (type, value) {
       App.log(type, value)
@@ -275,6 +260,7 @@ export default {
     $audio.style.display = 'none'
 
     this.$audio = $audio
+    App.emit('init-audio-end', $audio)
 
     const $body = App.query('body')
 
@@ -314,7 +300,7 @@ export default {
       }
     },
     playTimes (val) {
-      console.error(this.index + ' play times: ' + val)
+      console.log('play times: ' + val)
     },
     isNoCards (val) {
       if (val && !noCardTimer) {
@@ -378,6 +364,7 @@ export default {
     border-radius: 50%;
     // overflow: hidden;
     box-shadow: 0 8px 20px 0 rgba(0,0,0,0.10);
+    cursor: pointer;
     dd {
       position: absolute;
       top: 48px;
@@ -390,6 +377,7 @@ export default {
       color: #fff;
       white-space: nowrap;
       font-size: 12px;
+      margin: 0;
       &:before {
         content: '';
         position: absolute;

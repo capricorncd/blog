@@ -38,7 +38,6 @@ export default {
   width: 145px;
   height: 36px;
   line-height: 36px;
-  font-family: PingFangSC-Medium;
   font-size: 15px;
   color: #fff;
   transform: scale(1);

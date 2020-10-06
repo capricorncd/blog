@@ -5,6 +5,8 @@
  */
 export const MUSIC_LIST = [
   {
+    uid: 5,
+    gender: 1,
     lat: 31.57868,
     lng: 108.063343,
     url: {
@@ -13,6 +15,8 @@ export const MUSIC_LIST = [
     }
   },
   {
+    uid: 1,
+    gender: 2,
     lat: 30.57868,
     lng: 104.063343,
     url: {

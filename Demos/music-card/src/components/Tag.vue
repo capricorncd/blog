@@ -6,7 +6,7 @@
         <span v-for="(item, i) in tags" @click.stop="clickTag(item)" :key="i">{{ item }}</span>
       </div>
     </transition>
-    <i class="question-mark" @click="questionClick"></i>
+    <i class="question-mark" @click="questionClick"/>
   </div>
 </template>
 
@@ -49,6 +49,7 @@ export default {
     },
     questionClick () {
       console.log('showHelpDialog')
+      alert('Interact with native app')
     }
   },
   mounted () {
@@ -71,6 +72,7 @@ export default {
       border-radius: 13px;
       font-size: 12px;
       color: #fff;
+      cursor: pointer;
     }
     span.first {
       padding-right: 20px;
@@ -85,7 +87,7 @@ export default {
         @include bgImage('~/assets/img/arrow-down-small');
         -webkit-background-size: cover;
         background-size: cover;
-        transition: transform .2s;
+        transition: transform .2s ease-in-out;
       }
     }
     .question-mark {

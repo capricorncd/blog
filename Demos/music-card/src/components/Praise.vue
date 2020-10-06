@@ -11,9 +11,7 @@ export default {
     return {
       // default -> done
       state: '',
-      // 已点赞
       isPraised: false,
-      isMutualPraise: false,
       timer: null
     }
   },
@@ -31,25 +29,7 @@ export default {
           this.state = 'done'
         }, 300)
       }
-    },
-    _praisedSuccess (data, isMutualPraise) {
-      this.isMutualPraise = !!isMutualPraise
-      // 点赞成功
-      const params = {
-        method: 'musicCards',
-        data: {
-          action: 'praiseSuccess',
-          avatar: this.item.url.thumb,
-          ...this.item,
-          ...data,
-          is_mutual_praise: isMutualPraise === 2 ? 0 : isMutualPraise
-        }
-      }
-      App.log('等待App关闭点赞成功窗口:')
-      App.jsBridge.request(params, res => {
-        App.log('App关闭点赞成功窗口')
-        this.isPraised = true
-      })
+      this.isPraised = true
     }
   },
   props: {
@@ -63,19 +43,12 @@ export default {
     }
   },
   watch: {
-    item (item) {
-      // App.error('watch item:')
-      // App.logStr(item)
+    item () {
       this.state = ''
       this.isPraised = false
-      this.isMutualPraise = false
     },
     isPraised (val) {
-      // 通知父组件，是否已点赞
       this.$emit('change', 'isPraised', val)
-    },
-    isMutualPraise (val) {
-      this.$emit('change', 'isMutualPraise', val)
     }
   }
 }

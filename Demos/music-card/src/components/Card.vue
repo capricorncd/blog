@@ -53,7 +53,7 @@ export default {
       if (this.list.length) {
         list = this.list.concat(list.filter(item => item.url))
       }
-      this.list = list
+      this.list = this.gender > 0 ? list.filter(item => item.gender === this.gender) : list
       // 重置index
       if (this.index < 0) this.index = 0
       this.$nextTick(_ => {
