@@ -81,7 +81,6 @@ const baseConfig = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'index.html',
       filename: 'index.html'
@@ -92,7 +91,11 @@ const baseConfig = {
 
 let webpackConfig
 if (isProd) {
- webpackConfig = merge(baseConfig, {})
+ webpackConfig = merge(baseConfig, {
+   plugins: [
+     new CleanWebpackPlugin(),
+   ]
+ })
 } else {
   webpackConfig = merge(baseConfig, {
     // https://stackoverflow.com/questions/43209666/react-router-v4-cannot-get-url
