@@ -8,7 +8,8 @@ export default {
   data() {
     return {
       audio: null,
-      waveSurfer: null
+      waveSurfer: null,
+      resizeHandler: null
     }
   },
   created() {
@@ -19,18 +20,28 @@ export default {
         container: this.$refs.wave,
         // barWidth: 1,
         waveColor: 'rgba(255, 255, 255, 0.5)',
-        cursorColor: 'rgba(255, 255, 255, 0.8)',
+        cursorColor: 'rgba(255, 255, 255, 0.3)',
         progressColor: '#54549f',
         backend: 'MediaElement'
       })
+      this.resizeHandler = this.waveSurfer.util.debounce(() => {
+        this.waveSurfer.empty()
+        this.waveSurfer.drawBuffer()
+      }, 150)
+      window.addEventListener('resize', this.resizeHandler)
     })
+
     App.on('audio-change', () => {
-      this.waveSurfer.load(this.audio)
+      console.log('audio-change')
+      this.$nextTick(() => {
+        this.waveSurfer.load(this.audio)
+      })
     })
   },
   beforeDestroy() {
     App.off('init-audio-end')
     App.off('audio-change')
+    window.removeEventListener('resize', this.resizeHandler)
   }
 }
 </script>

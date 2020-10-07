@@ -58,7 +58,6 @@ export default {
       default: 0
     }
   },
-  template: '',
   watch: {
     progress (val) {
       // App.error('progress change: ' + val)

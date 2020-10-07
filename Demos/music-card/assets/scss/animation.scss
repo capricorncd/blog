@@ -82,15 +82,17 @@
   }
 }
 
-@keyframes tow-seconed-hide {
+@keyframes tow-second-hide {
   0% {
     opacity: 0;
   }
   2%, 98% {
     opacity: 1;
+    pointer-events: auto;
   }
   100% {
     opacity: 0;
+    pointer-events: none;
   }
 }
 

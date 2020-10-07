@@ -14,13 +14,12 @@
 </template>
 
 <script>
-import { initSwiper } from '../helper/swiper'
+import { initSwiper } from '../helper/index'
 import { MUSIC_LIST } from '~/assets/data'
 
 export default {
   created () {
     App.on('wrapper-showed', _ => {
-      // App.error('wrapper-showed')
       initSwiper.call(this, true)
     })
     this.getList()
@@ -85,15 +84,9 @@ export default {
         this.swiper.emit('slideChangeTransitionEnd')
       }
     },
-    // list (list) {
-    //   App.warn('list change: ' + list.length, this.isFirstRequest)
-    // },
     gender () {
       // 重置第一次请求状态
       this.isFirstRequest = true
-      // 保存未查看的数据
-      // this.dontShowList = this.list.slice(this.index + 1)
-      // App.logStr(this.dontShowList)
       // 重置索引
       this.index = -1
       // 重置列表数据

@@ -33,7 +33,8 @@
           :class="['send-private', privateBtnVisible ? '__show' : '__hide']"
           v-show="privateBtnVisible"
           @click="sendPrivate">
-          <dd>点击发送私密卡片，对方会第一时间收到</dd>
+          <dd>Click send private card, <br>the other party will receive it at the first time</dd>
+          <!-- <dd>点击发送私密卡片，对方会第一时间收到</dd> -->
         </dl>
       </transition>
       <zx-praise :is-error="isError" :item="currentCard || {}" @change="praiseStateChange"/>
@@ -246,13 +247,19 @@ export default {
       console.log('sendPrivate')
       if (!this.currentCard) return
       // 暂停音乐播放
-      if (this.isPlay) this.pause()
+      // if (this.isPlay) this.pause()
       alert('Interact with native app')
     },
     praiseStateChange (type, value) {
       App.log(type, value)
       this[type] = value
       // this.isPraised = isPraised
+    },
+    keyupHandler(e) {
+      // space key
+      if (e.keyCode === 32) {
+        this.clickPlay(e)
+      }
     }
   },
   mounted () {
@@ -288,6 +295,7 @@ export default {
         initOuterWrapper(this, nativeAppData)
       }
     })
+    document.addEventListener('keyup', this.keyupHandler)
   },
   watch: {
     isPlay (val) {
@@ -366,12 +374,14 @@ export default {
     box-shadow: 0 8px 20px 0 rgba(0,0,0,0.10);
     cursor: pointer;
     dd {
+      display: flex;
+      align-items: center;
       position: absolute;
       top: 48px;
       left: 0;
       padding: 0 12px;
       height: 42px;
-      line-height: 42px;
+      line-height: 1;
       background-color: #FF88D6;
       border-radius: 12px;
       color: #fff;
@@ -389,7 +399,7 @@ export default {
       }
     }
     &.__show dd {
-      animation: tow-seconed-hide 15s forwards;
+      animation: tow-second-hide 3s forwards;
     }
     &.__hide dd {
       display: none;

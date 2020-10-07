@@ -23,5 +23,15 @@ export const MUSIC_LIST = [
       thumb: './static/covers/old-dream.jpg',
       url: './static/audio/old-dream.mp4'
     }
+  },
+  {
+    uid: 6,
+    gender: 0,
+    lat: 30.67868,
+    lng: 104.063343,
+    url: {
+      thumb: './static/covers/total-soccer.jpg',
+      url: './static/audio/total-soccer.mp3'
+    }
   }
 ]
