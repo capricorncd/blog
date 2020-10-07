@@ -91,7 +91,8 @@ export default {
       // console.log('distance', distance)
       if (this.isPrivate) {
         // 只有你能看见的私密卡片
-        return 'Private card that only you can see'
+        // return 'Private card that only you can see'
+        return 'Private card'
       } else if (distance === 0) {
         // return null
       }
