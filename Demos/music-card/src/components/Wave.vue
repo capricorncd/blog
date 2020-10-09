@@ -8,8 +8,7 @@ export default {
   data() {
     return {
       audio: null,
-      waveSurfer: null,
-      resizeHandler: null
+      waveSurfer: null
     }
   },
   created() {
@@ -22,13 +21,9 @@ export default {
         waveColor: 'rgba(255, 255, 255, 0.5)',
         cursorColor: 'rgba(255, 255, 255, 0.3)',
         progressColor: '#54549f',
-        backend: 'MediaElement'
+        backend: 'MediaElement',
+        responsive: true
       })
-      this.resizeHandler = this.waveSurfer.util.debounce(() => {
-        this.waveSurfer.empty()
-        this.waveSurfer.drawBuffer()
-      }, 150)
-      window.addEventListener('resize', this.resizeHandler)
     })
 
     App.on('audio-change', () => {
@@ -41,7 +36,6 @@ export default {
   beforeDestroy() {
     App.off('init-audio-end')
     App.off('audio-change')
-    window.removeEventListener('resize', this.resizeHandler)
   }
 }
 </script>
