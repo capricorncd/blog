@@ -1,0 +1,32 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  height: 100%;
+  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+}
+
+body {
+  padding-top: 60px;
+  background: linear-gradient(135deg, #8988df 10%, #8988df 20%, #8b9ce9 59%, #8b9ce9 60%, #8face3);
+  //@include bgImage('../img/bg');
+  //-webkit-background-size: 100% auto;
+  //background-size: 100% auto;
+  //background-position: center center;
+  overflow: hidden;
+}
+
+.font-size-zero {
+  font-size: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-touch-callout:none;  /*系统默认菜单被禁用*/
+  -webkit-user-select:none; /*webkit浏览器*/
+  -khtml-user-select:none; /*早期浏览器*/
+  -moz-user-select:none;/*火狐*/
+  -ms-user-select:none; /*IE10*/
+  user-select:none;
+  -webkit-tap-highlight-color: transparent;
+}

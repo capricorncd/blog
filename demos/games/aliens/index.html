@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aliens - BinaryTree</title>
+  <link rel="stylesheet" href="./css/aliens.css">
+</head>
+<body>
+
+<div class="stage-wrapper">
+
+  <div class="alien"></div>
+
+  <div class="arc"></div>
+  <div class="cannon"></div>
+  <div class="missile"></div>
+  <div class="explosion"></div>
+</div>
+
+<div class="control-wrapper">
+  <div class="output">请输入X 和 Y坐标(0-300)， 然后点击fire.</div>
+  <div class="input-wrapper">
+    <input class="input input-x-hook" type="text" name="inputX" placeholder="X...">
+    <input class="input input-y-hook" type="text" name="inputY" placeholder="Y...">
+    <button class="input button-hook">Fire</button>
+  </div>
+</div>
+
+<script src="./js/binary-tree.js"></script>
+<script src="./js/aliens.js"></script>
+<script>
+  GameAliens.init();
+</script>
+</body>
+</html>

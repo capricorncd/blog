@@ -1,0 +1,20 @@
+{
+  "name": "express-jade-mongoose",
+  "version": "1.0.0",
+  "author": "Capricorncd",
+  "description": "express-jade-mongoose",
+  "keywords": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.7"
+  }
+}

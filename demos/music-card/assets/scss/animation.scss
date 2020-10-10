@@ -1,0 +1,121 @@
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes shakeHide {
+  15% {
+    opacity: .5;
+  }
+  30% {
+    opacity: .9;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes shakeShow {
+0% {
+  opacity: 0;
+  transform: scale(0);
+}
+40% {
+    opacity: .9;
+    transform: scale(1.2);
+  }
+60% {
+    transform: scale(0.9);
+  }
+80% {
+    transform: scale(1.1);
+  }
+100% {
+     opacity: 1;
+     transform: scale(1);
+   }
+}
+
+@keyframes shake {
+0% {
+  transform: translateX(0);
+}
+20% {
+    transform: translateX(5px);
+  }
+40% {
+    transform: translateX(-5px);
+  }
+60% {
+    transform: translateX(5px);
+  }
+80% {
+    transform: translateX(-5px);
+  }
+100% {
+     transform: translateX(0);
+   }
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes card-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+}
+
+@keyframes tow-second-hide {
+  0% {
+    opacity: 0;
+  }
+  2%, 98% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.fade-left-enter-active, .fade-left-leave-active {
+  transition: all .5s;
+}
+.fade-left-enter, .fade-left-leave-to {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
+.send-private-enter-active, .send-private-leave-active {
+  transition: all .5s;
+}
+.send-private-enter, .send-private-leave-to {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+.fade-center-enter-active, .fade-center-leave-active {
+  transition: all .5s;
+}
+.fade-center-enter, .fade-center-leave-to {
+  transform: scale(0);
+  opacity: 0;
+}

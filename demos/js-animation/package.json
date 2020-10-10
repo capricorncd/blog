@@ -1,0 +1,7 @@
+{
+  "name": "js-animation",
+  "version": "0.0.1",
+  "dependencies": {
+    "webpack": "^1.15.0"
+  }
+}

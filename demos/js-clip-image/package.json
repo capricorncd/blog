@@ -1,0 +1,34 @@
+{
+  "name": "js-image-clip",
+  "version": "1.0.0",
+  "description": "image clip for javascript",
+  "main": "dist/image-clip.js",
+  "scripts": {
+    "dev": "webpack-dev-server --mode=development --color --config webpack.dev.js",
+    "build": "webpack --colors --config webpack.prod.js"
+  },
+  "keywords": [
+    "image",
+    "clip"
+  ],
+  "author": "Capricorncd",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.0.1",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "license": "ISC"
+}

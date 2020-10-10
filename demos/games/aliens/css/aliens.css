@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.stage-wrapper {
+  position: relative;
+  margin: 20px;
+  width: 300px;
+  height: 300px;
+  background-color: #333;
+  overflow: hidden;
+}
+
+.arc {
+  position: absolute;
+  left: -150px;
+  bottom: -543px;
+  width: 600px;
+  height: 600px;
+  border: 2px dashed #ff0;
+  border-radius: 50%;
+}
+
+.cannon {
+  position: absolute;
+  bottom: 10px;
+  left: 140px;
+  width: 20px;
+  height: 20px;
+  background-color: #ff0;
+}
+.cannon:after {
+  position: absolute;
+  left: 7px;
+  top: -6px;
+  width: 6px;
+  height: 10px;
+  border-radius: 3px;
+  background-color: #ff0;
+  content: '';
+}
+
+.missile {
+  position: absolute;
+  top: 256px;
+  left: 142px;
+  width: 0px;
+  height: 0px;
+  border-bottom: 14px solid red;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.alien {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: sandybrown;
+}
+
+.explosion {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+
+
+.control-wrapper {
+  margin: 0 0 0 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.control-wrapper .input-wrapper {
+  margin-top: 20px;
+}
+
+.control-wrapper .input {
+  display: inline-block;
+  margin: 0 10px;
+  max-width: 80px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+}
+.control-wrapper button {
+  width: 40px;
+  height: 28px;
+}
+
