@@ -4,27 +4,13 @@
  * Date: 2020-10-06 11:02
  */
 import { touchEvents } from './touch-events'
+// ↑ 谷歌PC浏览器从设备模式切换(PC->Mobile)时，touchEvents将失效
 
 export function handleToneArm () {
   const _this = this
   const $toneArm = this.$toneArm
-  let toneBox
-  try {
-    toneBox = $toneArm.getBoundingClientRect()
-  } catch (e) {
-    // 不支持getBoundingClientRect的浏览器
-    const $mc = this.$wrapper
-    const top = (window.innerHeight - $mc.clientHeight) / 2
-    const left = (window.innerWidth - $mc.clientWidth) / 2
-    toneBox = {
-      // toneArm right: 18
-      x: left + App.query('.card-inner').clientWidth - $toneArm.clientWidth - 18,
-      // card marginTop: 19, toneArm top: 18
-      y: top + App.query('.tags-wrapper').clientHeight + 19 + 18,
-      width: $toneArm.clientWidth,
-      height: $toneArm.clientHeight
-    }
-  }
+  let toneBox = getBoundingClientRect($toneArm, this.$wrapper)
+  // window.onResize 时，需要重新计算。check winResizeToneArmHandler
   // tone arm 旋转轴
   const CENTER = {
     x: toneBox.x + toneBox.width * 0.53,
@@ -34,7 +20,7 @@ export function handleToneArm () {
   // isTouchEvent
   let isTouchEvent = false
   // 鼠标按下位置图片左上角位置
-  let moveBeforePostion = {}
+  let moveBeforePosition = {}
   // 拖到角度
   let angle = 0
   let timer = null
@@ -66,11 +52,11 @@ export function handleToneArm () {
 
       const x = isTouchEvent ? e.targetTouches[0].pageX : (e.pageX || e.clientX)
       const y = isTouchEvent ? e.targetTouches[0].pageY : (e.pageY || e.clientY)
-      moveBeforePostion = {
+      moveBeforePosition = {
         x,
         y
       }
-      // console.log(moveBeforePostion)
+      // console.log(moveBeforePosition)
     }
   })
   $toneArm.addEventListener(touchEvents.move, e => {
@@ -84,7 +70,7 @@ export function handleToneArm () {
         e.returnValue = false
       }
     }
-    angle = getEndAngle(CENTER, moveBeforePostion, e, isTouchEvent, this)
+    angle = getEndAngle(CENTER, moveBeforePosition, e, isTouchEvent, this)
     $toneArm.style.transform = `rotate(${angle}deg)`
     if (timer) return
     timer = setTimeout(_ => {
@@ -103,6 +89,18 @@ export function handleToneArm () {
     // console.error(e.type)
     touchEnd()
   })
+
+  if (!this.winResizeToneArmHandler) {
+    this.winResizeToneArmHandler = (e) => {
+      toneBox = getBoundingClientRect($toneArm, this.$wrapper)
+      // tone arm 旋转轴
+      CENTER.x = toneBox.x + toneBox.width * 0.53
+      CENTER.y = toneBox.y + toneBox.height * 0.13
+    }
+  }
+
+  // resize
+  window.addEventListener('resize', this.winResizeToneArmHandler)
 
   function getEndAngle (CENTER, moveBeforePosition, e, isTouchEvent) {
     const x = isTouchEvent ? e.targetTouches[0].pageX : (e.pageX || e.clientX)
@@ -158,4 +156,25 @@ function getStyleValue($el) {
 
 function isAndroid() {
   return /android/ig.test(navigator.userAgent)
+}
+
+function getBoundingClientRect($toneArm, $mc) {
+  let toneBox
+  try {
+    toneBox = $toneArm.getBoundingClientRect()
+  } catch (e) {
+    // 不支持getBoundingClientRect的浏览器
+    // const $mc = this.$wrapper
+    const top = (window.innerHeight - $mc.clientHeight) / 2
+    const left = (window.innerWidth - $mc.clientWidth) / 2
+    toneBox = {
+      // toneArm right: 18
+      x: left + App.query('.card-inner').clientWidth - $toneArm.clientWidth - 18,
+      // card marginTop: 19, toneArm top: 18
+      y: top + App.query('.tags-wrapper').clientHeight + 19 + 18,
+      width: $toneArm.clientWidth,
+      height: $toneArm.clientHeight
+    }
+  }
+  return toneBox
 }

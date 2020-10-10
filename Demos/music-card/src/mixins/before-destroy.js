@@ -15,6 +15,10 @@ export const beforeDestroy = {
     this.$audio.removeEventListener('play', this._audioHander)
     this.$audio.removeEventListener('canplay', this._canplayHandler)
     document.removeEventListener('keyup', this.keyupHandler)
+    if (this.winResizeToneArmHandler) {
+      window.removeEventListener('resize', this.winResizeToneArmHandler)
+      this.winResizeToneArmHandler = null
+    }
     App.off('change')
   }
 }
