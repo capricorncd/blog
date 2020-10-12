@@ -7,6 +7,7 @@ const { resolve } = require('path')
 const { merge } = require('webpack-merge')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const argsArr = process.argv.slice(2)
 
 console.log(argsArr)
@@ -75,8 +76,25 @@ const baseConfig = {
         ]
       },
       {
-        test: /\.jpe?g|pne?g|svg$/,
-        loader: 'file-loader'
+        test: /\.(pne?g|jpe?g|gif|svg|webp)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'static/img/[name].[ext]'
+        }
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        loader: 'file-loader',
+        options: {
+          name: 'static/media/[name].[ext]'
+        }
+      },
+      {
+        test: /\.(obj|stl|mtl)(\?.*)?$/,
+        loader: 'file-loader',
+        options: {
+          name: 'static/file/[name].[ext]'
+        }
       }
     ]
   },
@@ -94,6 +112,17 @@ if (isProd) {
  webpackConfig = merge(baseConfig, {
    plugins: [
      new CleanWebpackPlugin(),
+     new CopyWebpackPlugin({
+       patterns: [{
+         // 后期增加过滤，不同的项目可能static中需要的内容不一样
+         from: resolve(__dirname, './static'),
+         to: 'static'
+         // ignore: ['.*']
+       }],
+       options: {
+         concurrency: 100
+       }
+     })
    ]
  })
 } else {
@@ -103,6 +132,13 @@ if (isProd) {
       // BrowserRouter时，解决react-router刷新页面后 cannot GET *url*问题
       // historyApiFallback: true,
     },
+    plugins: [
+      // https://www.npmjs.com/package/eslint-webpack-plugin
+      // new EslintWebpackPlugin({
+      //   extensions: ['js', 'vue'],
+      //   fix: true
+      // })
+    ]
   })
 }
 

@@ -11,5 +11,7 @@ export const routers = [
   { text: 'Draw Lines', path: '/DrawLines' },
   { text: 'Earth', path: '/Earth' },
   { text: 'Canvas Demo', path: '/CanvasDemo' },
-  { text: 'Current Time(balls)', path: '/CanvasCurrentTime' }
+  { text: 'Current Time(balls)', path: '/CanvasCurrentTime' },
+  { text: 'Clock(C4D STL)', path: '/ClockSTL' },
+  { text: 'Clock(C4D Obj)', path: '/ClockObj' }
 ]

@@ -20,6 +20,8 @@ import DrawLines from './components/DrawLines/index'
 import Earth from './components/Earth/index'
 import CanvasDemo from './components/CanvasDemo/index'
 import CanvasCurrentTime from './components/CurrentTime/index'
+import ClockSTL from './components/ClockSTL/index'
+import ClockObj from './components/ClockObj/index'
 
 function App () {
   const [visible, setVisible] = useState(false)
@@ -66,6 +68,12 @@ function App () {
         </nav>
 
         <Switch>
+          <Route path="/ClockObj">
+            <ClockObj />
+          </Route>
+          <Route path="/ClockSTL">
+            <ClockSTL />
+          </Route>
           <Route path="/CanvasCurrentTime">
             <CanvasCurrentTime />
           </Route>

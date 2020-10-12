@@ -65,7 +65,7 @@ export function render(context, width, height) {
 function addBall(x, y, num) {
   MATRIX_DIGITS[num].forEach((line, rowIndex) => {
     line.forEach((v, i) => {
-      if (v === 1) {
+      if (v === 0) {
         balls.push({
           x: x + i * COE,
           y: y + rowIndex * COE,
