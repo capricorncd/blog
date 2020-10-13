@@ -17,15 +17,21 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 let scene, renderer
 
+/**
+ * 加载贴图和模型对象文件
+ * load resource
+ * @returns {Promise<unknown>}
+ */
 function loadResource() {
   return new Promise((resolve, reject) => {
     const objLoader = new OBJLoader()
     const mtlLoader = new MTLLoader()
-
+    // 加载贴图文件
     mtlLoader.load('static/clock.mtl', mtl => {
+      // 加载对象前，先设置贴图数据
       objLoader.setMaterials(mtl)
+      // 加载对象文件
       objLoader.load('static/clock.obj', res => {
-        // objLoader.setMaterials(mtl)
         resolve(res)
       }, undefined, reject)
     }, undefined, reject)
@@ -77,11 +83,9 @@ function _init(el, obj) {
 
 export function init(el) {
   loadResource().then(res => {
-    console.log(res)
+    // console.log(res)
     _init(el, res)
-  }).catch(errs => {
-    console.error.apply(null, errs)
-  })
+  }).catch(console.error)
 }
 
 export function destroy() {

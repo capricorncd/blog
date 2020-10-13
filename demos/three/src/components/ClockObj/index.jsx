@@ -6,13 +6,10 @@
 import React, { useEffect } from 'react'
 import { destroy, init } from './core'
 
-function MultipleGeometry() {
-  let el = null
+function ClockObjDemo() {
   useEffect(() => {
-    if (!el) {
-      el = document.querySelector('.clock-demo-el-hook')
-      init(el)
-    }
+    const el = document.querySelector('.clock-demo-el-hook')
+    init(el)
     return () => {
       destroy()
     }
@@ -20,4 +17,4 @@ function MultipleGeometry() {
   return <main className="clock-demo-el-hook font-size-zero"/>
 }
 
-export default MultipleGeometry
+export default ClockObjDemo
