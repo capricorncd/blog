@@ -4,7 +4,7 @@
 
 ## Demos
 
-* WebGL(Three.js) 
+* WebGL(Three.js)
 
 https://capricorncd.github.io/blog/dist/three/index.html
 
@@ -12,128 +12,211 @@ https://capricorncd.github.io/blog/dist/three/index.html
 
 https://capricorncd.github.io/blog/dist/music-card/index.html
 
-## Java
+* Java
 
 https://capricorncd.github.io/Java-Notes/
 
-## JavaScript
+## Catalog 目录
 
-#### # [JavaScript](./Javascript)
+### # algorithms-and-data-structures 算法与数据结构
 
-* [Ajax全接触](./Javascript/Ajax全接触.md)
+* [001-algorithms](./algorithms-and-data-structures/001-algorithms.md)
 
-* [JavaScriptⅠ-入门篇](./Javascript/JavaScriptⅠ-入门篇.md)
+* [002-data-structures](./algorithms-and-data-structures/002-data-structures.md)
 
-* [JavaScriptⅡ-进阶篇](./Javascript/JavaScriptⅡ-进阶篇.md)
+* [003-排序算法](./algorithms-and-data-structures/003-排序算法.md)
 
-* [JavaScript正则表达式RegExp](./Javascript/JavaScript正则表达式RegExp.md)
+* [004-选择排序SelectionSort](./algorithms-and-data-structures/004-选择排序SelectionSort.md)
 
-* [JavaScript二叉树算法](./Javascript/JavaScript二叉树算法.md)
+* [005-插入排序InsertionSort](./algorithms-and-data-structures/005-插入排序InsertionSort.md)
 
-#### # Other
+* [006-归并排序MergeSort](./algorithms-and-data-structures/006-归并排序MergeSort.md)
 
-* [JavaScript发展史](./Javascript/JavaScript/Lesson001.md)
+* [007-快速排序QuickSort](./algorithms-and-data-structures/007-快速排序QuickSort.md)
 
-* [JavaScript入门、引入、变量、值类型、运算符](./Javascript/JavaScript/Lesson002.md)
+### # C/C++
 
+* [C语言基础](./c/C语言基础.md)
 
-## TypeScript
+* [数据结构-栈(Stack)](./c/数据结构-栈(Stack).md)
 
-#### # [TypeScript](./Javascript)
+### # C#
 
-* [TypeScript入门](./Typescript/TypeScript入门.md)
+* [C#面向对象编程](./c/C-Sharp-OPP.md)
 
-## C/C++/C#
+### # C4D
 
-#### # C/C++
+* [C4D files](./c4d/)
 
-* [C语言基础](./C/C语言基础.md)
+### # Cocos
 
-* [数据结构-栈(Stack)](./C/数据结构-栈(Stack).md)
+* [monser stars demo](./cocos/monser-stars)
 
-#### # C#
+### # Computer Basics
 
-* [C#基础语法](./C/C-Sharp.md)
+* [Computer Basic](./computer-basics/computer-basic)
 
-* [C#面向对象编程](./C/C-Sharp-OPP.md)
+* [二进制Binary](./computer-basics/binary.md)
 
-#### # Basical Computor
+### # CSS
 
-* [二进制Binary](./BasicalComputor/binary.md)
+* [重拾CSS的乐趣](./css/重拾CSS的乐趣)
 
-#### # 算法与数据结构
+### # Demos
 
-* [001-algorithms](./AlgorithmsAndDataStructures/001-algorithms.md)
+* [drag and upload](./demos/drag-and-upload)
 
-* [002-data-structures](./AlgorithmsAndDataStructures/002-data-structures.md)
+* [animation](./demos/js-animation)
 
-* [003-排序算法](./AlgorithmsAndDataStructures/003-排序算法.md)
+* [js二叉树小蜜蜂游戏](./demos/games/aliens)
 
-* [004-选择排序SelectionSort](./AlgorithmsAndDataStructures/004-选择排序SelectionSort.md)
+* [js图片文件拖拽上传](./demos/drag-and-upload)
 
-* [005-插入排序InsertionSort](./AlgorithmsAndDataStructures/005-插入排序InsertionSort.md)
+* [js图片裁剪效果实现](./demos/js-clip-image)
 
-* [006-归并排序MergeSort](./AlgorithmsAndDataStructures/006-归并排序MergeSort.md)
+* [js电商网站无延时菜单实现](./demos/jd-menu-jquery)
 
-* [007-快速排序QuickSort](./AlgorithmsAndDataStructures/007-快速排序QuickSort.md)
+* [js clip image](./demos/js-clip-image)
 
+* [indexedDB数据库操作](./demos/indexeddb)
 
-## Python
+* [music card](./demos/music-card)
 
-#### # [Python入门](./Python/basic-tutorials)
+* [nodejs-express-jade](./demos/nodejs-express-jade)
 
-* [001-简介和安装](./Python/basic-tutorials/Python-001-简介和安装.md)
+* [Promise](./demos/promise)
 
-* [002-1-变量和数据类型](./Python/basic-tutorials/Python-002-0-变量和数据类型.md)
+* [Three.js/WebGL](./demos/three)
 
-* [002-2-字符串](./Python/basic-tutorials/Python-002-a-字符串.md)
+* [TypeScript config](./demos/typescript-config)
 
-* [002-3-整数和浮点数](./Python/basic-tutorials/Python-002-b-整数和浮点数.md)
+* [TypeScript react](./typescript-react)
 
-* [002-4-布尔类型](./Python/basic-tutorials/Python-002-c-布尔类型.md)
+* [Vdom](./demos/vdom)
 
-* [002-5-list](./Python/basic-tutorials/Python-002-d-list.md)
+* [web-audio](./demos/web-audio)
 
-* [002-6-tuple](./Python/basic-tutorials/Python-002-e-tuple.md)
+### # Hybrid
 
-* [002-数据类型（扩展）](./Python/basic-tutorials/Python-002-数据类型（扩展）.md)
+* [Hybrid](./hybrid)
 
-* [003-条件判断和循环](./Python/basic-tutorials/Python-003-条件判断和循环.md)
+### # JavaScript
 
-* [004-Dict和Set类型(1)](./Python/basic-tutorials/Python-004-Dict和Set类型(1).md)
+* [JavaScript二叉树算法](./javascript/JavaScript二叉树算法.md)
 
-* [004-Dict和Set类型(2)](./Python/basic-tutorials/Python-004-Dict和Set类型(2).md)
+* [JavaScript正则表达式RegExp](./javascript/JavaScript正则表达式RegExp.md)
 
-* [005-函数](./Python/basic-tutorials/Python-005-函数.md)
+* [async interactive 异步交互](./javascript/async-interactive)
 
-## DEMOS
+* [demo](./javascript/demo)
 
-#### [DEMOS](./Demos)
+* [es6+](./javascript/es6+)
 
-* [animation](./Demos/js-animation)
+* [event](./javascript/event)
 
-* [js二叉树小蜜蜂游戏](./Demos/games/aliens)
+* [promise](./javascript/promise)
 
-* [js图片文件拖拽上传](./Demos/drag-and-upload)
+* [Ajax全接触](./javascript/Ajax全接触.md)
 
-* [js图片裁剪效果实现](./Demos/js-clip-image)
+* [JavaScriptⅠ-入门篇](./javascript/JavaScriptⅠ-入门篇.md)
 
-* [js电商网站无延时菜单实现](./Demos/jd-menu-jquery)
+* [JavaScriptⅡ-进阶篇](./javascript/JavaScriptⅡ-进阶篇.md)
 
-* [indexedDB数据库操作](./Demos/indexeddb)
+* [JavaScriptⅢ深入浅出-01数据类型](./javascript/JavaScriptⅢ深入浅出-01数据类型.md)
 
-* [nodejs-express-jade](./Demos/nodejs-express-jade)
+* [JavaScriptⅢ深入浅出-02表达式和运算符](./javascript/JavaScriptⅢ深入浅出-02表达式和运算符.md)
 
-* [Promise](./Demos/js-promise)
+* [JavaScriptⅢ深入浅出-03语句](./javascript/JavaScriptⅢ深入浅出-03语句.md)
 
+* [JavaScriptⅢ深入浅出-04对象](./javascript/JavaScriptⅢ深入浅出-04对象.md)
 
-## webpack
+* [JavaScriptⅢ深入浅出-05数组](./javascript/JavaScriptⅢ深入浅出-05数组.md)
 
-#### # [webpack](./C%2B%2B)
+* [JavaScriptⅢ深入浅出-06函数和作用域](./javascript/JavaScriptⅢ深入浅出-06函数和作用域.md)
 
-* [webpack](./Webpack/webpack)
+* [JavaScriptⅢ深入浅出-07OOP](./javascript/JavaScriptⅢ深入浅出-07OOP.md)
 
-* [vue-loader-webpack](./Webpack/vue-loader%2Bwebpack)
+* [JavaScriptⅢ深入浅出-08正则与模式匹配](./javascript/JavaScriptⅢ深入浅出-08正则与模式匹配.md)
+
+* [基础/Lesson001](./javascript/basic/Lesson001.md)
+
+* [基础/Lesson002](./javascript/basic/Lesson002.md)
+
+### # Language
+
+* [jp/符号](./language/jp/)
+
+* [jp/dev-common-words](./language/jp/dev-common-words.md)
+
+### # Linux
+
+* [Linux系统管理](./linux/Linux系统管理/README.md)
+
+### # Mac
+
+* [jurisdiction](./mac/jurisdiction.md)
+
+### # Network
+
+* [DNS(Domain Name System)](./network/dns)
+
+* [Http](./network/http)
+
+* [Tcp](./network/tcp)
+
+* [Tcp/网络套接字与通信过程](./network/tcp/1-network-socket-and-communication-process.md)
+
+### # Nodejs
+
+* [ssr vue](./nodejs/ssr-vue-nodejs)
+
+* [tutorial](./nodejs/tutorial)
+
+### # Object-c
+
+* [getting started](./objective-c/getting-started)
+
+### # Python
+
+* [001-简介和安装](./python/basic-tutorials/Python-001-简介和安装.md)
+
+* [002-1-变量和数据类型](./python/basic-tutorials/Python-002-0-变量和数据类型.md)
+
+* [002-2-字符串](./python/basic-tutorials/Python-002-a-字符串.md)
+
+* [002-3-整数和浮点数](./python/basic-tutorials/Python-002-b-整数和浮点数.md)
+
+* [002-4-布尔类型](./python/basic-tutorials/Python-002-c-布尔类型.md)
+
+* [002-5-list](./python/basic-tutorials/Python-002-d-list.md)
+
+* [002-6-tuple](./python/basic-tutorials/Python-002-e-tuple.md)
+
+* [002-数据类型（扩展）](./python/basic-tutorials/Python-002-数据类型（扩展）.md)
+
+* [003-条件判断和循环](./python/basic-tutorials/Python-003-条件判断和循环.md)
+
+* [004-Dict和Set类型(1)](./python/basic-tutorials/Python-004-Dict和Set类型(1).md)
+
+* [004-Dict和Set类型(2)](./python/basic-tutorials/Python-004-Dict和Set类型(2).md)
+
+* [005-函数](./python/basic-tutorials/Python-005-函数.md)
+
+### # React
+
+[React 15.0.2](./react/React-15.0.2.md)
+
+### # TypeScript
+
+* [TypeScript入门](./typescript/)
+
+* [tsconfig](./typescript/tsconfig.md)
+
+* [范型](./typescript/范型.md)
+
+### # webpack
+
+* [webpack](./webpack)
 
 ## Copyright and license
 
