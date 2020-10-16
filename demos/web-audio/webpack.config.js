@@ -16,6 +16,7 @@ console.log(argsArr)
 const isProd = argsArr.includes('production')
 
 const baseConfig = {
+  mode: isProd ? 'production' : 'development',
   entry: {
     main: resolve(__dirname, './src/index.js')
   },
