@@ -218,6 +218,10 @@ https://capricorncd.github.io/Java-Notes/
 
 * [webpack](./webpack)
 
+* [config(webpack4)](./demos/music-card/webpack.config.js)
+
+* [config(webpack5)](./demos/web-audio/webpack.config.js)
+
 ## Copyright and license
 
 https://github.com/capricorncd
