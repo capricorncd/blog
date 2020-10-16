@@ -4,9 +4,8 @@
   "description": "web audio",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server",
-    "build": "webpack"
+    "dev": "webpack serve",
+    "build": "webpack --mode production"
   },
   "keywords": [
     "web",
@@ -38,5 +37,11 @@
     "webpack-cli": "^4.0.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.2.0"
+  },
+  "github": "https://github.com/capricorncd",
+  "homepage": "https://github.com/capricorncd/blog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capricorncd/blog.git"
   }
 }
