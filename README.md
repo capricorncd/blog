@@ -18,7 +18,7 @@ https://capricorncd.github.io/Java-Notes/
 
 ## Catalog 目录
 
-### # algorithms-and-data-structures 算法与数据结构
+### algorithms-and-data-structures 算法与数据结构
 
 * [001-algorithms](./algorithms-and-data-structures/001-algorithms.md)
 
@@ -34,35 +34,35 @@ https://capricorncd.github.io/Java-Notes/
 
 * [007-快速排序QuickSort](./algorithms-and-data-structures/007-快速排序QuickSort.md)
 
-### # C/C++
+### C/C++
 
 * [C语言基础](./c/C语言基础.md)
 
 * [数据结构-栈(Stack)](./c/数据结构-栈(Stack).md)
 
-### # C#
+### C#
 
 * [C#面向对象编程](./c/C-Sharp-OPP.md)
 
-### # C4D
+### C4D
 
 * [C4D files](./c4d/)
 
-### # Cocos
+### Cocos
 
 * [monser stars demo](./cocos/monser-stars)
 
-### # Computer Basics
+### Computer Basics
 
 * [Computer Basic](./computer-basics/computer-basic)
 
 * [二进制Binary](./computer-basics/binary.md)
 
-### # CSS
+### CSS
 
 * [重拾CSS的乐趣](./css/重拾CSS的乐趣)
 
-### # Demos
+### Demos
 
 * [drag and upload](./demos/drag-and-upload)
 
@@ -96,11 +96,11 @@ https://capricorncd.github.io/Java-Notes/
 
 * [web-audio](./demos/web-audio)
 
-### # Hybrid
+### Hybrid
 
 * [Hybrid](./hybrid)
 
-### # JavaScript
+### JavaScript
 
 * [JavaScript二叉树算法](./javascript/JavaScript二叉树算法.md)
 
@@ -142,21 +142,21 @@ https://capricorncd.github.io/Java-Notes/
 
 * [基础/Lesson002](./javascript/basic/Lesson002.md)
 
-### # Language
+### Language
 
 * [jp/符号](./language/jp/)
 
 * [jp/dev-common-words](./language/jp/dev-common-words.md)
 
-### # Linux
+### Linux
 
 * [Linux系统管理](./linux/Linux系统管理/README.md)
 
-### # Mac
+### Mac
 
 * [jurisdiction](./mac/jurisdiction.md)
 
-### # Network
+### Network
 
 * [DNS(Domain Name System)](./network/dns)
 
@@ -166,17 +166,17 @@ https://capricorncd.github.io/Java-Notes/
 
 * [Tcp/网络套接字与通信过程](./network/tcp/1-network-socket-and-communication-process.md)
 
-### # Nodejs
+### Nodejs
 
 * [ssr vue](./nodejs/ssr-vue-nodejs)
 
 * [tutorial](./nodejs/tutorial)
 
-### # Object-c
+### Object-c
 
 * [getting started](./objective-c/getting-started)
 
-### # Python
+### Python
 
 * [001-简介和安装](./python/basic-tutorials/Python-001-简介和安装.md)
 
@@ -202,11 +202,11 @@ https://capricorncd.github.io/Java-Notes/
 
 * [005-函数](./python/basic-tutorials/Python-005-函数.md)
 
-### # React
+### React
 
 [React 15.0.2](./react/React-15.0.2.md)
 
-### # TypeScript
+### TypeScript
 
 * [TypeScript入门](./typescript/)
 
@@ -214,7 +214,7 @@ https://capricorncd.github.io/Java-Notes/
 
 * [范型](./typescript/范型.md)
 
-### # webpack
+### webpack
 
 * [webpack](./webpack)
 
