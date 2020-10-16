@@ -204,7 +204,7 @@ https://capricorncd.github.io/Java-Notes/
 
 ### React
 
-[React 15.0.2](./react/React-15.0.2.md)
+* [React 15.0.2](./react/React-15.0.2.md)
 
 ### TypeScript
 
