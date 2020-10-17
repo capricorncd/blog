@@ -22,8 +22,7 @@ const baseConfig = {
   },
   output: {
     path: resolve(__dirname, '../../dist/web-audio'),
-    filename: '[name].js',
-    libraryTarget: 'window'
+    filename: '[name].js'
   },
   externals: {
     // react: 'React',
