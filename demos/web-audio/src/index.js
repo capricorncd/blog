@@ -91,9 +91,12 @@ function init() {
 }
 
 function onLoadAudio(audio, parent) {
-  const context = new AudioContext()
+  const context = new (window.AudioContext || window.webkitAudioContext)()
   const analyser = context.createAnalyser()
-  analyser.fftSize = 512
+  // Must be a power of 2 between 25 and 215,
+  // so one of: 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, and 32768.
+  // Defaults to 2048.
+  analyser.fftSize = 1024
   const source = context.createMediaElementSource(audio)
 
   source.connect(analyser)

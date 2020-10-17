@@ -123,6 +123,7 @@ if (isProd) {
     devServer: {
       // BrowserRouter时，解决react-router刷新页面后 cannot GET *url*问题
       // historyApiFallback: true,
+      host: '0.0.0.0'
     },
     plugins: [
       // https://www.npmjs.com/package/eslint-webpack-plugin
