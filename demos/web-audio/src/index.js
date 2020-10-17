@@ -12,6 +12,15 @@ const MUSIC_LIST = [
   'static/total-soccer.mp3'
 ]
 
+const AUDIO_EVENTS = [
+  'canplay',
+  'canplaythrough',
+  'play',
+  'playing',
+  'pause',
+  'ended'
+]
+
 function $(s, context = document) {
   return context.querySelector(s)
 }
@@ -33,23 +42,19 @@ function init() {
   })
 
   button.addEventListener('click', () => {
-    console.log(isPlay)
     if (isPlay) {
       audio.pause()
     } else {
-      play(0)
+      if (typeof playIndex === 'number') audio.play()
+      else play(0)
     }
   })
 
-  audio.addEventListener('canplay', audioHandler)
-  audio.addEventListener('canplaythrough', audioHandler)
-  audio.addEventListener('play', audioHandler)
-  audio.addEventListener('playing', audioHandler)
-  audio.addEventListener('pause', audioHandler)
-  audio.addEventListener('ended', audioHandler)
+  AUDIO_EVENTS.forEach(ev => {
+    audio.addEventListener(ev, audioHandler)
+  })
 
   function audioHandler(e) {
-    console.log(e.type)
     switch (e.type) {
       case 'ended':
         {
@@ -97,8 +102,6 @@ function onLoadAudio(audio, parent) {
   const bufferLength = analyser.frequencyBinCount
   const dataArray = new Uint8Array(bufferLength)
 
-  console.log(dataArray)
-
   const width = !parent ? window.innerWidth : parent.offsetWidth
   const height = !parent ? window.innerHeight : parent.offsetHeight
 
@@ -110,16 +113,12 @@ function onLoadAudio(audio, parent) {
   function render() {
     requestAnimationFrame(render)
     analyser.getByteFrequencyData(dataArray)
-    // console.log(dataArray, analyser)
+    // console.log(Math.max.apply(null, dataArray), Math.min.apply(null, dataArray), analyser)
     ctx.clearRect(0, 0, width, height)
 
-    let r, g, b
     for (let i = 0, x = 0; i < bufferLength; i++) {
       barHeight = dataArray[i]
-      r = barHeight + 25 * (i / bufferLength)
-      g = 250 * (i / bufferLength)
-      b = 50
-      ctx.fillStyle = `rgb(${r}, ${g}, ${b})`
+      ctx.fillStyle = `rgb(${barHeight}, 150, 60)`
       ctx.fillRect(x, height - barHeight, barWidth, barHeight)
       x += barWidth + 2
     }
