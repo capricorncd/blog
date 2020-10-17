@@ -1,41 +1,26 @@
 <template>
-  <div class="wave-wrapper" ref="wave"></div>
+  <div class="wave-wrapper" ref="wave">
+    <canvas></canvas>
+  </div>
 </template>
 
 <script>
-import WaveSurfer from 'wavesurfer.js'
+import { onLoadAudio } from '../helper/web-audio'
 export default {
   data() {
     return {
-      audio: null,
-      waveSurfer: null
+      audio: null
     }
   },
   created() {
     App.on('init-audio-end', audio => {
       this.audio = audio
       // https://wavesurfer-js.org/docs/options.html
-      this.waveSurfer = WaveSurfer.create({
-        container: this.$refs.wave,
-        // barWidth: 1,
-        waveColor: 'rgba(255, 255, 255, 0.5)',
-        cursorColor: 'rgba(255, 255, 255, 0.3)',
-        progressColor: '#54549f',
-        backend: 'MediaElement',
-        responsive: true
-      })
-    })
-
-    App.on('audio-change', () => {
-      console.log('audio-change')
-      this.$nextTick(() => {
-        this.waveSurfer.load(this.audio)
-      })
+      onLoadAudio(audio, this.$refs.wave)
     })
   },
   beforeDestroy() {
     App.off('init-audio-end')
-    App.off('audio-change')
   }
 }
 </script>
@@ -43,9 +28,9 @@ export default {
 <style lang="scss">
 .wave-wrapper {
   position: fixed;
-  bottom: 5px;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 128px;
+  height: 100%;
 }
 </style>
