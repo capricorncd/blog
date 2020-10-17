@@ -214,7 +214,7 @@ export default {
       this.isError = false
       switch (e.type) {
         case 'canplay':
-          this.play()
+          // this.play()
           break
         case 'canplaythrough':
           break
