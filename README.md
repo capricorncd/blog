@@ -12,6 +12,10 @@ https://capricorncd.github.io/blog/dist/three/index.html
 
 https://capricorncd.github.io/blog/dist/music-card/index.html
 
+* Web Audio
+
+https://capricorncd.github.io/blog/dist/web-audio/index.html
+
 * Java
 
 https://capricorncd.github.io/Java-Notes/
