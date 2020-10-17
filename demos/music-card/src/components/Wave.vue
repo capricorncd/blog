@@ -6,21 +6,16 @@
 
 <script>
 import { onLoadAudio } from '../helper/web-audio'
+
 export default {
-  data() {
-    return {
-      audio: null
-    }
-  },
   created() {
-    App.on('init-audio-end', audio => {
-      this.audio = audio
-      // https://wavesurfer-js.org/docs/options.html
-      onLoadAudio(audio, this.$refs.wave)
+    App.on('first-play', audio => {
+      try {
+        onLoadAudio(audio, this.$refs.wave)
+      } catch (e) {
+        alert(e.message)
+      }
     })
-  },
-  beforeDestroy() {
-    App.off('init-audio-end')
   }
 }
 </script>

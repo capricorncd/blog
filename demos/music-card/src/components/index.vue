@@ -150,12 +150,16 @@ export default {
       this.isError = false
       this.isSentPrivateCard = false
       this.$audio.src = getCurrentUrl(item)
-      App.emit('audio-change')
+      // App.emit('audio-change')
     },
     // 播放
     play () {
       // if (this.isError) return
       try {
+        if (!this.isLoaded) {
+          this.isLoaded = true
+          App.emit('first-play', this.$audio)
+        }
         // this.total > 0: fixed #8481
         // #8481音乐卡片主页，卡片播放完毕后，此时退出app，再进入，暂停的状态会变为播放状态(IOS V2.6.0-[D]04221030）
         if (!this.isPlay && this.total > 0) this.$audio.play()
@@ -268,7 +272,7 @@ export default {
     $audio.style.display = 'none'
 
     this.$audio = $audio
-    App.emit('init-audio-end', $audio)
+    // App.emit('init-audio-end', $audio)
 
     const $body = App.query('body')
 

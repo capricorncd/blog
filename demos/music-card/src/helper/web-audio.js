@@ -4,6 +4,9 @@
  * Date: 2020-10-17 21:25
  */
 export function onLoadAudio(audio, parent) {
+  // webkitAudioContext
+  // fix: safari and weChat that device iphone 7 plus
+  const AudioContext = window.AudioContext || window.webkitAudioContext
   const context = new AudioContext()
   const analyser = context.createAnalyser()
   analyser.fftSize = 512
@@ -25,6 +28,7 @@ export function onLoadAudio(audio, parent) {
 
   function render() {
     requestAnimationFrame(render)
+    // https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/getByteFrequencyData
     analyser.getByteFrequencyData(dataArray)
     // console.log(Math.max.apply(null, dataArray), Math.min.apply(null, dataArray), analyser)
     ctx.clearRect(0, 0, width, height)

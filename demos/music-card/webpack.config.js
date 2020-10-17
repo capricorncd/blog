@@ -123,6 +123,7 @@ if (isProd) {
 } else {
   webpackConfig = merge(baseConfig, {
     devServer: {
+      host: '0.0.0.0'
     },
     plugins: [
       // https://www.npmjs.com/package/eslint-webpack-plugin
