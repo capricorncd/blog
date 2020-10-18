@@ -52,6 +52,8 @@ https://capricorncd.github.io/Java-Notes/
 
 * [C4D files](./c4d/)
 
+* [从C4D建模到Three.js实现闹钟产品360度展示效果(.stl,.obj,.mtl)](./c4d/docs/threejs-product.md)
+
 ### Cocos
 
 * [monser stars demo](./cocos/monser-stars)
