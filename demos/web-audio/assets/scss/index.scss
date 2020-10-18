@@ -73,6 +73,26 @@ button {
   }
 }
 
+.graphic-switching {
+  position: fixed;
+  z-index: 6;
+  right: 20px;
+  top: 50px;
+  a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    opacity: 0.4;
+    cursor: pointer;
+    svg {
+      color: #000;
+    }
+    &:hover, &.is-current {
+      opacity: 0.8;
+    }
+  }
+}
+
 @media screen and (max-width: 640px) {
   ul {
     right: 50px;

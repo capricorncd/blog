@@ -21,6 +21,8 @@ const AUDIO_EVENTS = [
   'ended'
 ]
 
+let animeId
+
 function $(s, context = document) {
   return context.querySelector(s)
 }
@@ -29,6 +31,7 @@ function init() {
   const ul = createList()
   const button = $('button')
   const audio = $('audio')
+  const swt = $('.graphic-switching')
 
   let playIndex, isPlay, isLoaded
 
@@ -83,7 +86,13 @@ function init() {
 
     if (!isLoaded) {
       isLoaded = true
-      onLoadAudio(audio)
+      const { start } = onLoadAudio(audio)
+      slice(swt.children).forEach((el, i) => {
+        el.addEventListener('click', () => {
+          resetCurrentItem(i, swt)
+          start(i === 0)
+        })
+      })
     }
 
     audio.play()
@@ -114,7 +123,7 @@ function onLoadAudio(audio, parent) {
   const ctx = createCanvasContext(width, height)
 
   function render() {
-    requestAnimationFrame(render)
+    animeId = requestAnimationFrame(render)
     analyser.getByteFrequencyData(dataArray)
     // console.log(Math.max.apply(null, dataArray), Math.min.apply(null, dataArray), analyser)
     ctx.clearRect(0, 0, width, height)
@@ -127,7 +136,57 @@ function onLoadAudio(audio, parent) {
     }
   }
 
-  render()
+  function draw() {
+    animeId = requestAnimationFrame(draw)
+
+    analyser.getByteTimeDomainData(dataArray)
+
+    ctx.fillStyle = 'rgb(255, 255, 255)'
+    ctx.fillRect(0, 0, width, height)
+
+    ctx.lineWidth = 2
+    ctx.strokeStyle = `rgb(${255 * Math.random()}, ${255 * Math.random()}, ${255 * Math.random()})`
+
+    ctx.beginPath()
+
+    const sliceWidth = width / bufferLength
+    let x = 0
+
+    for (let i = 0; i < bufferLength; i++) {
+      const v = dataArray[i] / 128.0
+      const y = v * height / 2
+
+      if (i === 0) {
+        ctx.moveTo(x, y)
+      } else {
+        ctx.lineTo(x, y)
+      }
+
+      x += sliceWidth
+    }
+
+    ctx.lineTo(width, height / 2)
+    ctx.stroke()
+  }
+
+  function start(isColumn = true) {
+    destroy()
+    if (isColumn) {
+      render()
+    } else {
+      draw()
+    }
+  }
+
+  start()
+
+  return {
+    start
+  }
+}
+
+export function destroy() {
+  cancelAnimationFrame(animeId)
 }
 
 function createCanvasContext(width, height) {
@@ -155,10 +214,14 @@ function getAttrs(el) {
 }
 
 function resetCurrentItem(current, ul) {
-  Array.prototype.slice.call(ul.children).forEach(el => {
+  slice(ul.children).forEach(el => {
     const { index } = getAttrs(el)
     el.className = current === index ? 'is-current' : ''
   })
+}
+
+function slice(a, offset = 0) {
+  return Array.prototype.slice.call(a, offset)
 }
 
 init()
