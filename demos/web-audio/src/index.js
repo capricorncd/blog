@@ -93,6 +93,7 @@ function init() {
           start(i === 0)
         })
       })
+      swt.style.display = 'block'
     }
 
     audio.play()
