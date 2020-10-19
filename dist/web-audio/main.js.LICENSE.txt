@@ -1,0 +1,6 @@
+/*!
+ * web-audio 1.0.0
+ * repository: https://github.com/capricorncd/blog/tree/master/demos/web-audio
+ * author: Capricorncd
+ * github: https://github.com/capricorncd
+ */

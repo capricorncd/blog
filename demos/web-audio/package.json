@@ -40,7 +40,7 @@
     "webpack-merge": "^5.2.0"
   },
   "github": "https://github.com/capricorncd",
-  "homepage": "https://github.com/capricorncd/blog",
+  "homepage": "https://github.com/capricorncd/blog/tree/master/demos/web-audio",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/capricorncd/blog.git"

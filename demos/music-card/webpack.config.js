@@ -5,11 +5,14 @@
  */
 const { resolve } = require('path')
 const { merge } = require('webpack-merge')
+const { ProgressPlugin, BannerPlugin } = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const EslintWebpackPlugin = require('eslint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const pkg = require('./package.json')
+
 const argsArr = process.argv.slice(2)
 
 console.log(argsArr)
@@ -94,6 +97,7 @@ const baseConfig = {
     ]
   },
   plugins: [
+    new ProgressPlugin(),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: 'index.html',
@@ -107,6 +111,12 @@ if (isProd) {
   webpackConfig = merge(baseConfig, {
     plugins: [
       new CleanWebpackPlugin(),
+      new BannerPlugin([
+        `${pkg.name} ${pkg.version}`,
+        `repository: ${pkg.homepage}`,
+        `author: ${pkg.author}`,
+        `github: ${pkg.github}`
+      ].join('\n')),
       new CopyWebpackPlugin({
         patterns: [{
           // 后期增加过滤，不同的项目可能static中需要的内容不一样

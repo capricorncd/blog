@@ -45,5 +45,11 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "three": "^0.120.1"
-  }
+  },
+  "github": "https://github.com/capricorncd",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capricorncd/blog.git"
+  },
+  "homepage": "https://github.com/capricorncd/blog/tree/master/demos/three"
 }
