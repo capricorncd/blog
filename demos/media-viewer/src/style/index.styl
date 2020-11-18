@@ -1,0 +1,148 @@
+.zx-media-viewer-container
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  .cur
+    cursor: pointer;
+  .zx-media-viewer-wrapper
+    transition: transform 0.3s;
+    .__item
+      overflow: hidden;
+      float: left;
+      display: flex;
+      align-items center;
+      justify-content center
+      img, video
+        max-width 90%;
+        max-height 90%;
+  .zx-mv-close
+    position absolute
+    z-index 2
+    top 0
+    right 0
+    width 50px
+    height 50px
+    transform rotate(45deg)
+    transition all .3s
+    opacity .6
+    cursor pointer
+    &:before, &:after
+      position absolute
+      border-radius 1px
+      background-color #fff
+      content ''
+    &:before
+      top 24px
+      left 10px
+      width 30px
+      height 2px
+    &:after
+      top 10px
+      left 24px
+      height 30px
+      width 2px
+    &:hover
+      opacity .8
+      transform rotate(215deg)
+  // 左右切换
+  .zx-mv-arrow
+    position absolute
+    z-index: 3
+    top: 50%
+    margin-top: -51px;
+    width 101px
+    height: 101px
+    opacity .6
+    filter: unquote('Alpha(opacity=60)')
+    cursor pointer
+    background-color: rgba(0, 0, 0, .1);
+    border-radius 50%
+    &:after
+      content ''
+      position absolute
+      top 35px
+      width 20px
+      height: 37px
+      background-image: url('../img/arrow.png')
+      background-repeat: no-repeat
+      transition all .3s
+    &.__prev
+      left: -50px;
+      &:after
+        right 22px
+        background-position: 0 0
+    &.__next
+      right: -50px;
+      &:after
+        left: 22px;
+        background-position: -20px 0
+    &:hover
+      opacity .9
+      filter: unquote('Alpha(opacity=90)')
+      background-color: rgba(0, 0, 0, .2);
+      &.__prev:after
+        right 25px
+      &.__next:after
+        left: 25px;
+  .zx-mv-pagination-wrapper
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%)
+    width 60%
+    text-align: center
+    height: 3px;
+    i
+      display: inline-block;
+      max-width 30px
+      height 3px
+      opacity .3
+      border-left: 2px solid transparent
+      border-right: 2px solid transparent
+      box-sizing border-box
+      vertical-align top
+      cursor: pointer;
+      &:after
+        display: block
+        content: ''
+        width 100%
+        height 3px
+        background-color: #fff;
+        border-radius 1px;
+      &.__current
+        opacity .9
+  .zx-mv-thumb-wrapper
+    position absolute
+    z-index 4
+    transition: transform .3s;
+    left: 50%;
+    max-width: 90%;
+    height: 50px;
+    transform: translateX(-50%);
+    &:hover
+      transform: translate(-50%, -16px)
+    .__inner
+      white-space: nowrap;
+    .__item
+      display: inline-block;
+      overflow: hidden;
+      margin: 0 3px;
+      border: 2px solid transparent;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: transform .3s;
+      height 50px;
+      img
+        width: auto;
+        height: 100%;
+      &:hover
+        transform: scale(1.8);
+      &.__current
+        border: 2px solid rgba(255, 255, 255, .8);
+    &.__top
+      &:hover
+        transform: translate(-50%, 16px)

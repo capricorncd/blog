@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>media-viewer capricorncd</title>
+  <style>
+    #imgs .item {
+      float: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      box-sizing: border-box;
+      border: 1px solid #f1f1f1;
+      margin: 5px;
+      cursor: pointer;
+    }
+    #imgs .item img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+<div id="imgs"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.42/polyfill.min.js"></script>
+<script src="<%= htmlWebpackPlugin.files.chunks['media-viewer'].entry %>"></script>
+<script>
+  // 模拟数据，图片数组1
+  var imgs = [
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22396594.jpg',
+      type: 1
+    },
+    {
+      type: 1,
+      url: 'https://photo.tuchong.com/1000000/f/22405378.jpg'
+    },
+    {
+      type: 2,
+      url: 'http://v11-tt.ixigua.com/0b245253e0fdbcf1b72266a4fbb6ab4b/5bc8a5a5/video/m/2201ef17da57b4643fe95dd13b75fd765d3115d7f2e00007c557a3b068f/'
+    },
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22396591.jpg',
+      type: 1
+    },
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22405389.jpg',
+      type: 1
+    },
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22405385.jpg',
+      type: 1
+    },
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22396590.jpg',
+      type: 1
+    },
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22405381.jpg',
+      type: 1
+    },
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22405379.jpg',
+      type: 1
+    },
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22405393.jpg',
+      type: 1
+    },
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22405388.jpg',
+      type: 1
+    },
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22396595.jpg',
+      type: 1
+    },
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22396592.jpg',
+      type: 1
+    },
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22396593.jpg',
+      type: 1
+    },
+    {
+      url: 'https://photo.tuchong.com/1000000/f/22396589.jpg',
+      type: 1
+    }
+  ]
+
+  // 获取图片列表容器
+  var $el = document.getElementById('imgs');
+  var html = '';
+  // 创建img dom
+  imgs.forEach(function (item) {
+    // 拼接html结构
+    html += '<div class="item"><img src="'+ (item.thumb || item.url) +'"></div>';
+  })
+  // 将图片添加至图片容器中
+  $el.innerHTML = html;
+
+  /**
+   * 插件使用 *****************************************************************************
+   */
+  // 初始化参数
+  var _config = {
+      // 错误通知
+      error: function (err) {
+        console.error(err)
+      },
+      // 显示分页导航栏
+      showPagination: true,
+      // 分页切换触发事件名称mouseover
+      paginationEvent: 'mouseover',
+      // 显示缩略图
+      showThumb: true,
+      // 缩略图显示位置 top/bottom
+      thumbPosition: 'top'
+    }
+  // 使用方法
+  var mv = new MediaViewer(_config, imgs);
+  console.log(mv);
+  // 查看第几张
+  var $images = $el.querySelectorAll('.item');
+  for (var i = 0; i < $images.length; i++) {
+    (function (index) {
+      $images[i].addEventListener('click', function () {
+        mv.view(index);
+      })
+    }(i))
+  }
+
+  mv.on('show', function(){
+    console.log('show')
+  })
+
+  mv.on('close', function(){
+    console.log('close')
+  })
+</script>
+</body>
+</html>
