@@ -1,0 +1,17 @@
+@import "../../assets/style/config";
+.react-doc-compoent {
+  display: block;
+  margin-top: 10px;
+  white-space: nowrap;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: @mainColor;
+  opacity: .4;
+  &:before {
+    content: '文档：';
+  }
+  &:hover {
+    opacity: .8;
+  }
+}

@@ -1,0 +1,30 @@
+.rt-events-component {
+  position: relative;
+  ul {
+    position: absolute;
+    z-index: 1;
+    top: 110px;
+    left: 0;
+    padding: 5px 10px;
+    width: 100px;
+    background-color: #999;
+    border-radius: 4px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      border-bottom: 5px solid #999;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+    }
+    li {
+      line-height: 24px;
+      border-bottom: 1px #ccc dashed;
+      cursor: pointer;
+      &:last-child {
+        border-bottom-width: 0;
+      }
+    }
+  }
+}

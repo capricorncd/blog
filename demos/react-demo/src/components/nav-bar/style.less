@@ -1,0 +1,69 @@
+/**
+ * Created by Capricorncd.
+ * Date: 2019/02/13 16:15
+ * https://github.com/capricorncd
+ */
+@import "../../assets/style/config";
+
+@height: 60px;
+
+/**
+ * *********************************************
+ * nav-bar
+ * *********************************************
+ */
+.nav-bar-component {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: @height;
+  background: #20232a;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  display: flex;
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    i {
+      display: inline-block;
+      width: 22px;
+      height: 20px;
+      background: url('./logo.svg') no-repeat;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    .text {
+      margin-left: 10px;
+      font-size: 1.2em;
+      color: @mainColor;
+      font-weight: bold;
+    }
+  }
+  ul {
+    display: none;
+    height: @height;
+    line-height: @height;
+    li {}
+  }
+  .r-wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 30px;
+    height: @height;
+    a {
+      display: inline-block;
+      margin-left: 20px;
+      line-height: @height;
+      color: #ccc;
+      font-size: 12px;
+      text-decoration: none;
+      &:hover {
+        color: @mainColor;
+        text-decoration: underline;
+      }
+    }
+  }
+}

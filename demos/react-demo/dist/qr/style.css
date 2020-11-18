@@ -1,0 +1,21 @@
+#app {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+dl {
+  display: inline-block;
+  width: 150px;
+  margin: 30px 30px 0;
+}
+dt, dd {
+  margin: 0;
+  padding: 0;
+}
+dt img {
+  width: 100%;
+}
+
+dd {
+  text-align: center;
+}
