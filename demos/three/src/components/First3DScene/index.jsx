@@ -3,21 +3,18 @@
  * https://github.com/capricorncd
  * Date: 2020-09-19 16:18
  */
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { init, destroy } from './core'
 
 function First3DScene() {
-  let el = null
+  const elRef = useRef()
   useEffect(() => {
-    if (!el) {
-      el = document.querySelector('.first-3d-scene-el-hook')
-      init(el)
-    }
+    init(elRef.current)
     return () => {
       destroy()
     }
   }, [])
-  return <main className="first-3d-scene-el-hook font-size-zero"/>
+  return <main className="font-size-zero" ref={elRef}/>
 }
 
 export default First3DScene

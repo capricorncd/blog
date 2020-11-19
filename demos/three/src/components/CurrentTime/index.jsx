@@ -3,11 +3,13 @@
  * https://github.com/capricorncd
  * Date: 2020-10-04 15:35
  */
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { render } from './core'
 
 function App() {
   let el, canvas, context, width, height, animeId
+
+  const elRef = useRef()
 
   function handleResize() {
     width = el.offsetWidth
@@ -22,23 +24,21 @@ function App() {
   }
 
   useEffect(() => {
-    if (!el) {
-      el = document.querySelector('.canvas-hook')
-      width = el.offsetWidth
-      height = el.offsetHeight
-      canvas = el.querySelector('canvas')
-      canvas.width = width
-      canvas.height = height
-      context = canvas.getContext('2d')
-      window.addEventListener('resize', handleResize)
-      anime()
-    }
+    el = elRef.current
+    width = el.offsetWidth
+    height = el.offsetHeight
+    canvas = el.querySelector('canvas')
+    canvas.width = width
+    canvas.height = height
+    context = canvas.getContext('2d')
+    window.addEventListener('resize', handleResize)
+    anime()
     return () => {
       window.removeEventListener('resize', handleResize)
       cancelAnimationFrame(animeId)
     }
   }, [])
-  return <main className="canvas-hook font-size-zero">
+  return <main className="font-size-zero" ref={elRef}>
     <canvas>
       Canvas is not supported by current browser
     </canvas>

@@ -3,21 +3,18 @@
  * https://github.com/capricorncd
  * Date: 2020-09-20 00:02
  */
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { init, destroy } from './core'
 
 function Materials() {
-  let el = null
+  const elRef = useRef()
   useEffect(() => {
-    if (!el) {
-      el = document.querySelector('.materials-el-hook')
-      init(el)
-    }
+    init(elRef.current)
     return () => {
       destroy()
     }
   }, [])
-  return <main className="materials-el-hook font-size-zero"/>
+  return <main className="font-size-zero" ref={elRef}/>
 }
 
 export default Materials

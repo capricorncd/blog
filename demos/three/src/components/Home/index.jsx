@@ -3,21 +3,18 @@
  * https://github.com/capricorncd
  * Date: 2020-09-18 09:22
  */
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { init, destroy } from '../Earth/core'
 
 function Home() {
-  let el = null
+  const elRef = useRef()
   useEffect(() => {
-    if (!el) {
-      el = document.querySelector('.home-el-hook')
-      init(el)
-    }
+    init(elRef.current)
     return () => {
       destroy()
     }
   }, [])
-  return <main className="home-el-hook font-size-zero"/>
+  return <main className="font-size-zero" ref={elRef}/>
 }
 
 export default Home
