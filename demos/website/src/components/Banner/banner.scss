@@ -1,0 +1,23 @@
+.banner-wrapper {
+  margin-top: $--size-header-height;
+  background: $--color-bg-banner;
+  height: 300px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  h1 {
+    margin: 0;
+    font-weight: 300;
+    font-size: 3rem;
+    color: #fff;
+  }
+  p {
+    margin: 10px 0 0;
+    font-size: 1.8rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+  }
+}
