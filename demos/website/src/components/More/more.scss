@@ -1,0 +1,21 @@
+.more-wrapper {
+  padding-bottom: $--size-header-height;
+  text-align: center;
+  a {
+    display: inline-block;
+    background: $--color-bg-banner;
+    color: #fff;
+    border-radius: 4px;
+    padding: 20px 30px;
+    opacity: 0.9;
+    white-space: nowrap;
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+      opacity: 1;
+    }
+    svg {
+      margin-left: 10px;
+    }
+  }
+}

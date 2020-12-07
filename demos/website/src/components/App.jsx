@@ -8,6 +8,7 @@ import { isMacOS } from '~/assets/js'
 import Nav from './Nav/index'
 import Banner from './Banner'
 import GitHub from './GitHub'
+import More from './More'
 import Footer from './Foot'
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
       <Nav/>
       <Banner/>
       <GitHub/>
+      <More/>
       <Footer/>
     </>
   }

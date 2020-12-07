@@ -9,7 +9,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { ProgressPlugin, BannerPlugin } = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // https://github.com/webpack-contrib/copy-webpack-plugin
-// const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const EslintWebpackPlugin = require('eslint-webpack-plugin')
 const pkg = require('./package.json')
 
@@ -26,7 +26,7 @@ const baseConfig = {
   },
   output: {
     path: resolve(__dirname, '../../../capricorncd.github.io'),
-    filename: '[name].js'
+    filename: '[name].[hash:8].js'
   },
   externals: {
     // react: 'React',
@@ -119,24 +119,24 @@ if (isProd) {
       new CleanWebpackPlugin({
         verbose: true,
         // 需要保留的文件（夹）
-        cleanOnceBeforeBuildPatterns: ['!.git', '!.gitignore', '!music-card', '!web-audio']
+        cleanOnceBeforeBuildPatterns: ['*.*', 'static', '!.git', '!.gitignore']
       }),
       new BannerPlugin([
         `${pkg.name} ${pkg.version}`,
         `repository: ${pkg.homepage}`,
         `author: ${pkg.author}`,
         `github: ${pkg.github}`
-      ].join('\n'))
+      ].join('\n')),
       // https://github.com/webpack-contrib/copy-webpack-plugin
-      // new CopyWebpackPlugin({
-      //   patterns: [{
-      //     from: resolve(__dirname, './static'),
-      //     to: 'static'
-      //   }],
-      //   options: {
-      //     concurrency: 100
-      //   }
-      // })
+      new CopyWebpackPlugin({
+        patterns: [{
+          from: resolve(__dirname, './static'),
+          to: 'static'
+        }],
+        options: {
+          concurrency: 100
+        }
+      })
     ]
   })
 } else {

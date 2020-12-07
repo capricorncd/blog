@@ -9,7 +9,7 @@ import './footer.scss'
 class Footer extends Component {
   render() {
     return <footer>
-      © 2020 Capricorncd. kaneoki2020@gmail.com
+      © 2016-2020 Capricorncd. kaneoki2020@gmail.com
     </footer>
   }
 }

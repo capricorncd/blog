@@ -12,13 +12,18 @@ $imgHeight: 236px;
     padding-bottom: $--size-header-height;
     border-bottom: 1px solid rgba(69, 39, 160, .5);
     overflow: hidden;
-    &:last-child {
-      padding-bottom: 0;
-      border: 0;
-    }
+    //&:last-child {
+    //  padding-bottom: 0;
+    //  border: 0;
+    //}
     dt, dd {
       padding: 0;
       margin: 0;
+    }
+    .npm-items {
+      a {
+        margin-right: 4px;
+      }
     }
     .l {
       position: absolute;
@@ -29,18 +34,19 @@ $imgHeight: 236px;
       overflow: hidden;
       display: flex;
       align-items: center;
+      justify-content: center;
       background: $--color-dark;
       img {
         width: 100%;
         height: auto;
-        opacity: 0.8;
-        transition: all 0.2s ease-in-out;
+        opacity: 0.9;
+        transition: all 0.3s ease-in-out;
         cursor: pointer;
       }
       &:hover {
         img {
           opacity: 0.98;
-          transform: scale(1.1);
+          transform: scale(1.05);
         }
       }
     }
@@ -77,13 +83,15 @@ $imgHeight: 236px;
   .github-wrapper {
     .github-item-wrapper {
       margin-top: 40px;
+      padding-bottom: 40px;
       height: auto;
       .l {
         position: relative;
         width: 100%;
         //height: auto;
         img {
-          height: auto;
+          width: auto;
+          height: 100%;
         }
       }
       .r {
