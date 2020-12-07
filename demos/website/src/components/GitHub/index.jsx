@@ -13,7 +13,6 @@ const list = [
     url: 'https://capricorncd.github.io/music-card/',
     desc: [
       {
-        tag: '',
         text: 'The music card that Web mini-program application in Smartphone App'
       },
       {
@@ -28,7 +27,6 @@ const list = [
     url: 'https://github.com/capricorncd/zx-editor',
     desc: [
       {
-        tag: '',
         text: 'The HTML document (rich text) editor in Smart phone browser or webview, supporting mixed layout, reference, headline, unordered list, font color, bold and italics.'
       },
       {
@@ -60,7 +58,6 @@ const list = [
     url: 'https://github.com/capricorncd/calendar#zx-calendar',
     desc: [
       {
-        tag: '',
         text: 'zx-calendar, zx-vue-calendar (Vue2.x.x and Vue3.x.x), zx-react-calendar'
       },
       {
@@ -92,7 +89,6 @@ const list = [
     url: 'https://github.com/capricorncd/tetris',
     desc: [
       {
-        tag: '',
         text: 'Tetris is a tile-matching video game created by Russian software engineer Alexey Pajitnov in 1984. '
       },
       {
@@ -112,7 +108,6 @@ const list = [
     url: 'https://capricorncd.github.io/blog/dist/three/index.html#/ClockObj',
     desc: [
       {
-        tag: '',
         text: 'Developing 3D display pages for products in C4D and Three.js'
       },
       {
@@ -134,6 +129,7 @@ const list = [
         text: 'Use AudioContext to achieve cool music playback effects  in the browser'
       },
       {
+        tag: 'Tags',
         text: 'JavaScript/AudioContext/Canvas/Scss'
       }
     ]
