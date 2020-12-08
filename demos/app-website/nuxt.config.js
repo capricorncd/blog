@@ -69,14 +69,13 @@ export default {
 
       if (!isDev) {
         // relative links, please.
-        config.output.publicPath = './_nuxt/'
+        config.output.publicPath = '_nuxt/'
       }
     },
   },
 
   router: {
     mode: 'hash',
-    base: './',
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'page-not-found',

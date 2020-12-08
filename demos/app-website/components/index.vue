@@ -60,7 +60,7 @@
 <script>
 import Vue from 'vue'
 
-const SOURCE_PREFIX = '/home-anime/'
+const SOURCE_PREFIX = './home-anime/'
 const IMG_SOURCES = {
   verticalLine: SOURCE_PREFIX + 'vertical-line.png',
   jukeboxStart: SOURCE_PREFIX + 'jukebox-start.png',

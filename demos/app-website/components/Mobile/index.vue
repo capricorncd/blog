@@ -50,7 +50,7 @@
   import MarkerIcon from '../ContactUs/img/map-marker.png'
   import { supportWebp } from '../../assets/libs/index'
 
-  const PREFIX = '/mobile/'
+  const PREFIX = './mobile/'
   export default {
     data () {
       const vm = this
