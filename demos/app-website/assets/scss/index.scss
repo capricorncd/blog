@@ -1,0 +1,61 @@
+@import "./constants.scss";
+
+/**
+ * *******************************************
+ * common
+ * *******************************************
+ */
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-width: $minWrapperWidth;
+}
+
+.is-mac {
+  overflow: hidden;
+}
+
+* {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", Helvetica, "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  color: #212121;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    color: $--color-primary;
+  }
+}
+
+h1, h2, h3, h4, h5, p, dl, dt, dd, ul, li, ol {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+.cur {
+  cursor: pointer;
+}
+
+.ell {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// -webkit-box-orient: vertical; ignore after webpack build
+.clamp2 {
+  @include lineClamp(2)
+}
+
+.clamp3 {
+  @include lineClamp(3)
+}
+
+.clamp6 {
+  @include lineClamp(6)
+}

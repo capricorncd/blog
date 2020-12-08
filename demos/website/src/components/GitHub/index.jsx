@@ -8,6 +8,20 @@ import './github.scss'
 
 const list = [
   {
+    name: 'School Circle Web Site',
+    cover: './static/app-site.jpg',
+    url: 'https://capricorncd.github.io/blog/dist/app-site/',
+    desc: [
+      {
+        text: ''
+      },
+      {
+        tag: 'Tags',
+        text: 'Nuxt.js(Vue.js)/Sass/CSS3/HTML5'
+      }
+    ]
+  },
+  {
     name: 'Music Card Demo',
     cover: './static/music-card.jpg',
     url: 'https://capricorncd.github.io/music-card/',
@@ -181,7 +195,7 @@ const list = [
         url: 'https://github.com/capricorncd/blog/tree/master/demos/web-audio'
       }
     ]
-  }
+  },
 ]
 
 class GitHub extends Component {

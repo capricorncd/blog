@@ -1,0 +1,175 @@
+//@keyframes verticalLine {
+//  to {
+//    top: 0;
+//    opacity: 1;
+//  }
+//}
+
+@keyframes jukeboxStart {
+  5% {
+    top: 331px;
+    margin-left: -756px;
+    transform-origin: 20px 441px;
+    transform: rotateX(0) rotateY(0) rotateZ(0) scaleX(0) scaleY(0) translate(-56px, -203px);
+  }
+  10% {
+    top: 531px;
+    margin-left: -756px;
+    transform-origin: 20px 441px;
+    transform: rotateX(0) rotateY(0) rotateZ(0) scaleX(1) scaleY(1) translate(-56px, -203px);
+  }
+  24%, 100% {
+    transform-origin: 58px 426px;
+    top: 531px;
+    margin-left: -556px;
+    transform: rotateX(52deg) rotateY(0deg) rotateZ(-46.8deg) scaleX(.98) scaleY(0.90) translate(84px, -86px);
+  }
+}
+
+/*
+@keyframes jukeboxEnd {
+  7.5% {
+    opacity: 0;
+    transform: rotateX(-41deg) rotateY(38deg) rotateZ(61deg) scaleX(1.8) scaleY(1.8);
+  }
+  12.5% {
+    opacity: 1;
+    transform: rotateX(-41deg) rotateY(38deg) rotateZ(61deg) scaleX(1.8) scaleY(1.8);
+  }
+  20% {
+    transform: rotateX(-41deg) rotateY(38deg) rotateZ(61deg) scaleX(1.8) scaleY(1.8);
+  }
+  31%, 100% {
+    transform: rotateX(0) rotateY(0) rotateZ(0) scaleX(1) scaleY(1);
+    opacity: 1;
+  }
+}
+*/
+
+@keyframes people {
+  23% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  30%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes listen {
+  61% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  75%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pictureFrame {
+  28% {
+    opacity: 0;
+  }
+  42%, 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pictureFrameMiddle {
+  37% {
+    opacity: 0;
+  }
+  51%, 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pictureFrameTop {
+  49% {
+    opacity: 0;
+  }
+  60%, 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bgColor {
+  35.5% {
+    width: 0;
+  }
+  65% {
+    width: 824px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes btnRight {
+  45% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  48.5%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes btnLeft {
+  47% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  52%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes enDecorate {
+  70% {
+    opacity: 0;
+  }
+  75%, 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slogan {
+  65% {
+    transform: scale(0) translateX(0);
+  }
+  79%, 100% {
+    opacity: 1;
+    transform: scale(1) translateX(199px);
+  }
+}
+
+@keyframes btnIos {
+  76% {
+    transform: scale(0);
+  }
+  79%, 100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes btnAndroid {
+  78% {
+    transform: scale(0);
+  }
+  82%, 100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes qrPic {
+  81% {
+    transform: scale(0);
+  }
+  86%, 100% {
+    transform: scale(1);
+  }
+}
