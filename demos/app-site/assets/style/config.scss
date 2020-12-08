@@ -1,0 +1,92 @@
+/**
+ * *******************************************
+ * main colors
+ * *******************************************
+ */
+$--color-primary: #00c0a7;
+$--color-primary-dark: #24b5ac;
+$--color-primary-light: #24CEAD;
+
+$--color-success: #67C23A;
+$--color-success-dark: #5cae34;
+$--color-success-light: #85ce61;
+
+$--color-info: #909399;
+$--color-info-dark: #818489;
+$--color-info-light: #a6a9ad;
+
+$--color-warning: #ffa018;
+$--color-warning-dark: #cf9136;
+$--color-warning-light: #ebb563;
+
+$--color-danger: #f56c6c;
+$--color-danger-dark: #dc6161;
+$--color-danger-light: #f78989;
+
+$--color-blue: #409eff;
+$--color-blue-dark: #398ee5;
+$--color-blue-light: #66b1ff;
+
+$--color-black: #333;
+
+/**
+ * *******************************************
+ * special colors
+ * *******************************************
+ */
+$mainGreen: #15927f;
+$mainYellow: #fee46d;
+
+/**
+ * *******************************************
+ * size
+ * *******************************************
+ */
+$minWrapperWidth: 1200px;
+
+/**
+ * *******************************************
+ * other
+ * *******************************************
+ */
+// frames per second
+//$framesPerSecond: 25;
+
+/**
+ * *******************************************
+ * mixin
+ * *******************************************
+ */
+@mixin bgImage($url) {
+  background-image: url('#{$url}@1x.png');
+  @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+    background-image: url('#{$url}@2x.png');
+  }
+  @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+    background-image: url('#{$url}@3x.png');
+  }
+}
+
+/**
+ * mobile bg image
+ */
+@mixin mbgImage($url) {
+  background-image: url('#{$url}@2x.png');
+  @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+    background-image: url('#{$url}@3x.png');
+  }
+}
+
+/**
+ * **********************************
+ * 多行文本超出省略
+ * **********************************
+ */
+// webpack编译后，-webkit-box-orient: vertical;被忽略了
+@mixin lineClamp($line) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  overflow: hidden;
+  -webkit-line-clamp: #{$line};
+}

@@ -25,7 +25,7 @@ const baseConfig = {
     main: resolve(__dirname, './src/index.js')
   },
   output: {
-    path: resolve(__dirname, '../../dist/music-card'),
+    path: resolve(__dirname, '../../../capricorncd.github.io/music-card'),
     filename: '[name].js'
   },
   externals: {

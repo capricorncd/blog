@@ -17,7 +17,15 @@ const list = [
       },
       {
         tag: 'Tags',
-        text: 'JavaScript/Vue.js/Scss',
+        text: 'JavaScript/Vue2.js/Scss/Webpack4',
+      },
+      {
+        tag: 'Demo',
+        url: 'https://capricorncd.github.io/music-card/'
+      },
+      {
+        tag: 'Source',
+        url: 'https://github.com/capricorncd/blog/tree/master/demos/music-card'
       }
     ]
   },
@@ -31,7 +39,19 @@ const list = [
       },
       {
         tag: 'Tags',
-        text: 'JavaScript/HTML5/Less',
+        text: 'JavaScript/HTML5/Less/Gulp/Rollup',
+      },
+      {
+        tag: 'Demo',
+        url: 'https://capricorncd.github.io/zx-editor/'
+      },
+      {
+        tag: 'Source',
+        url: 'https://github.com/capricorncd/zx-editor'
+      },
+      {
+        tag: 'Docs',
+        url: 'https://capricorncd.github.io/zx-editor/docs/options.html#textStyleheadLeftbtntext'
       }
     ],
     npm: [
@@ -62,7 +82,19 @@ const list = [
       },
       {
         tag: 'Tags',
-        text: 'JavaScript/Vue.js/React.js/TypeScript/Scss',
+        text: 'JavaScript/Vue.js/React.js/TypeScript/Scss/Webpack4',
+      },
+      {
+        tag: 'Demo',
+        url: 'https://capricorncd.github.io/calendar/dist/index.html'
+      },
+      {
+        tag: 'Vue2.x',
+        url: 'https://capricorncd.github.io/calendar/dist/vue.html'
+      },
+      {
+        tag: 'React',
+        url: 'https://capricorncd.github.io/calendar/dist/react.html'
       }
     ],
     npm: [
@@ -93,11 +125,15 @@ const list = [
       },
       {
         tag: 'Tags',
-        text: 'TypeScript/Stylus'
+        text: 'TypeScript/Stylus/Webpack4'
       },
       {
         tag: 'Play',
         url: 'https://capricorncd.github.io/tetris/dist/index.html',
+      },
+      {
+        tag: 'Source',
+        url: 'https://github.com/capricorncd/tetris'
       }
     ]
   },
@@ -112,11 +148,15 @@ const list = [
       },
       {
         tag: 'Tags',
-        text: 'C4D/Three.js/React.js/Scss'
+        text: 'C4D/Three.js/React.js/Scss/Webpack4'
       },
       {
         tag: 'Qiita',
         url: 'https://qiita.com/capricorncd/items/881b22208521e2ae31a4'
+      },
+      {
+        tag: 'Source',
+        url: 'https://github.com/capricorncd/blog/tree/master/demos/three'
       }
     ]
   },
@@ -130,7 +170,15 @@ const list = [
       },
       {
         tag: 'Tags',
-        text: 'JavaScript/AudioContext/Canvas/Scss'
+        text: 'JavaScript/AudioContext/Canvas/Scss/Webpack5'
+      },
+      {
+        tag: 'Demo',
+        url: 'https://capricorncd.github.io/web-audio/'
+      },
+      {
+        tag: 'Source',
+        url: 'https://github.com/capricorncd/blog/tree/master/demos/web-audio'
       }
     ]
   }
