@@ -40,6 +40,7 @@
       <zx-praise :is-error="isError" :item="currentCard || {}" @change="praiseStateChange"/>
       <div class="next" @click="next"/>
     </div>
+    <VolumeControl ref="vc"/>
   </div>
 </template>
 
@@ -55,6 +56,7 @@ import ZxCard from './Card'
 import ZxPlaySchedule from './PlaySchedule'
 import ZxPraise from './Praise'
 import NoMoreCards from './NoMoreCards'
+import VolumeControl from './VolumeControl'
 
 // 无卡片了timer
 let noCardTimer = null
@@ -70,7 +72,8 @@ export default {
     ZxCard,
     ZxPlaySchedule,
     ZxPraise,
-    NoMoreCards
+    NoMoreCards,
+    VolumeControl
   },
   mixins: [beforeDestroy],
   computed: {
@@ -273,6 +276,8 @@ export default {
 
     this.$audio = $audio
     // App.emit('init-audio-end', $audio)
+
+    this.$refs.vc.setAudio($audio)
 
     const $body = App.query('body')
 
