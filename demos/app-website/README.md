@@ -1,5 +1,7 @@
 # app-website
 
+https://capricorncd.github.io/blog/dist/app-website/
+
 ## Build Setup
 
 ```bash
