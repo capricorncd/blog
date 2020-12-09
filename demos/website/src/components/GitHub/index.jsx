@@ -10,14 +10,18 @@ const list = [
   {
     name: 'School Circle Web Site',
     cover: './static/app-site.jpg',
-    url: 'https://capricorncd.github.io/blog/dist/app-site/',
+    url: 'https://capricorncd.github.io/blog/dist/app-website/',
     desc: [
       {
-        text: ''
+        text: 'Listen,it\'s like falling in love'
       },
       {
         tag: 'Tags',
-        text: 'Nuxt.js(Vue.js)/Sass/CSS3/HTML5'
+        text: 'Nuxt.js(Vue.js)/Sass/CSS3(animation)/HTML5'
+      },
+      {
+        tag: 'Source',
+        url: 'https://github.com/capricorncd/blog/tree/master/demos/app-website'
       }
     ]
   },
