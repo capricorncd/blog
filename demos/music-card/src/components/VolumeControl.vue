@@ -63,6 +63,7 @@ $barBgColor: #7474d4;
     height: 5px;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 3px;
+    cursor: pointer;
     .bar {
       position: absolute;
       height: 5px;
@@ -84,6 +85,7 @@ $barBgColor: #7474d4;
   svg {
     position: absolute;
     color: $barBgColor;
+    cursor: pointer;
     &.icon-l {
       left: -10%;
     }

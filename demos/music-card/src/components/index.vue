@@ -418,6 +418,8 @@ export default {
   .praise {
     width: 70px;
     height: 70px;
+    // preload
+    @include bgImage('~/assets/img/heart');
     @include bgImage('~/assets/img/btn-heart');
     -webkit-background-size: cover;
     background-size: cover;
