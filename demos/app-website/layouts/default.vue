@@ -27,7 +27,7 @@
     },
     mounted() {
       const path = location.hash.substr(2)
-      console.log(location.hash, path, isMobile())
+      // console.log(location.hash, path, isMobile())
       if (isMobile()) {
         if (path === '' || path === 'contact-us') {
           // location.href = '#mobile'
