@@ -11,7 +11,7 @@ npm run dev
 npm run build
 ```
 
-http://localhost:8000/
+http://localhost:8002/
 
 ## 资源
 
