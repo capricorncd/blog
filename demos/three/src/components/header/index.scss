@@ -14,10 +14,13 @@ header {
     font-weight: 500;
     font-size: 24px;
     font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+    span {
+      font-size: 0.6em;
+    }
   }
-  button {
+  .icon-menu {
     position: absolute;
-    right: 50px;
+    right: 55px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
@@ -26,6 +29,11 @@ header {
     opacity: 0.6;
     outline: none;
     display: none;
+    width: 26px;
+    height: 26px;
+    vertical-align: middle;
+    fill: currentColor;
+    overflow: hidden;
     &:active {
       opacity: 0.8;
     }
@@ -41,9 +49,9 @@ header {
     &:hover {
       opacity: 0.8;
     }
-  }
-  svg {
-    fill: currentColor;
-    color: #fff;
+    svg {
+      fill: currentColor;
+      color: #fff;
+    }
   }
 }
