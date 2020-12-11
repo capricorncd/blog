@@ -4,7 +4,7 @@
  * Date: 2020-10-04 15:35
  */
 import React, { useEffect, useRef } from 'react'
-import { render } from './core'
+import { render, destroy } from './core'
 
 function App() {
   let el, canvas, context, width, height, animeId
@@ -36,6 +36,7 @@ function App() {
     return () => {
       window.removeEventListener('resize', handleResize)
       cancelAnimationFrame(animeId)
+      destroy()
     }
   }, [])
   return <main className="font-size-zero" ref={elRef}>

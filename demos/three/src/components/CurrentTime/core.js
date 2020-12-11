@@ -103,3 +103,7 @@ function createBall(ball, context, width, height) {
 
   context.fill()
 }
+
+export function destroy() {
+  balls.length = 0
+}
