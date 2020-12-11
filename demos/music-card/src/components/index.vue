@@ -371,6 +371,7 @@ export default {
   dl.send-private {
     display: inline-block;
     position: absolute;
+    z-index: 10;
     top: 45px;
     left: 0;
     width: 40px;
