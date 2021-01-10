@@ -1,15 +1,27 @@
 import * as Types from '../types/index'
 
+/**
+ * is number like
+ * @param str
+ */
 export function isNumberLike(str: string): boolean {
   return /^-?(\d+|\d+\.\d+)$/.test(str)
 }
 
+/**
+ * to number
+ * @param str
+ */
 export function toNumber(str: number | string): number {
   if (typeof str === 'number') return str
   const num = parseFloat(str)
   return isNaN(num) ? 0 : num
 }
 
+/**
+ * handle query value
+ * @param str
+ */
 function handleQueryValue(str: string): any {
   if (str === 'null') return null
   if (str === 'undefined') return undefined
@@ -21,6 +33,9 @@ function handleQueryValue(str: string): any {
   }
 }
 
+/**
+ * get location queries
+ */
 export function getQuery(): Types.IAnyObject {
   const result: Types.IAnyObject = {}
   const search: string | undefined = location.search.split('?').pop()

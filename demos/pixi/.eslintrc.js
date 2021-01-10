@@ -23,10 +23,11 @@
   rules: {
     'space-before-function-paren': 0,
     'brace-style': 0,
-    '@typescript-eslint/explicit-function-return-type': 'off',
+    // '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-use-before-define': 'off',
-    'no-use-before-define': 'off'
+    // '@typescript-eslint/no-use-before-define': 'off',
+    // 'no-use-before-define': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off'
   },
   parser: '@typescript-eslint/parser'
 }

@@ -11,7 +11,7 @@ import { IMG_BG_FILE } from './constants'
  * Renderer, Ticker & Stage
  * PIXI.Application
  */
-export function rendererDemo(options: Types.IOptions) {
+export function rendererDemo(options: Types.IOptions): void {
   let { canvas, width, height, resolution } = options
 
   const renderer: PIXI.Renderer = new PIXI.Renderer({

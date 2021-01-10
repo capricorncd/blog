@@ -27,9 +27,9 @@ const baseConfig = {
     index: resolve(__dirname, './src/index.ts')
   },
   output: {
-    path: resolve(__dirname, './dist'),
+    path: resolve(__dirname, '../../dist/pixi'),
     filename: '[name].js',
-    libraryTarget: 'umd',
+    libraryTarget: 'window',
     globalObject: 'typeof self !== \'undefined\' ? self : this',
     // umdNamedDefine: true,
   },
@@ -91,7 +91,7 @@ const baseConfig = {
       template: 'index.html',
       filename: 'index.html'
     }),
-    
+
   ]
 }
 

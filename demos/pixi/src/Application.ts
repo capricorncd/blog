@@ -11,8 +11,8 @@ import { IMG_BG_FILE } from './constants'
  * Getting Started
  * PIXI.Application
  */
-export function gettingStarted(options: Types.IOptions) {
-  const { canvas, width, height, resolution } = options
+export function gettingStarted(options: Types.IOptions): void {
+  const { canvas, width, height } = options
   const app = new PIXI.Application({
     view: canvas,
     width,
