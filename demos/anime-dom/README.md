@@ -6,7 +6,7 @@ https://github.com/capricorncd/dev3cli
 ## Build Setup
 
 ```bash
-# serve with hot reload at localhost:4000
+# serve with hot reload at localhost:9000
 $ npm run dev
 # or
 $ yarn dev
