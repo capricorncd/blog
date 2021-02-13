@@ -33,14 +33,22 @@ export class AnimeDom {
     const len = positions.length
     const lastIndex = len - 1
     if (len) {
-      const index = Math.min((this.runTime - this.changeLoop * lastIndex * this.interval) / this.interval | 0, lastIndex)
+      const index = Math.min(Math.abs((this.runTime - this.changeLoop * lastIndex * this.interval) / this.interval) % lastIndex | 0, lastIndex)
+      // console.log(len, index)
       const [x, y] = positions[index].split(' ')
       if (index === lastIndex) this.changeLoop++
       el.style.backgroundPosition = `${x}px ${y}px`
     }
   }
 
-  setPositions(positions: string[]) {
+  setPositions(positions: string[], imgUrl?: string) {
+    if (imgUrl) {
+      this.el.style.backgroundImage = `url(${imgUrl})`
+      // this.runTime = 0
+      // this.changeLoop = 0
+      // this.startTime = +new Date()
+    }
+    if (this.positions === positions) return
     this.positions = positions
   }
 

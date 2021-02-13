@@ -4,9 +4,9 @@
  * Date: 2021-02-11 17:26:56
 */
 import { imageLoader } from './sourceLoader'
-import { $, createRabbit, hideEl, showEl, getPositionInfo, getElPositionInfo } from './helper'
+import { $, createRabbit, hideEl, showEl, getPositionInfo, getElPositionInfo, isArrived } from './helper'
 import { IImageLoaderItem } from '~/types'
-import { IMAGE_SOURCES, LEFT_RUNNING_POSITIONS, RIGHT_RUNNING_POSITIONS } from './constants'
+import { IMAGE_SOURCES, LEFT_RUNNING_POSITIONS, LOST_POSITION, RIGHT_RUNNING_POSITIONS } from './constants'
 import { AnimeDom } from './AnimeDom'
 import './style.scss'
 
@@ -30,7 +30,6 @@ function run() {
   imageLoader(IMAGE_SOURCES, per).then((res: IImageLoaderItem[]) => {
     console.log(res)
     hideEl('.loading')
-    console.log(rabbitA)
     rabbitA.style.backgroundImage = `url(${res[0].url})`
     rabbitAnime(rabbitA)
   }).catch(err => {
@@ -40,7 +39,7 @@ function run() {
 }
 
 function rabbitAnime(rabbitA: HTMLElement): void {
-  const interval = 60
+  const interval = 80
   const anime = new AnimeDom({
     el: rabbitA,
     positions: RIGHT_RUNNING_POSITIONS
@@ -52,8 +51,9 @@ function rabbitAnime(rabbitA: HTMLElement): void {
   let top = 0
   let isRight = true
   let isDown = true
+  let isGameOver = false
   const SPEED = 10
-  const MARGIN = 20
+  const MARGIN = 30
   const RABBIT_WIDTH = rabbitA.offsetWidth
   const RABBIT_HEIGHT = rabbitA.offsetHeight
   const BOUNDARY_RIGHT = window.innerWidth - MARGIN - RABBIT_WIDTH
@@ -64,8 +64,34 @@ function rabbitAnime(rabbitA: HTMLElement): void {
   let verticalBoundaryTopLine = MARGIN
   let horizontalSpeed = SPEED
   let verticalSpeed = SPEED
+  let targetPos = {
+    x: BOUNDARY_RIGHT,
+    y: BOUNDARY_BOTTOM
+  }
+
+  // hp
+  const $hp = $('.hp dd i') as HTMLElement
+  let hpPer = 100
 
   function callback({ el }: AnimeDom): void {
+    hpPer -= 0.5
+    $hp.style.width = `${Math.max(hpPer, 0)}%`
+    if (hpPer <= 0) {
+      if (!isGameOver) {
+        anime.setPositions(LOST_POSITION, IMAGE_SOURCES[1])
+        isGameOver = true
+      } else {
+        // anime.pause()
+      }
+      return
+    }
+    if (isArrived(el.getBoundingClientRect(), targetPos)) {
+      horizontalBoundaryRightLine = BOUNDARY_RIGHT
+      horizontalBoundaryLeftLine = MARGIN
+      verticalBoundaryTopLine = MARGIN
+      verticalBoundaryBottomLine = BOUNDARY_BOTTOM
+      console.log('Arrived at the destination point')
+    }
     // console.log(left)
     if (isRight) {
       left += horizontalSpeed
@@ -102,31 +128,38 @@ function rabbitAnime(rabbitA: HTMLElement): void {
     if (anime.isStart()) {
       anime.pause()
     } else {
+      if (isGameOver) {
+        // replay
+        hpPer = 100
+        anime.setPositions(isRight ? RIGHT_RUNNING_POSITIONS : LEFT_RUNNING_POSITIONS, IMAGE_SOURCES[0])
+        isGameOver = false
+      }
       anime.start(interval, callback)
     }
   })
 
   document.addEventListener('click', (e: MouseEvent) => {
-    const pos = getPositionInfo(e)
+    targetPos = getPositionInfo(e)
     const rabbitPos = getElPositionInfo(rabbitA)
-    console.log(pos, rabbitPos)
-    if (pos.x > rabbitPos.cX) {
+    if (targetPos.y < 40 || targetPos.x < 30) return
+    // console.log(targetPos, rabbitPos)
+    if (targetPos.x > rabbitPos.cX) {
       horizontalBoundaryRightLine = BOUNDARY_RIGHT
-      horizontalBoundaryLeftLine = pos.x
+      horizontalBoundaryLeftLine = targetPos.x
     } else {
-      horizontalBoundaryRightLine = Math.max(pos.x, MARGIN)
+      horizontalBoundaryRightLine = Math.max(targetPos.x, MARGIN)
       horizontalBoundaryLeftLine = MARGIN
     }
-    if (pos.y > rabbitPos.cY) {
+    if (targetPos.y > rabbitPos.cY) {
       verticalBoundaryBottomLine = BOUNDARY_BOTTOM
-      verticalBoundaryTopLine = pos.y
+      verticalBoundaryTopLine = targetPos.y
     } else {
-      verticalBoundaryBottomLine = pos.y
+      verticalBoundaryBottomLine = targetPos.y
       verticalBoundaryTopLine = MARGIN
     }
 
-    const horizontalDistanceDifference = Math.abs(pos.x - rabbitPos.cX)
-    const verticalDistanceDifference = Math.abs(pos.y - rabbitPos.cY)
+    const horizontalDistanceDifference = Math.abs(targetPos.x - rabbitPos.cX)
+    const verticalDistanceDifference = Math.abs(targetPos.y - rabbitPos.cY)
     if (horizontalDistanceDifference > verticalDistanceDifference) {
       horizontalSpeed = SPEED
       verticalSpeed = verticalDistanceDifference * SPEED / horizontalDistanceDifference

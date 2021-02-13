@@ -32,7 +32,7 @@ export function createRabbit(parent: HTMLElement): HTMLElement {
   return el
 }
 
-export function getPositionInfo(e: MouseEvent): { [key: string]: number } {
+export function getPositionInfo(e: MouseEvent): { x: number, y: number } {
   return {
     x: e.clientX,
     y: e.clientY
@@ -41,9 +41,14 @@ export function getPositionInfo(e: MouseEvent): { [key: string]: number } {
 
 export function getElPositionInfo(el: HTMLElement): { [key: string]: number } {
   const rect = el.getBoundingClientRect()
-  console.log(rect)
   return {
     cX: rect.x + rect.width / 2,
     cY: rect.y + rect.height / 2
   }
+}
+
+// Arrived at the destination point
+export function isArrived({ left, right, top, bottom }: DOMRect, targetPos: { x: number, y: number }) {
+  return (left <= targetPos.x && right >= targetPos.x) &&
+    (top <= targetPos.y && bottom >= targetPos.y)
 }
