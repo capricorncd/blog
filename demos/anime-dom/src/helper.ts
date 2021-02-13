@@ -28,8 +28,22 @@ export function hideEl(selector: string, time = 500): void {
 export function createRabbit(parent: HTMLElement): HTMLElement {
   const el = document.createElement('section')
   el.className = 'rabbit'
-  const section = document.createElement('section')
-  section.appendChild(el)
-  parent.appendChild(section)
+  parent.appendChild(el)
   return el
+}
+
+export function getPositionInfo(e: MouseEvent): { [key: string]: number } {
+  return {
+    x: e.clientX,
+    y: e.clientY
+  }
+}
+
+export function getElPositionInfo(el: HTMLElement): { [key: string]: number } {
+  const rect = el.getBoundingClientRect()
+  console.log(rect)
+  return {
+    cX: rect.x + rect.width / 2,
+    cY: rect.y + rect.height / 2
+  }
 }

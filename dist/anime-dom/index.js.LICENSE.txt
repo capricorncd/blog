@@ -1,0 +1,6 @@
+/*!
+ * anime-dom v0.0.1
+ * Author: Capricorncd
+ * Repository: undefined
+ * Released on: 2021-02-13 20:32:29
+ */

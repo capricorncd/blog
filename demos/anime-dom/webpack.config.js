@@ -27,7 +27,7 @@ const baseConfig = {
     index: resolve(__dirname, './src/index.ts')
   },
   output: {
-    path: resolve(__dirname, './dist'),
+    path: resolve(__dirname, '../../dist/anime-dom'),
     filename: '[name].js',
     libraryTarget: 'window',
     globalObject: 'typeof self !== \'undefined\' ? self : this',
