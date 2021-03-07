@@ -44,7 +44,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "three": "^0.120.1"
+    "three": ">=0.125.0"
   },
   "github": "https://github.com/capricorncd",
   "repository": {
