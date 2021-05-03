@@ -52,10 +52,13 @@ function rain(): void {
     $rain.style.top = '-150px'
     $body.appendChild($rain)
 
+    let acceleration = 1
+
     // 雨滴下降动画和边界检测，超出屏幕外的元素移除
     const timer = setInterval(() => {
       let top = getStyleTopValue($rain)
-      top += 5 + Math.pow(2, 2)
+      acceleration += 0.1
+      top += Math.pow(acceleration, 2)
       $rain.style.top = top + 'px'
       if (top > winHeight) {
         $body.removeChild($rain)
