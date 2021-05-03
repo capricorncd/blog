@@ -33,3 +33,36 @@ function init(): void {
 }
 
 init()
+
+function getStyleTopValue(el: HTMLElement): number {
+  const top = parseInt(el.style.top)
+  return isNaN(top) ? 0 : top
+}
+
+function rain(): void {
+  const $body = $('body')[0]
+
+  setInterval(() => {
+    const winWidth = window.innerWidth
+    const winHeight = window.innerHeight
+    const $rain = document.createElement('div')
+    $rain.classList.add('rain')
+    $rain.style.left = winWidth * Math.random() + 'px'
+    $rain.style.opacity = Math.random() + ''
+    $rain.style.top = '-150px'
+    $body.appendChild($rain)
+
+    // 雨滴下降动画和边界检测，超出屏幕外的元素移除
+    const timer = setInterval(() => {
+      let top = getStyleTopValue($rain)
+      top += 5 + Math.pow(2, 2)
+      $rain.style.top = top + 'px'
+      if (top > winHeight) {
+        $body.removeChild($rain)
+        clearInterval(timer)
+      }
+    }, 10)
+  }, 50)
+}
+
+rain()

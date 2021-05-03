@@ -6,7 +6,10 @@
 body {
   background: #000;
 }
+
 #app {
+  position: relative;
+  z-index: 1;
   margin: 0 auto;
   width: 60%;
   text-align: center;
@@ -21,6 +24,27 @@ body {
       }
     }
   }
+}
+
+canvas {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.rain {
+  position: fixed;
+  height: 1px;
+  width: 1px;
+  border-bottom: 150px solid #fff;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  filter: blur(1px);
+  transform: scale(0.5);
 }
 
 @keyframes smoke {
