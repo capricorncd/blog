@@ -27,7 +27,7 @@ const baseConfig = {
     index: resolve(__dirname, './src/index.ts')
   },
   output: {
-    path: resolve(__dirname, './dist'),
+    path: resolve(__dirname, '../../dist/smoke-text'),
     filename: '[name].js',
     libraryTarget: 'umd',
     globalObject: 'typeof self !== \'undefined\' ? self : this',
@@ -91,7 +91,7 @@ const baseConfig = {
       template: 'index.html',
       filename: 'index.html'
     }),
-    
+
   ]
 }
 
@@ -107,15 +107,15 @@ module.exports = isProd
         `Released on: ${formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss')}`
       ].join('\n')),
       // https://github.com/webpack-contrib/copy-webpack-plugin
-      new CopyWebpackPlugin({
-        patterns: [{
-          from: resolve(__dirname, './static'),
-          to: 'static'
-        }],
-        options: {
-          concurrency: 100
-        }
-      })
+      // new CopyWebpackPlugin({
+      //   patterns: [{
+      //     from: resolve(__dirname, './static'),
+      //     to: 'static'
+      //   }],
+      //   options: {
+      //     concurrency: 100
+      //   }
+      // })
     ]
   })
   // development
