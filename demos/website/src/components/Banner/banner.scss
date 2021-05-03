@@ -1,4 +1,5 @@
 .banner-wrapper {
+  position: relative;
   margin-top: $--size-header-height;
   background: $--color-bg-banner;
   height: 300px;
@@ -19,5 +20,42 @@
     font-size: 1.8rem;
     font-weight: 200;
     letter-spacing: 2px;
+    span {
+      display: inline-block;
+      &.active {
+        animation: smoke 10s linear forwards;
+        transform-origin: bottom;
+      }
+    }
+  }
+}
+
+.rain {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  border-bottom: 150px solid #fff;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  filter: blur(1px);
+  transform: scale(0.5);
+  pointer-events: none;
+}
+
+@keyframes smoke {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+  20% {
+    opacity: 0;
+    filter: blur(20px);
+    transform: translate(300px, -300px) rotate(720deg) scale(4);
+  }
+  21% {
+    opacity: 0;
+    filter: blur(0);
+    transform: translate(0, 0) rotate(0) scale(1);
   }
 }
