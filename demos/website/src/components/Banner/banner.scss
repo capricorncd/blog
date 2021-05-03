@@ -20,12 +20,12 @@
     font-size: 1.8rem;
     font-weight: 200;
     letter-spacing: 2px;
-    span {
-      display: inline-block;
-      &.active {
-        animation: smoke 10s linear forwards;
-        transform-origin: bottom;
-      }
+  }
+  span {
+    display: inline-block;
+    &.active {
+      animation: smoke 10s linear forwards;
+      transform-origin: bottom;
     }
   }
 }
