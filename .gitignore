@@ -8,5 +8,4 @@ learning-route.md
 __psd/
 .rdb
 
-package-lock.json
-yarn.lock
+.log*

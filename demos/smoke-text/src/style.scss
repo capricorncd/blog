@@ -1,0 +1,42 @@
+/**
+ * Created by dev3cli.
+ * https://github.com/capricorncd/dev3cli
+ * Date: 2021-05-03 14:52:50
+*/
+body {
+  background: #000;
+}
+#app {
+  margin: 0 auto;
+  width: 60%;
+  text-align: center;
+  color: #fff;
+  p {
+    text-align: justify;
+    span {
+      display: inline-block;
+      &.active {
+        animation: smoke 10s linear forwards;
+        transform-origin: bottom;
+      }
+    }
+  }
+}
+
+@keyframes smoke {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+  20% {
+    opacity: 0;
+    filter: blur(20px);
+    transform: translate(300px, -300px) rotate(720deg) scale(4);
+  }
+  21% {
+    opacity: 0;
+    filter: blur(0);
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+}
