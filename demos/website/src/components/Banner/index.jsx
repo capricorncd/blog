@@ -15,7 +15,7 @@ class Banner extends Component {
   render() {
     return <div className="banner-wrapper">
       <h1>CAPRICORNCD</h1>
-      <p>A developer who likes to write code</p>
+      <p>A front-end developer from Chengdu, China.</p>
     </div>
   }
 }

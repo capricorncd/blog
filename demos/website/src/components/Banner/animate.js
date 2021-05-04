@@ -15,7 +15,7 @@ function addActiveClassName($el) {
       $el.classList.remove('active')
       clearTimeout(timer)
       timer = null
-    }, 10000)
+    }, 9000)
   }
 }
 
@@ -80,15 +80,15 @@ function handleCollisions($rain, spanPositions) {
 
 /**
  * 雨滴下落处理
- * @param $rain
+ * @param rain
  * @param spanPositions
  * @param winWidth
- * @param winHeight
+ * @param bannerHeight
  * @param $app
  */
-function fallingAnimation($rain, spanPositions, winWidth, winHeight, $app) {
+function fallingAnimation(rain, spanPositions, winWidth, bannerHeight, $app) {
   let acceleration = 1
-
+  const $rain = rain.el
   // 雨滴下降动画和边界检测，超出屏幕外的元素移除
   let animeId = null
   function anime() {
@@ -100,13 +100,26 @@ function fallingAnimation($rain, spanPositions, winWidth, winHeight, $app) {
 
     handleCollisions($rain, spanPositions)
 
-    if (top > winHeight) {
-      $app.removeChild($rain)
+    if (top > bannerHeight) {
       cancelAnimationFrame(animeId)
       animeId = null
+      rain.active = false
     }
   }
   anime()
+}
+
+function createRain($app, winWidth) {
+  const $rain = document.createElement('div')
+  $rain.classList.add('rain')
+  $rain.style.left = winWidth * Math.random() + 'px'
+  $rain.style.opacity = Math.random() + ''
+  $rain.style.top = '-150px'
+  $app.appendChild($rain)
+  return {
+    el: $rain,
+    active: true
+  }
 }
 
 /**
@@ -115,15 +128,17 @@ function fallingAnimation($rain, spanPositions, winWidth, winHeight, $app) {
  */
 function rain($app) {
   let winWidth = window.innerWidth
-  let winHeight = window.innerHeight
+  let bannerHeight = $app.offsetHeight
 
   let spanPositions = getSpansRect($app)
   // resize
   window.addEventListener('resize', () => {
     winWidth = window.innerWidth
-    winHeight = window.innerHeight
+    bannerHeight = $app.offsetHeight
     spanPositions = getSpansRect($app)
   })
+
+  const rainList = []
 
   let time = 0
   const startTime = +new Date()
@@ -134,15 +149,18 @@ function rain($app) {
     if (+new Date() - startTime < time) return
 
     time += 50
+    let rain = rainList.find(item => !item.active)
+    if (rain) {
+      rain.active = true
+      rain.el.style.top = '-150px'
+      rain.el.style.left = winWidth * Math.random() + 'px'
+      rain.el.style.opacity = Math.random() + ''
+    } else {
+      rain = createRain($app, winWidth)
+      rainList.push(rain)
+    }
 
-    const $rain = document.createElement('div')
-    $rain.classList.add('rain')
-    $rain.style.left = winWidth * Math.random() + 'px'
-    $rain.style.opacity = Math.random() + ''
-    $rain.style.top = '-150px'
-    $app.appendChild($rain)
-
-    fallingAnimation($rain, spanPositions, winWidth, winHeight, $app)
+    fallingAnimation(rain, spanPositions, winWidth, bannerHeight, $app)
   }
 
   createRainAnime()
