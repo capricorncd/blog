@@ -46,7 +46,7 @@ function getStyleTopValue(el) {
 /**
  * 获取span的位置信息
  * @param $app
- * @return {jQuery}
+ * @return {{}}
  */
 function getSpansRect($app) {
   return $('span', $app).map(el => {

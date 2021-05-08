@@ -8,6 +8,32 @@ import './github.scss'
 
 const list = [
   {
+    name: '新選組 ～桜華妖乱～',
+    cover: './static/game-shinsengumi.jpg',
+    url: 'https://www.shinsengumi-ouka.com/',
+    desc: [
+      {
+        text: '幕末の京都を舞台に繰り広げられる、新たなる新選組の物語。美しく咲く女性隊士と共に妖屍(あやかし)を討ち、歴史を切り拓け！'
+      },
+      {
+        tag: 'Tags',
+        text: 'TypeScript'
+      },
+      {
+        tag: '公式サイト',
+        url: 'https://www.shinsengumi-ouka.com/'
+      },
+      {
+        tag: 'Mobage',
+        url: 'http://www.mbga.jp/_game_intro?game_id=12026826'
+      },
+      {
+        tag: 'GREE',
+        url: 'http://jp.apps.gree.net/ja/80174'
+      }
+    ]
+  },
+  {
     name: 'School Circle Web Site',
     cover: './static/app-site.jpg',
     url: 'https://capricorncd.github.io/blog/dist/app-website/',
