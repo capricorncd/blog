@@ -4,6 +4,19 @@
 
 ## Demos
 
+* anime-dom
+
+https://capricorncd.github.io/blog/dist/anime-dom/index.html
+
+* fireworks
+
+https://capricorncd.github.io/blog/dist/fireworks/index.html
+
+* smoke-text
+
+https://capricorncd.github.io/blog/dist/smoke-text/index.html
+
+
 * WebGL(Three.js)
 
 https://capricorncd.github.io/blog/dist/three/index.html
