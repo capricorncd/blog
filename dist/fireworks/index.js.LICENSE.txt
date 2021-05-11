@@ -1,0 +1,6 @@
+/*!
+ * fireworks v0.0.1
+ * Author: Capricorncd
+ * Repository: undefined
+ * Released on: 2021-05-11 21:49:35
+ */

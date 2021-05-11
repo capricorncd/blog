@@ -27,7 +27,7 @@ const baseConfig = {
     index: resolve(__dirname, './src/index.ts')
   },
   output: {
-    path: resolve(__dirname, './dist'),
+    path: resolve(__dirname, '../../dist/fireworks'),
     filename: '[name].js',
     libraryTarget: 'umd',
     globalObject: 'typeof self !== \'undefined\' ? self : this',
