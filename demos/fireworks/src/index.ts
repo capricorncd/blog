@@ -52,6 +52,7 @@ createFireworks()
 const MAX_COUNT = 20
 let count = 0
 function run() {
+  requestAnimationFrame(run)
   ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'
   ctx.clearRect(0, 0, winWidth, winHeight)
   let i = fireworks.length
@@ -80,4 +81,4 @@ canvas.addEventListener('mouseup', (e: MouseEvent) => {
   createFireworks(tx, ty)
 })
 
-setInterval(run, 50)
+run()
