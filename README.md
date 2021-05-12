@@ -2,37 +2,6 @@
 
 平时工作或学习中做的笔记。以前是写在纸上(或笔记本上)，后来发现携带和存放都是个问题，所以就用Markdown记录并放到网上，有网络的地方随时都可以查阅、温习...
 
-## Demos
-
-* anime-dom
-
-https://capricorncd.github.io/blog/dist/anime-dom/index.html
-
-* fireworks
-
-https://capricorncd.github.io/blog/dist/fireworks/index.html
-
-* smoke-text
-
-https://capricorncd.github.io/blog/dist/smoke-text/index.html
-
-
-* WebGL(Three.js)
-
-https://capricorncd.github.io/blog/dist/three/index.html
-
-* Music Card (vue2)
-
-https://capricorncd.github.io/blog/dist/music-card/index.html
-
-* Web Audio
-
-https://capricorncd.github.io/blog/dist/web-audio/index.html
-
-* Java
-
-https://capricorncd.github.io/Java-Notes/
-
 ## Catalog 目录
 
 ### algorithms-and-data-structures 算法与数据结构
