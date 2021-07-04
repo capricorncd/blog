@@ -64,14 +64,14 @@ rm -rf MyDir/
 rm -rf dir1 dir2 dir3
 ```
 
-## 源码安装
+## nginx/源码安装
 
 ```shell
 cd ./nginx
 # 源文件安装
 # ./configure --prefix=/usr/local/nginx
-# 需要使用https开始ssl模块时：
-./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module
+# 需要使用https开始ssl模块/htt2时：
+./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-http_v2_module
 make
 sudo make install
 # 查看安装结果
@@ -99,8 +99,47 @@ yum -y install zlib zlib-devel
 # yum install -y gcc pcre pcre-devel openssl openssl-devel gd gd-devel
 ```
 
-## nginx
+## coturn安装
 
 ```shell
+#https://github.com/coturn/coturn/wiki/Downloads
+tar xvfz turnserver-<...>.tar.gz
+./configure --prefix=/usr/local/coturn
+make
+sudo make install
+```
 
+Error
+
+```shell
+# ./configure error
+# ERROR: Libevent2 development libraries are not installed properly in required location.
+# ERROR: may be you have just too old libevent tool - then you have to upgrade it.
+yum install libevent-devel -y
+```
+
+进入安装完成目录，并复制默认配置文件再修改内容
+
+```shell
+cd /usr/local/coturn/etc
+cp turnserver.conf.default turnserver.conf
+```
+
+```shell
+vi turnserver.conf
+```
+
+```shell
+# turnserver.conf
+listening-port=3478
+external-ip=60.70.80.91
+user=username:password
+realm=stun.domain.com
+```
+
+启动sturn服务
+
+```shell
+# turnserver/bin添加只全局变量配置文件
+turnserver -c turnserver.conf
 ```
