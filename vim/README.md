@@ -72,3 +72,21 @@ cat filename.txt
 
 `:close` 关闭窗口。
 
+## C语言代码高亮
+
+```shell
+:syntax on
+```
+
+编译C语言代码
+
+```shell
+# Mac
+clang -g -o HelloWorld HelloWorld.c
+```
+
+执行编译后的文件
+
+```shell
+./HelloWorld
+```
