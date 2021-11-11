@@ -1,8 +1,8 @@
 # 从C4D建模到Three.js实现闹钟产品360度展示效果
 
-演示地址：[https://capricorncd.github.io/blog/dist/three/index.html#/ClockObj](https://capricorncd.github.io/blog/dist/three/index.html#/ClockObj)
+演示地址：[https://capricorncd.github.io/demos/three/index.html#/ClockObj](https://capricorncd.github.io/demos/three/index.html#/ClockObj)
 
-源码：[https://github.com/capricorncd/blog/tree/master/demos/three](https://github.com/capricorncd/blog/tree/master/demos/three)
+源码：[https://github.com/capricorncd/demos/tree/main/three](https://github.com/capricorncd/demos/tree/main/three)
 
 C4D文件：clock(R21.207).c4d [https://github.com/capricorncd/blog/tree/master/c4d](https://github.com/capricorncd/blog/tree/master/c4d)
 
