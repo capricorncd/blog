@@ -60,3 +60,27 @@ git rebase --continue
 # 第五步
 git push --force
 ```
+
+### checkout merge reset ...
+
+```shell
+git checkout origin/main
+# create a new branch
+git checkout -b feature/new-branch
+# switch the feature/other-branch
+git checkout feature/other-branch
+# merge origin/main into the current branch
+git merge origin/main
+# add all files that modified
+git add .
+# or add some-file and some-dir
+git add src/some-file.ts src/some-dir
+# status
+git status
+# reset
+git reset HEAD src/some-file.ts
+# commit
+git commit -m "some message"
+# push
+git push
+```
