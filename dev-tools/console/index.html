@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>console</title>
+  <style type="text/css">
+    fieldset {
+      border: 1px solid green;
+    }
+
+    legend {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      background: linear-gradient(cadetblue 0 0) center/100% 1px no-repeat;
+      color: cadetblue;
+    }
+
+    legend div {
+      background-color: white;
+      padding: 0 0.5em;
+    }
+  </style>
+</head>
+
+<body>
+  <fieldset onclick="changeStyles()">
+    <legend>
+      <div>Keyboard shortcuts</div>
+      <div>to open the console</div>
+    </legend>
+    <p>Windows/Linux: Press Control + Shift + J.</p>
+    <p>Mac: Press Command + Option + J.</p>
+  </fieldset>
+
+  <script>
+    const students = [
+      {
+        name: 'John',
+        score: 99,
+      },
+      {
+        name: 'Mary',
+        score: 100,
+      },
+    ]
+
+    function changeStyles() {
+      const fieldset = document.querySelector('fieldset')
+      // set Break on attribute modifications at dev tools'Elements
+      // fieldset.style.fontSize = '2rem';
+      fieldset.style.color = 'blueviolet';
+      fieldset.style.borderColor = 'blueviolet';
+      console.log(students)
+      console.table(students)
+    }
+
+    console.log('use %s', '\%s text')
+
+    console.log('%c Styled some texts ', 'font-size: 2rem; background: blueviolet; color: #fff;')
+
+    console.warn('warn')
+    console.info('info')
+    console.error('error')
+
+    // console.clear()
+
+    const legend = document.querySelector('legend')
+    const textContent = legend.textContent.trim().replace(/\n/g, '')
+    console.log(textContent)
+    console.assert(!textContent.includes('Keyboard'), 'output some message')
+
+    console.log(legend)
+    console.dir(legend)
+    // console.dirxml(legend)
+
+    students.forEach((item) => {
+      console.group(item.name)
+      // console.groupCollapsed(item.name)
+      console.log(`This is ${item.name}`)
+      console.log(`${item.name}'s score is ${item.score}`)
+      console.groupEnd(item.name)
+    })
+
+    console.table(students)
+
+    console.count('some words')
+    console.count('some words')
+    console.count(students[0].name)
+    console.count('some words')
+    console.count('some words')
+    console.count(students[0].name)
+    console.count('some words')
+    console.count(students[0].name)
+    console.count(students[0].name)
+    console.count(students[0].name)
+    console.count('some words')
+    console.count('some words')
+    console.count('some words')
+
+    console.time('setTimeout timing')
+    setTimeout(() => {
+      console.timeEnd('setTimeout timing')
+    }, 2 * Math.random())
+
+  </script>
+</body>
+
+</html>
