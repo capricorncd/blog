@@ -1,6 +1,6 @@
 # git
 
-```shell-js
+```bash
 # 查看用户名:
 git config user.name
 
@@ -16,39 +16,39 @@ git config --global user.email "xxx"
 #### 当次提交
 当次的提交显示指定提交者信息：
 
-```shell-js
+```bash
 git commit -m "Initial commit" --author="mn <mn@furzoom.com>"
 ```
 
 #### 修改上次提交
 修改已经提交的commit的信息：
 
-```shell-js
+```shell
 git commit --amend --author="mn <mn@furzoom.com>"
 ```
 
 #### 修改历史提交
 如果是上几次的提交呢？可以利用rebase来实现，如：
-```shell-js
+```shell
 git rebase -i orgin/master
 ```
 
 在列表中将开头的pick修改为edit，然后重复执行以下命令直到完成：
 
-```shell-js
+```shell
 git commit --amend --author="mn <mn@furzoom.com>"
 git rebase --continue
 ```
 
 #### 修改所有的提交
 与上面的不同在于，不能再使用特定的commit id，使用
-```shell-js
+```shell
 git rebase -i --root
 ```
 
 ## 修改提交历史中的author信息2
 
-```shell-js
+```shell
 # 第一步，（n）代表提交次数
 git rebase -i HEAD~n
 # 第二步
@@ -71,6 +71,7 @@ git checkout -b feature/new-branch
 git checkout feature/other-branch
 # merge origin/main into the current branch
 git merge origin/main
+# git merge main
 # add all files that modified
 git add .
 # or add some-file and some-dir
@@ -79,8 +80,25 @@ git add src/some-file.ts src/some-dir
 git status
 # reset
 git reset HEAD src/some-file.ts
+# git reset --soft HEAD^
 # commit
 git commit -m "some message"
 # push
 git push
+```
+
+### Personal access tokens (classic)
+
+```bash
+git remote set-url origin https://capricorncd:{ghp_token}@github.com/capricorncd/repository-name.git
+```
+
+### branch
+
+```bash
+# show branch list
+git branch
+
+# delete branch
+git branch -D branch-name
 ```
