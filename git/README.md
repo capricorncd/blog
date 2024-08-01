@@ -11,6 +11,27 @@ git config --global user.name "xxx"
 git config --global user.email "xxx"
 ```
 
+## 撤销/还原/放弃本地修改
+
+### 未使用 git add 缓存代码
+
+使用 `git checkout -- 文件路径名`放弃某个文件修改
+
+使用 `git checkout .` 放弃所有文件修改
+
+### 已经使用 git add 缓存代码，未使用git commit
+
+使用 `git reset HEAD 文件名` 放弃某个文件修改
+
+
+使用 `git reset HEAD` 放弃所有文件修改
+
+### 已经使用 git commit 提交了代码
+
+使用 `git reset --hard HEAD^` 来回退到上一次commit的状态
+
+可以使用 `git reset --hard commitid` 回退到任意版本，使用 `git log` 命令查看git提交历史和`commitid`
+
 ## 修改提交历史中的author信息1
 
 #### 当次提交
