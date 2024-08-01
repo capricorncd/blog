@@ -108,6 +108,14 @@ git commit -m "some message"
 git push
 ```
 
+## clone
+
+### 使用个人访问令牌(PAT)
+
+```bash
+git clone https://capricorncd:{personal_access_token}@github.com/capricorncd/{repository}.git
+```
+
 ### Personal access tokens (classic)
 
 ```bash
